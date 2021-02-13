@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "moduleResolution": "Node",
+    "stripInternal": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  },
+  "references": [
+    { "path": "./extension-vscode" },
+    { "path": "./language-service" },
+    { "path": "./language-service/__tests__" },
+    { "path": "./parser/" },
+    { "path": "./parser/__tests__" }
+  ],
+  "files": []
+}

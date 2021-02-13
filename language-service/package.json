@@ -1,0 +1,21 @@
+{
+  "name": "ef-language-service-server",
+  "description": "efml language service",
+  "version": "0.0.0",
+  "author": "Jack-Works",
+  "license": "MIT",
+  "types": "./dist/",
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jack-Works/ef-language-service"
+  },
+  "dependencies": {
+    "vscode-languageserver": "^7.0.0",
+    "vscode-languageserver-textdocument": "^1.0.1",
+    "ef-parser": "*"
+  },
+  "scripts": {}
+}

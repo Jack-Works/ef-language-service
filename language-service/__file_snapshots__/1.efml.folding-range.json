@@ -1,0 +1,32 @@
+[
+    {
+        "kind": "element",
+        "startLine": 6,
+        "endLine": 50
+    },
+    {
+        "kind": "comment",
+        "startLine": 7,
+        "endLine": 11
+    },
+    {
+        "kind": "element",
+        "startLine": 33,
+        "endLine": 37
+    },
+    {
+        "kind": "text",
+        "startLine": 35,
+        "endLine": 37
+    },
+    {
+        "kind": "element",
+        "startLine": 42,
+        "endLine": 50
+    },
+    {
+        "kind": "comment",
+        "startLine": 0,
+        "endLine": 5
+    }
+]

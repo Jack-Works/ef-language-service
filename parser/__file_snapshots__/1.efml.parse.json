@@ -1,0 +1,2599 @@
+{
+    "kind": 100,
+    "fileName": "example.efml",
+    "path": "example.efml",
+    "children": [
+        {
+            "kind": 101,
+            "text": "Tree structure\n",
+            "pos": 0,
+            "end": 15,
+            "len": 15,
+            "line": 0,
+            "character": 15,
+            "__kind__": "CommentLine"
+        },
+        {
+            "kind": 101,
+            "text": "Lines not started with >#%@.+- are considered as comments\n",
+            "pos": 15,
+            "end": 73,
+            "len": 58,
+            "line": 1,
+            "character": 58,
+            "__kind__": "CommentLine"
+        },
+        {
+            "kind": 101,
+            "text": "The escape character of eft is '&', for prevention of the conflict with js escapes.\n",
+            "pos": 73,
+            "end": 157,
+            "len": 84,
+            "line": 2,
+            "character": 84,
+            "__kind__": "CommentLine"
+        },
+        {
+            "kind": 101,
+            "text": "Except for the change of the character, all the usage should be the same.\n",
+            "pos": 157,
+            "end": 231,
+            "len": 74,
+            "line": 3,
+            "character": 74,
+            "__kind__": "CommentLine"
+        },
+        {
+            "kind": 101,
+            "text": "this is a comment\n",
+            "pos": 231,
+            "end": 249,
+            "len": 18,
+            "line": 4,
+            "character": 18,
+            "__kind__": "CommentLine"
+        },
+        {
+            "kind": 101,
+            "text": "'>' stands for tag name\n",
+            "pos": 249,
+            "end": 273,
+            "len": 24,
+            "line": 5,
+            "character": 24,
+            "__kind__": "CommentLine"
+        },
+        {
+            "kind": 102,
+            "indent": "",
+            "indentLevel": 0,
+            "tag": {
+                "kind": 107,
+                "startToken": {
+                    "kind": 9,
+                    "pos": 273,
+                    "end": 274,
+                    "len": 1,
+                    "line": 6,
+                    "character": 1,
+                    "__kind__": "GreaterThanToken"
+                },
+                "attributes": [
+                    {
+                        "kind": 106,
+                        "content": [
+                            {
+                                "kind": 110,
+                                "value": "div",
+                                "pos": 274,
+                                "end": 277,
+                                "len": 3,
+                                "line": 6,
+                                "character": 4,
+                                "__kind__": "StringLiteral"
+                            }
+                        ],
+                        "pos": 274,
+                        "end": 277,
+                        "len": 3,
+                        "line": 6,
+                        "character": 4,
+                        "__kind__": "TemplateStringExpression"
+                    }
+                ],
+                "pos": 273,
+                "end": 277,
+                "len": 4,
+                "line": 6,
+                "character": 4,
+                "__kind__": "TagExpression"
+            },
+            "endOfLineToken": {
+                "kind": 4,
+                "pos": 277,
+                "end": 278,
+                "len": 1,
+                "line": 6,
+                "character": 1,
+                "__kind__": "NewLineTrivia"
+            },
+            "children": [
+                {
+                    "kind": 101,
+                    "text": "  '#' stands for attributes\n",
+                    "pos": 278,
+                    "end": 306,
+                    "len": 28,
+                    "line": 7,
+                    "character": 28,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 101,
+                    "text": "  Mustaches stands for binding data\n",
+                    "pos": 306,
+                    "end": 342,
+                    "len": 36,
+                    "line": 8,
+                    "character": 36,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 101,
+                    "text": "  content inside mustaches after '=' stands for the default value for this binding\n",
+                    "pos": 342,
+                    "end": 425,
+                    "len": 83,
+                    "line": 9,
+                    "character": 83,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 101,
+                    "text": "  content without mustaches stands for a static data\n",
+                    "pos": 425,
+                    "end": 478,
+                    "len": 53,
+                    "line": 10,
+                    "character": 53,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 101,
+                    "text": "  which means that you cannot modify them using ef.js\n",
+                    "pos": 478,
+                    "end": 532,
+                    "len": 54,
+                    "line": 11,
+                    "character": 54,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 10,
+                        "pos": 534,
+                        "end": 535,
+                        "len": 1,
+                        "line": 12,
+                        "character": 3,
+                        "__kind__": "HashToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "value": "class ",
+                        "pos": 535,
+                        "end": 541,
+                        "len": 6,
+                        "line": 12,
+                        "character": 9,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "pos": 541,
+                            "end": 542,
+                            "len": 1,
+                            "line": 12,
+                            "character": 10,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 109,
+                                    "startToken": {
+                                        "kind": 19,
+                                        "pos": 542,
+                                        "end": 545,
+                                        "len": 3,
+                                        "line": 12,
+                                        "character": 13,
+                                        "__kind__": "MustacheStartToken"
+                                    },
+                                    "expression": [
+                                        {
+                                            "kind": 110,
+                                            "value": "class ",
+                                            "pos": 545,
+                                            "end": 551,
+                                            "len": 6,
+                                            "line": 12,
+                                            "character": 19,
+                                            "__kind__": "StringLiteral"
+                                        }
+                                    ],
+                                    "initializer": [
+                                        {
+                                            "kind": 18,
+                                            "pos": 551,
+                                            "end": 552,
+                                            "len": 1,
+                                            "line": 12,
+                                            "character": 20,
+                                            "__kind__": "EqualsToken"
+                                        },
+                                        {
+                                            "kind": 110,
+                                            "value": " some class name",
+                                            "pos": 552,
+                                            "end": 568,
+                                            "len": 16,
+                                            "line": 12,
+                                            "character": 36,
+                                            "__kind__": "StringLiteral"
+                                        }
+                                    ],
+                                    "endToken": {
+                                        "kind": 20,
+                                        "pos": 568,
+                                        "end": 570,
+                                        "len": 2,
+                                        "line": 12,
+                                        "character": 38,
+                                        "__kind__": "MustacheEndToken"
+                                    },
+                                    "pos": 542,
+                                    "end": 570,
+                                    "len": 28,
+                                    "line": 12,
+                                    "character": 38,
+                                    "__kind__": "MustacheExpression"
+                                }
+                            ],
+                            "pos": 542,
+                            "end": 570,
+                            "len": 28,
+                            "line": 12,
+                            "character": 38,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 570,
+                        "end": 571,
+                        "len": 1,
+                        "line": 12,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 532,
+                    "end": 571,
+                    "len": 39,
+                    "line": 12,
+                    "character": 39,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 10,
+                        "pos": 573,
+                        "end": 574,
+                        "len": 1,
+                        "line": 13,
+                        "character": 3,
+                        "__kind__": "HashToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "value": "style ",
+                        "pos": 574,
+                        "end": 580,
+                        "len": 6,
+                        "line": 13,
+                        "character": 9,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "pos": 580,
+                            "end": 581,
+                            "len": 1,
+                            "line": 13,
+                            "character": 10,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 109,
+                                    "startToken": {
+                                        "kind": 19,
+                                        "pos": 581,
+                                        "end": 584,
+                                        "len": 3,
+                                        "line": 13,
+                                        "character": 13,
+                                        "__kind__": "MustacheStartToken"
+                                    },
+                                    "expression": [
+                                        {
+                                            "kind": 110,
+                                            "value": "attr",
+                                            "pos": 584,
+                                            "end": 588,
+                                            "len": 4,
+                                            "line": 13,
+                                            "character": 17,
+                                            "__kind__": "StringLiteral"
+                                        },
+                                        {
+                                            "kind": 14,
+                                            "pos": 588,
+                                            "end": 589,
+                                            "len": 1,
+                                            "line": 13,
+                                            "character": 18,
+                                            "__kind__": "DotToken"
+                                        },
+                                        {
+                                            "kind": 110,
+                                            "value": "style ",
+                                            "pos": 589,
+                                            "end": 595,
+                                            "len": 6,
+                                            "line": 13,
+                                            "character": 24,
+                                            "__kind__": "StringLiteral"
+                                        }
+                                    ],
+                                    "initializer": [
+                                        {
+                                            "kind": 18,
+                                            "pos": 595,
+                                            "end": 596,
+                                            "len": 1,
+                                            "line": 13,
+                                            "character": 25,
+                                            "__kind__": "EqualsToken"
+                                        },
+                                        {
+                                            "kind": 110,
+                                            "value": " background:#ECECEC",
+                                            "pos": 596,
+                                            "end": 616,
+                                            "len": 20,
+                                            "line": 13,
+                                            "character": 45,
+                                            "__kind__": "StringLiteral"
+                                        }
+                                    ],
+                                    "endToken": {
+                                        "kind": 20,
+                                        "pos": 616,
+                                        "end": 618,
+                                        "len": 2,
+                                        "line": 13,
+                                        "character": 47,
+                                        "__kind__": "MustacheEndToken"
+                                    },
+                                    "pos": 581,
+                                    "end": 618,
+                                    "len": 37,
+                                    "line": 13,
+                                    "character": 47,
+                                    "__kind__": "MustacheExpression"
+                                }
+                            ],
+                            "pos": 581,
+                            "end": 618,
+                            "len": 37,
+                            "line": 13,
+                            "character": 47,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 618,
+                        "end": 619,
+                        "len": 1,
+                        "line": 13,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 571,
+                    "end": 619,
+                    "len": 48,
+                    "line": 13,
+                    "character": 48,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 10,
+                        "pos": 621,
+                        "end": 622,
+                        "len": 1,
+                        "line": 14,
+                        "character": 3,
+                        "__kind__": "HashToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "value": "id ",
+                        "pos": 622,
+                        "end": 625,
+                        "len": 3,
+                        "line": 14,
+                        "character": 6,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "pos": 625,
+                            "end": 626,
+                            "len": 1,
+                            "line": 14,
+                            "character": 7,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 110,
+                                    "value": " testdiv",
+                                    "pos": 626,
+                                    "end": 634,
+                                    "len": 8,
+                                    "line": 14,
+                                    "character": 15,
+                                    "__kind__": "StringLiteral"
+                                }
+                            ],
+                            "pos": 626,
+                            "end": 634,
+                            "len": 8,
+                            "line": 14,
+                            "character": 15,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 634,
+                        "end": 635,
+                        "len": 1,
+                        "line": 14,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 619,
+                    "end": 635,
+                    "len": 16,
+                    "line": 14,
+                    "character": 16,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 10,
+                        "pos": 637,
+                        "end": 638,
+                        "len": 1,
+                        "line": 15,
+                        "character": 3,
+                        "__kind__": "HashToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "value": "some-attr ",
+                        "pos": 638,
+                        "end": 648,
+                        "len": 10,
+                        "line": 15,
+                        "character": 13,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "pos": 648,
+                            "end": 649,
+                            "len": 1,
+                            "line": 15,
+                            "character": 14,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 110,
+                                    "value": " some text",
+                                    "pos": 649,
+                                    "end": 659,
+                                    "len": 10,
+                                    "line": 15,
+                                    "character": 24,
+                                    "__kind__": "StringLiteral"
+                                }
+                            ],
+                            "pos": 649,
+                            "end": 659,
+                            "len": 10,
+                            "line": 15,
+                            "character": 24,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 659,
+                        "end": 660,
+                        "len": 1,
+                        "line": 15,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 635,
+                    "end": 660,
+                    "len": 25,
+                    "line": 15,
+                    "character": 25,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 10,
+                        "pos": 662,
+                        "end": 663,
+                        "len": 1,
+                        "line": 16,
+                        "character": 3,
+                        "__kind__": "HashToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "value": "content",
+                        "pos": 663,
+                        "end": 670,
+                        "len": 7,
+                        "line": 16,
+                        "character": 10,
+                        "__kind__": "StringLiteral"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 670,
+                        "end": 671,
+                        "len": 1,
+                        "line": 16,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 660,
+                    "end": 671,
+                    "len": 11,
+                    "line": 16,
+                    "character": 11,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 101,
+                    "text": "  '%' stands for properties\n",
+                    "pos": 671,
+                    "end": 699,
+                    "len": 28,
+                    "line": 17,
+                    "character": 28,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 11,
+                        "pos": 701,
+                        "end": 702,
+                        "len": 1,
+                        "line": 18,
+                        "character": 3,
+                        "__kind__": "PercentToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "value": "title ",
+                        "pos": 702,
+                        "end": 708,
+                        "len": 6,
+                        "line": 18,
+                        "character": 9,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "pos": 708,
+                            "end": 709,
+                            "len": 1,
+                            "line": 18,
+                            "character": 10,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 110,
+                                    "value": " Welcome, ",
+                                    "pos": 709,
+                                    "end": 719,
+                                    "len": 10,
+                                    "line": 18,
+                                    "character": 20,
+                                    "__kind__": "StringLiteral"
+                                },
+                                {
+                                    "kind": 109,
+                                    "startToken": {
+                                        "kind": 19,
+                                        "pos": 719,
+                                        "end": 721,
+                                        "len": 2,
+                                        "line": 18,
+                                        "character": 22,
+                                        "__kind__": "MustacheStartToken"
+                                    },
+                                    "expression": [
+                                        {
+                                            "kind": 110,
+                                            "value": "name",
+                                            "pos": 721,
+                                            "end": 725,
+                                            "len": 4,
+                                            "line": 18,
+                                            "character": 26,
+                                            "__kind__": "StringLiteral"
+                                        }
+                                    ],
+                                    "endToken": {
+                                        "kind": 20,
+                                        "pos": 725,
+                                        "end": 727,
+                                        "len": 2,
+                                        "line": 18,
+                                        "character": 28,
+                                        "__kind__": "MustacheEndToken"
+                                    },
+                                    "pos": 719,
+                                    "end": 727,
+                                    "len": 8,
+                                    "line": 18,
+                                    "character": 28,
+                                    "__kind__": "MustacheExpression"
+                                }
+                            ],
+                            "pos": 709,
+                            "end": 727,
+                            "len": 18,
+                            "line": 18,
+                            "character": 28,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 727,
+                        "end": 728,
+                        "len": 1,
+                        "line": 18,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 699,
+                    "end": 728,
+                    "len": 29,
+                    "line": 18,
+                    "character": 29,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 11,
+                        "pos": 730,
+                        "end": 731,
+                        "len": 1,
+                        "line": 19,
+                        "character": 3,
+                        "__kind__": "PercentToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "value": "anotherProperty ",
+                        "pos": 731,
+                        "end": 747,
+                        "len": 16,
+                        "line": 19,
+                        "character": 19,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "pos": 747,
+                            "end": 748,
+                            "len": 1,
+                            "line": 19,
+                            "character": 20,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 110,
+                                    "value": " text",
+                                    "pos": 748,
+                                    "end": 753,
+                                    "len": 5,
+                                    "line": 19,
+                                    "character": 25,
+                                    "__kind__": "StringLiteral"
+                                }
+                            ],
+                            "pos": 748,
+                            "end": 753,
+                            "len": 5,
+                            "line": 19,
+                            "character": 25,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 753,
+                        "end": 754,
+                        "len": 1,
+                        "line": 19,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 728,
+                    "end": 754,
+                    "len": 26,
+                    "line": 19,
+                    "character": 26,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 101,
+                    "text": "  '@' stands for events\n",
+                    "pos": 754,
+                    "end": 778,
+                    "len": 24,
+                    "line": 20,
+                    "character": 24,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 101,
+                    "text": "  contents after ':' are considered as value passed to the handler\n",
+                    "pos": 778,
+                    "end": 845,
+                    "len": 67,
+                    "line": 21,
+                    "character": 67,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 104,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "atToken": {
+                        "kind": 13,
+                        "pos": 847,
+                        "end": 848,
+                        "len": 1,
+                        "line": 22,
+                        "character": 3,
+                        "__kind__": "AtToken"
+                    },
+                    "eventDescriptor": [
+                        {
+                            "kind": 110,
+                            "value": "click ",
+                            "pos": 848,
+                            "end": 854,
+                            "len": 6,
+                            "line": 22,
+                            "character": 9,
+                            "__kind__": "StringLiteral"
+                        }
+                    ],
+                    "equalsToken": {
+                        "kind": 18,
+                        "pos": 854,
+                        "end": 855,
+                        "len": 1,
+                        "line": 22,
+                        "character": 10,
+                        "__kind__": "EqualsToken"
+                    },
+                    "handler": {
+                        "kind": 110,
+                        "value": " updateInfo",
+                        "pos": 855,
+                        "end": 866,
+                        "len": 11,
+                        "line": 22,
+                        "character": 21,
+                        "__kind__": "StringLiteral"
+                    },
+                    "parameter": [
+                        {
+                            "kind": 22,
+                            "pos": 866,
+                            "end": 867,
+                            "len": 1,
+                            "line": 22,
+                            "character": 22,
+                            "__kind__": "ColonToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 109,
+                                    "startToken": {
+                                        "kind": 19,
+                                        "pos": 867,
+                                        "end": 869,
+                                        "len": 2,
+                                        "line": 22,
+                                        "character": 24,
+                                        "__kind__": "MustacheStartToken"
+                                    },
+                                    "expression": [
+                                        {
+                                            "kind": 110,
+                                            "value": "binding",
+                                            "pos": 869,
+                                            "end": 876,
+                                            "len": 7,
+                                            "line": 22,
+                                            "character": 31,
+                                            "__kind__": "StringLiteral"
+                                        },
+                                        {
+                                            "kind": 14,
+                                            "pos": 876,
+                                            "end": 877,
+                                            "len": 1,
+                                            "line": 22,
+                                            "character": 32,
+                                            "__kind__": "DotToken"
+                                        },
+                                        {
+                                            "kind": 110,
+                                            "value": "value",
+                                            "pos": 877,
+                                            "end": 882,
+                                            "len": 5,
+                                            "line": 22,
+                                            "character": 37,
+                                            "__kind__": "StringLiteral"
+                                        }
+                                    ],
+                                    "endToken": {
+                                        "kind": 20,
+                                        "pos": 882,
+                                        "end": 884,
+                                        "len": 2,
+                                        "line": 22,
+                                        "character": 39,
+                                        "__kind__": "MustacheEndToken"
+                                    },
+                                    "pos": 867,
+                                    "end": 884,
+                                    "len": 17,
+                                    "line": 22,
+                                    "character": 39,
+                                    "__kind__": "MustacheExpression"
+                                },
+                                {
+                                    "kind": 110,
+                                    "value": " and static value",
+                                    "pos": 884,
+                                    "end": 901,
+                                    "len": 17,
+                                    "line": 22,
+                                    "character": 56,
+                                    "__kind__": "StringLiteral"
+                                }
+                            ],
+                            "pos": 867,
+                            "end": 901,
+                            "len": 34,
+                            "line": 22,
+                            "character": 56,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 901,
+                        "end": 902,
+                        "len": 1,
+                        "line": 22,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 845,
+                    "end": 902,
+                    "len": 57,
+                    "line": 22,
+                    "character": 57,
+                    "__kind__": "ElementEventHandlerDeclaration"
+                },
+                {
+                    "kind": 101,
+                    "text": "  modify keys now can be bind easily\n",
+                    "pos": 902,
+                    "end": 939,
+                    "len": 37,
+                    "line": 23,
+                    "character": 37,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 104,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "atToken": {
+                        "kind": 13,
+                        "pos": 941,
+                        "end": 942,
+                        "len": 1,
+                        "line": 24,
+                        "character": 3,
+                        "__kind__": "AtToken"
+                    },
+                    "eventDescriptor": [
+                        {
+                            "kind": 110,
+                            "value": "mousedown",
+                            "pos": 942,
+                            "end": 951,
+                            "len": 9,
+                            "line": 24,
+                            "character": 12,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 951,
+                            "end": 952,
+                            "len": 1,
+                            "line": 24,
+                            "character": 13,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "shift",
+                            "pos": 952,
+                            "end": 957,
+                            "len": 5,
+                            "line": 24,
+                            "character": 18,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 957,
+                            "end": 958,
+                            "len": 1,
+                            "line": 24,
+                            "character": 19,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "alt",
+                            "pos": 958,
+                            "end": 961,
+                            "len": 3,
+                            "line": 24,
+                            "character": 22,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 961,
+                            "end": 962,
+                            "len": 1,
+                            "line": 24,
+                            "character": 23,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "ctrl",
+                            "pos": 962,
+                            "end": 966,
+                            "len": 4,
+                            "line": 24,
+                            "character": 27,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 966,
+                            "end": 967,
+                            "len": 1,
+                            "line": 24,
+                            "character": 28,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "meta ",
+                            "pos": 967,
+                            "end": 972,
+                            "len": 5,
+                            "line": 24,
+                            "character": 33,
+                            "__kind__": "StringLiteral"
+                        }
+                    ],
+                    "equalsToken": {
+                        "kind": 18,
+                        "pos": 972,
+                        "end": 973,
+                        "len": 1,
+                        "line": 24,
+                        "character": 34,
+                        "__kind__": "EqualsToken"
+                    },
+                    "handler": {
+                        "kind": 110,
+                        "value": " select",
+                        "pos": 973,
+                        "end": 980,
+                        "len": 7,
+                        "line": 24,
+                        "character": 41,
+                        "__kind__": "StringLiteral"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 980,
+                        "end": 981,
+                        "len": 1,
+                        "line": 24,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 939,
+                    "end": 981,
+                    "len": 42,
+                    "line": 24,
+                    "character": 42,
+                    "__kind__": "ElementEventHandlerDeclaration"
+                },
+                {
+                    "kind": 101,
+                    "text": "  bind to keys is also easy\n",
+                    "pos": 981,
+                    "end": 1009,
+                    "len": 28,
+                    "line": 25,
+                    "character": 28,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 104,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "atToken": {
+                        "kind": 13,
+                        "pos": 1011,
+                        "end": 1012,
+                        "len": 1,
+                        "line": 26,
+                        "character": 3,
+                        "__kind__": "AtToken"
+                    },
+                    "eventDescriptor": [
+                        {
+                            "kind": 110,
+                            "value": "keypress",
+                            "pos": 1012,
+                            "end": 1020,
+                            "len": 8,
+                            "line": 26,
+                            "character": 11,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 1020,
+                            "end": 1021,
+                            "len": 1,
+                            "line": 26,
+                            "character": 12,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "13 ",
+                            "pos": 1021,
+                            "end": 1024,
+                            "len": 3,
+                            "line": 26,
+                            "character": 15,
+                            "__kind__": "StringLiteral"
+                        }
+                    ],
+                    "equalsToken": {
+                        "kind": 18,
+                        "pos": 1024,
+                        "end": 1025,
+                        "len": 1,
+                        "line": 26,
+                        "character": 16,
+                        "__kind__": "EqualsToken"
+                    },
+                    "handler": {
+                        "kind": 110,
+                        "value": " submit",
+                        "pos": 1025,
+                        "end": 1032,
+                        "len": 7,
+                        "line": 26,
+                        "character": 23,
+                        "__kind__": "StringLiteral"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1032,
+                        "end": 1033,
+                        "len": 1,
+                        "line": 26,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 1009,
+                    "end": 1033,
+                    "len": 24,
+                    "line": 26,
+                    "character": 24,
+                    "__kind__": "ElementEventHandlerDeclaration"
+                },
+                {
+                    "kind": 101,
+                    "text": "  use '.prevent' to preventDefault, '.stop' to stopPropagation, '.stopImmediate' to stopImmediatePropagation\n",
+                    "pos": 1033,
+                    "end": 1142,
+                    "len": 109,
+                    "line": 27,
+                    "character": 109,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 104,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "atToken": {
+                        "kind": 13,
+                        "pos": 1144,
+                        "end": 1145,
+                        "len": 1,
+                        "line": 28,
+                        "character": 3,
+                        "__kind__": "AtToken"
+                    },
+                    "eventDescriptor": [
+                        {
+                            "kind": 110,
+                            "value": "keydown",
+                            "pos": 1145,
+                            "end": 1152,
+                            "len": 7,
+                            "line": 28,
+                            "character": 10,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 1152,
+                            "end": 1153,
+                            "len": 1,
+                            "line": 28,
+                            "character": 11,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "8",
+                            "pos": 1153,
+                            "end": 1154,
+                            "len": 1,
+                            "line": 28,
+                            "character": 12,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 1154,
+                            "end": 1155,
+                            "len": 1,
+                            "line": 28,
+                            "character": 13,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "prevent",
+                            "pos": 1155,
+                            "end": 1162,
+                            "len": 7,
+                            "line": 28,
+                            "character": 20,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 1162,
+                            "end": 1163,
+                            "len": 1,
+                            "line": 28,
+                            "character": 21,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "stop ",
+                            "pos": 1163,
+                            "end": 1168,
+                            "len": 5,
+                            "line": 28,
+                            "character": 26,
+                            "__kind__": "StringLiteral"
+                        }
+                    ],
+                    "equalsToken": {
+                        "kind": 18,
+                        "pos": 1168,
+                        "end": 1169,
+                        "len": 1,
+                        "line": 28,
+                        "character": 27,
+                        "__kind__": "EqualsToken"
+                    },
+                    "handler": {
+                        "kind": 110,
+                        "value": " stopbackspace",
+                        "pos": 1169,
+                        "end": 1183,
+                        "len": 14,
+                        "line": 28,
+                        "character": 41,
+                        "__kind__": "StringLiteral"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1183,
+                        "end": 1184,
+                        "len": 1,
+                        "line": 28,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 1142,
+                    "end": 1184,
+                    "len": 42,
+                    "line": 28,
+                    "character": 42,
+                    "__kind__": "ElementEventHandlerDeclaration"
+                },
+                {
+                    "kind": 101,
+                    "text": "  use '.capture' to capture an event\n",
+                    "pos": 1184,
+                    "end": 1221,
+                    "len": 37,
+                    "line": 29,
+                    "character": 37,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 104,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "atToken": {
+                        "kind": 13,
+                        "pos": 1223,
+                        "end": 1224,
+                        "len": 1,
+                        "line": 30,
+                        "character": 3,
+                        "__kind__": "AtToken"
+                    },
+                    "eventDescriptor": [
+                        {
+                            "kind": 110,
+                            "value": "submit",
+                            "pos": 1224,
+                            "end": 1230,
+                            "len": 6,
+                            "line": 30,
+                            "character": 9,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 1230,
+                            "end": 1231,
+                            "len": 1,
+                            "line": 30,
+                            "character": 10,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "capture",
+                            "pos": 1231,
+                            "end": 1238,
+                            "len": 7,
+                            "line": 30,
+                            "character": 17,
+                            "__kind__": "StringLiteral"
+                        },
+                        {
+                            "kind": 14,
+                            "pos": 1238,
+                            "end": 1239,
+                            "len": 1,
+                            "line": 30,
+                            "character": 18,
+                            "__kind__": "DotToken"
+                        },
+                        {
+                            "kind": 110,
+                            "value": "j ",
+                            "pos": 1239,
+                            "end": 1241,
+                            "len": 2,
+                            "line": 30,
+                            "character": 20,
+                            "__kind__": "StringLiteral"
+                        }
+                    ],
+                    "equalsToken": {
+                        "kind": 18,
+                        "pos": 1241,
+                        "end": 1242,
+                        "len": 1,
+                        "line": 30,
+                        "character": 21,
+                        "__kind__": "EqualsToken"
+                    },
+                    "handler": {
+                        "kind": 110,
+                        "value": " submit",
+                        "pos": 1242,
+                        "end": 1249,
+                        "len": 7,
+                        "line": 30,
+                        "character": 28,
+                        "__kind__": "StringLiteral"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1249,
+                        "end": 1250,
+                        "len": 1,
+                        "line": 30,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 1221,
+                    "end": 1250,
+                    "len": 29,
+                    "line": 30,
+                    "character": 29,
+                    "__kind__": "ElementEventHandlerDeclaration"
+                },
+                {
+                    "kind": 101,
+                    "text": "  '.' stands for text nodes\n",
+                    "pos": 1250,
+                    "end": 1278,
+                    "len": 28,
+                    "line": 31,
+                    "character": 28,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 108,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "token": {
+                        "kind": 14,
+                        "pos": 1280,
+                        "end": 1281,
+                        "len": 1,
+                        "line": 32,
+                        "character": 3,
+                        "__kind__": "DotToken"
+                    },
+                    "content": {
+                        "kind": 106,
+                        "content": [
+                            {
+                                "kind": 110,
+                                "value": "Name:",
+                                "pos": 1281,
+                                "end": 1286,
+                                "len": 5,
+                                "line": 32,
+                                "character": 8,
+                                "__kind__": "StringLiteral"
+                            },
+                            {
+                                "kind": 109,
+                                "startToken": {
+                                    "kind": 19,
+                                    "pos": 1286,
+                                    "end": 1289,
+                                    "len": 3,
+                                    "line": 32,
+                                    "character": 11,
+                                    "__kind__": "MustacheStartToken"
+                                },
+                                "expression": [
+                                    {
+                                        "kind": 110,
+                                        "value": "name",
+                                        "pos": 1289,
+                                        "end": 1293,
+                                        "len": 4,
+                                        "line": 32,
+                                        "character": 15,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "endToken": {
+                                    "kind": 20,
+                                    "pos": 1293,
+                                    "end": 1295,
+                                    "len": 2,
+                                    "line": 32,
+                                    "character": 17,
+                                    "__kind__": "MustacheEndToken"
+                                },
+                                "pos": 1286,
+                                "end": 1295,
+                                "len": 9,
+                                "line": 32,
+                                "character": 17,
+                                "__kind__": "MustacheExpression"
+                            },
+                            {
+                                "kind": 110,
+                                "value": "&nJob:",
+                                "pos": 1295,
+                                "end": 1301,
+                                "len": 6,
+                                "line": 32,
+                                "character": 23,
+                                "__kind__": "StringLiteral"
+                            },
+                            {
+                                "kind": 109,
+                                "startToken": {
+                                    "kind": 19,
+                                    "pos": 1301,
+                                    "end": 1304,
+                                    "len": 3,
+                                    "line": 32,
+                                    "character": 26,
+                                    "__kind__": "MustacheStartToken"
+                                },
+                                "expression": [
+                                    {
+                                        "kind": 110,
+                                        "value": "job",
+                                        "pos": 1304,
+                                        "end": 1307,
+                                        "len": 3,
+                                        "line": 32,
+                                        "character": 29,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "endToken": {
+                                    "kind": 20,
+                                    "pos": 1307,
+                                    "end": 1309,
+                                    "len": 2,
+                                    "line": 32,
+                                    "character": 31,
+                                    "__kind__": "MustacheEndToken"
+                                },
+                                "pos": 1301,
+                                "end": 1309,
+                                "len": 8,
+                                "line": 32,
+                                "character": 31,
+                                "__kind__": "MustacheExpression"
+                            }
+                        ],
+                        "pos": 1281,
+                        "end": 1309,
+                        "len": 28,
+                        "line": 32,
+                        "character": 31,
+                        "__kind__": "TemplateStringExpression"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1309,
+                        "end": 1310,
+                        "len": 1,
+                        "line": 32,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 1278,
+                    "end": 1310,
+                    "len": 32,
+                    "line": 32,
+                    "character": 32,
+                    "__kind__": "TextLine"
+                },
+                {
+                    "kind": 102,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "tag": {
+                        "kind": 107,
+                        "startToken": {
+                            "kind": 9,
+                            "pos": 1312,
+                            "end": 1313,
+                            "len": 1,
+                            "line": 33,
+                            "character": 3,
+                            "__kind__": "GreaterThanToken"
+                        },
+                        "attributes": [
+                            {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "pre",
+                                        "pos": 1313,
+                                        "end": 1316,
+                                        "len": 3,
+                                        "line": 33,
+                                        "character": 6,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1313,
+                                "end": 1316,
+                                "len": 3,
+                                "line": 33,
+                                "character": 6,
+                                "__kind__": "TemplateStringExpression"
+                            }
+                        ],
+                        "pos": 1312,
+                        "end": 1316,
+                        "len": 4,
+                        "line": 33,
+                        "character": 6,
+                        "__kind__": "TagExpression"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1316,
+                        "end": 1317,
+                        "len": 1,
+                        "line": 33,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "children": [
+                        {
+                            "kind": 101,
+                            "text": "    '|' stands for multiline text\n",
+                            "pos": 1317,
+                            "end": 1351,
+                            "len": 34,
+                            "line": 34,
+                            "character": 34,
+                            "__kind__": "CommentLine"
+                        },
+                        {
+                            "kind": 108,
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "token": {
+                                "kind": 15,
+                                "pos": 1355,
+                                "end": 1356,
+                                "len": 1,
+                                "line": 35,
+                                "character": 5,
+                                "__kind__": "BarToken"
+                            },
+                            "content": {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "Line 1",
+                                        "pos": 1356,
+                                        "end": 1362,
+                                        "len": 6,
+                                        "line": 35,
+                                        "character": 11,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1356,
+                                "end": 1362,
+                                "len": 6,
+                                "line": 35,
+                                "character": 11,
+                                "__kind__": "TemplateStringExpression"
+                            },
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1362,
+                                "end": 1363,
+                                "len": 1,
+                                "line": 35,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
+                            "pos": 1351,
+                            "end": 1363,
+                            "len": 12,
+                            "line": 35,
+                            "character": 12,
+                            "__kind__": "TextLine"
+                        },
+                        {
+                            "kind": 108,
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "token": {
+                                "kind": 15,
+                                "pos": 1367,
+                                "end": 1368,
+                                "len": 1,
+                                "line": 36,
+                                "character": 5,
+                                "__kind__": "BarToken"
+                            },
+                            "content": {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "Line 2",
+                                        "pos": 1368,
+                                        "end": 1374,
+                                        "len": 6,
+                                        "line": 36,
+                                        "character": 11,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1368,
+                                "end": 1374,
+                                "len": 6,
+                                "line": 36,
+                                "character": 11,
+                                "__kind__": "TemplateStringExpression"
+                            },
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1374,
+                                "end": 1375,
+                                "len": 1,
+                                "line": 36,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
+                            "pos": 1363,
+                            "end": 1375,
+                            "len": 12,
+                            "line": 36,
+                            "character": 12,
+                            "__kind__": "TextLine"
+                        },
+                        {
+                            "kind": 108,
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "token": {
+                                "kind": 15,
+                                "pos": 1379,
+                                "end": 1380,
+                                "len": 1,
+                                "line": 37,
+                                "character": 5,
+                                "__kind__": "BarToken"
+                            },
+                            "content": {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "Line 3",
+                                        "pos": 1380,
+                                        "end": 1386,
+                                        "len": 6,
+                                        "line": 37,
+                                        "character": 11,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1380,
+                                "end": 1386,
+                                "len": 6,
+                                "line": 37,
+                                "character": 11,
+                                "__kind__": "TemplateStringExpression"
+                            },
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1386,
+                                "end": 1387,
+                                "len": 1,
+                                "line": 37,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
+                            "pos": 1375,
+                            "end": 1387,
+                            "len": 12,
+                            "line": 37,
+                            "character": 12,
+                            "__kind__": "TextLine"
+                        }
+                    ],
+                    "pos": 1310,
+                    "end": 1387,
+                    "len": 77,
+                    "line": 33,
+                    "character": 77,
+                    "__kind__": "ElementDeclarationLine"
+                },
+                {
+                    "kind": 102,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "tag": {
+                        "kind": 107,
+                        "startToken": {
+                            "kind": 9,
+                            "pos": 1389,
+                            "end": 1390,
+                            "len": 1,
+                            "line": 38,
+                            "character": 3,
+                            "__kind__": "GreaterThanToken"
+                        },
+                        "attributes": [
+                            {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "br",
+                                        "pos": 1390,
+                                        "end": 1392,
+                                        "len": 2,
+                                        "line": 38,
+                                        "character": 5,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1390,
+                                "end": 1392,
+                                "len": 2,
+                                "line": 38,
+                                "character": 5,
+                                "__kind__": "TemplateStringExpression"
+                            }
+                        ],
+                        "pos": 1389,
+                        "end": 1392,
+                        "len": 3,
+                        "line": 38,
+                        "character": 5,
+                        "__kind__": "TagExpression"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1392,
+                        "end": 1393,
+                        "len": 1,
+                        "line": 38,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "children": [],
+                    "pos": 1387,
+                    "end": 1393,
+                    "len": 6,
+                    "line": 38,
+                    "character": 6,
+                    "__kind__": "ElementDeclarationLine"
+                },
+                {
+                    "kind": 101,
+                    "text": "  '-' stands for standard mounting point\n",
+                    "pos": 1393,
+                    "end": 1434,
+                    "len": 41,
+                    "line": 39,
+                    "character": 41,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 105,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "token": {
+                        "kind": 17,
+                        "pos": 1436,
+                        "end": 1437,
+                        "len": 1,
+                        "line": 40,
+                        "character": 3,
+                        "__kind__": "MinusToken"
+                    },
+                    "identifier": {
+                        "kind": 110,
+                        "value": "node1",
+                        "pos": 1437,
+                        "end": 1442,
+                        "len": 5,
+                        "line": 40,
+                        "character": 8,
+                        "__kind__": "StringLiteral"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1442,
+                        "end": 1443,
+                        "len": 1,
+                        "line": 40,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 1434,
+                    "end": 1443,
+                    "len": 9,
+                    "line": 40,
+                    "character": 9,
+                    "__kind__": "MountingPointDeclaration"
+                },
+                {
+                    "kind": 101,
+                    "text": "  '.' after a tag name stands for class names for this tag\n",
+                    "pos": 1443,
+                    "end": 1502,
+                    "len": 59,
+                    "line": 41,
+                    "character": 59,
+                    "__kind__": "CommentLine"
+                },
+                {
+                    "kind": 102,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "tag": {
+                        "kind": 107,
+                        "startToken": {
+                            "kind": 9,
+                            "pos": 1504,
+                            "end": 1505,
+                            "len": 1,
+                            "line": 42,
+                            "character": 3,
+                            "__kind__": "GreaterThanToken"
+                        },
+                        "attributes": [
+                            {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "p",
+                                        "pos": 1505,
+                                        "end": 1506,
+                                        "len": 1,
+                                        "line": 42,
+                                        "character": 4,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1505,
+                                "end": 1506,
+                                "len": 1,
+                                "line": 42,
+                                "character": 4,
+                                "__kind__": "TemplateStringExpression"
+                            },
+                            {
+                                "kind": 14,
+                                "pos": 1506,
+                                "end": 1507,
+                                "len": 1,
+                                "line": 42,
+                                "character": 5,
+                                "__kind__": "DotToken"
+                            },
+                            {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "some",
+                                        "pos": 1507,
+                                        "end": 1511,
+                                        "len": 4,
+                                        "line": 42,
+                                        "character": 9,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1507,
+                                "end": 1511,
+                                "len": 4,
+                                "line": 42,
+                                "character": 9,
+                                "__kind__": "TemplateStringExpression"
+                            },
+                            {
+                                "kind": 14,
+                                "pos": 1511,
+                                "end": 1512,
+                                "len": 1,
+                                "line": 42,
+                                "character": 10,
+                                "__kind__": "DotToken"
+                            },
+                            {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 109,
+                                        "startToken": {
+                                            "kind": 19,
+                                            "pos": 1512,
+                                            "end": 1514,
+                                            "len": 2,
+                                            "line": 42,
+                                            "character": 12,
+                                            "__kind__": "MustacheStartToken"
+                                        },
+                                        "expression": [
+                                            {
+                                                "kind": 110,
+                                                "value": "binding",
+                                                "pos": 1514,
+                                                "end": 1521,
+                                                "len": 7,
+                                                "line": 42,
+                                                "character": 19,
+                                                "__kind__": "StringLiteral"
+                                            },
+                                            {
+                                                "kind": 14,
+                                                "pos": 1521,
+                                                "end": 1522,
+                                                "len": 1,
+                                                "line": 42,
+                                                "character": 20,
+                                                "__kind__": "DotToken"
+                                            },
+                                            {
+                                                "kind": 110,
+                                                "value": "class",
+                                                "pos": 1522,
+                                                "end": 1527,
+                                                "len": 5,
+                                                "line": 42,
+                                                "character": 25,
+                                                "__kind__": "StringLiteral"
+                                            }
+                                        ],
+                                        "endToken": {
+                                            "kind": 20,
+                                            "pos": 1527,
+                                            "end": 1529,
+                                            "len": 2,
+                                            "line": 42,
+                                            "character": 27,
+                                            "__kind__": "MustacheEndToken"
+                                        },
+                                        "pos": 1512,
+                                        "end": 1529,
+                                        "len": 17,
+                                        "line": 42,
+                                        "character": 27,
+                                        "__kind__": "MustacheExpression"
+                                    }
+                                ],
+                                "pos": 1512,
+                                "end": 1529,
+                                "len": 17,
+                                "line": 42,
+                                "character": 27,
+                                "__kind__": "TemplateStringExpression"
+                            },
+                            {
+                                "kind": 14,
+                                "pos": 1529,
+                                "end": 1530,
+                                "len": 1,
+                                "line": 42,
+                                "character": 28,
+                                "__kind__": "DotToken"
+                            },
+                            {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "class",
+                                        "pos": 1530,
+                                        "end": 1535,
+                                        "len": 5,
+                                        "line": 42,
+                                        "character": 33,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1530,
+                                "end": 1535,
+                                "len": 5,
+                                "line": 42,
+                                "character": 33,
+                                "__kind__": "TemplateStringExpression"
+                            },
+                            {
+                                "kind": 14,
+                                "pos": 1535,
+                                "end": 1536,
+                                "len": 1,
+                                "line": 42,
+                                "character": 34,
+                                "__kind__": "DotToken"
+                            },
+                            {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "names",
+                                        "pos": 1536,
+                                        "end": 1541,
+                                        "len": 5,
+                                        "line": 42,
+                                        "character": 39,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1536,
+                                "end": 1541,
+                                "len": 5,
+                                "line": 42,
+                                "character": 39,
+                                "__kind__": "TemplateStringExpression"
+                            }
+                        ],
+                        "pos": 1504,
+                        "end": 1541,
+                        "len": 37,
+                        "line": 42,
+                        "character": 39,
+                        "__kind__": "TagExpression"
+                    },
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1541,
+                        "end": 1542,
+                        "len": 1,
+                        "line": 42,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "children": [
+                        {
+                            "kind": 101,
+                            "text": "    '#' at the end of a tag name stands for the reference name of the node\n",
+                            "pos": 1542,
+                            "end": 1617,
+                            "len": 75,
+                            "line": 43,
+                            "character": 75,
+                            "__kind__": "CommentLine"
+                        },
+                        {
+                            "kind": 101,
+                            "text": "    Mustaches after a dot will bind to 'class' automatically\n",
+                            "pos": 1617,
+                            "end": 1678,
+                            "len": 61,
+                            "line": 44,
+                            "character": 61,
+                            "__kind__": "CommentLine"
+                        },
+                        {
+                            "kind": 102,
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "tag": {
+                                "kind": 107,
+                                "startToken": {
+                                    "kind": 9,
+                                    "pos": 1682,
+                                    "end": 1683,
+                                    "len": 1,
+                                    "line": 45,
+                                    "character": 5,
+                                    "__kind__": "GreaterThanToken"
+                                },
+                                "attributes": [
+                                    {
+                                        "kind": 106,
+                                        "content": [
+                                            {
+                                                "kind": 110,
+                                                "value": "span",
+                                                "pos": 1683,
+                                                "end": 1687,
+                                                "len": 4,
+                                                "line": 45,
+                                                "character": 9,
+                                                "__kind__": "StringLiteral"
+                                            }
+                                        ],
+                                        "pos": 1683,
+                                        "end": 1687,
+                                        "len": 4,
+                                        "line": 45,
+                                        "character": 9,
+                                        "__kind__": "TemplateStringExpression"
+                                    },
+                                    {
+                                        "kind": 14,
+                                        "pos": 1687,
+                                        "end": 1688,
+                                        "len": 1,
+                                        "line": 45,
+                                        "character": 10,
+                                        "__kind__": "DotToken"
+                                    },
+                                    {
+                                        "kind": 106,
+                                        "content": [
+                                            {
+                                                "kind": 109,
+                                                "startToken": {
+                                                    "kind": 19,
+                                                    "pos": 1688,
+                                                    "end": 1690,
+                                                    "len": 2,
+                                                    "line": 45,
+                                                    "character": 12,
+                                                    "__kind__": "MustacheStartToken"
+                                                },
+                                                "expression": [
+                                                    {
+                                                        "kind": 110,
+                                                        "value": "emergency ",
+                                                        "pos": 1690,
+                                                        "end": 1700,
+                                                        "len": 10,
+                                                        "line": 45,
+                                                        "character": 22,
+                                                        "__kind__": "StringLiteral"
+                                                    }
+                                                ],
+                                                "initializer": [
+                                                    {
+                                                        "kind": 18,
+                                                        "pos": 1700,
+                                                        "end": 1701,
+                                                        "len": 1,
+                                                        "line": 45,
+                                                        "character": 23,
+                                                        "__kind__": "EqualsToken"
+                                                    },
+                                                    {
+                                                        "kind": 110,
+                                                        "value": " emergency",
+                                                        "pos": 1701,
+                                                        "end": 1711,
+                                                        "len": 10,
+                                                        "line": 45,
+                                                        "character": 33,
+                                                        "__kind__": "StringLiteral"
+                                                    }
+                                                ],
+                                                "endToken": {
+                                                    "kind": 20,
+                                                    "pos": 1711,
+                                                    "end": 1713,
+                                                    "len": 2,
+                                                    "line": 45,
+                                                    "character": 35,
+                                                    "__kind__": "MustacheEndToken"
+                                                },
+                                                "pos": 1688,
+                                                "end": 1713,
+                                                "len": 25,
+                                                "line": 45,
+                                                "character": 35,
+                                                "__kind__": "MustacheExpression"
+                                            }
+                                        ],
+                                        "pos": 1688,
+                                        "end": 1713,
+                                        "len": 25,
+                                        "line": 45,
+                                        "character": 35,
+                                        "__kind__": "TemplateStringExpression"
+                                    }
+                                ],
+                                "reference": [
+                                    {
+                                        "kind": 10,
+                                        "pos": 1713,
+                                        "end": 1714,
+                                        "len": 1,
+                                        "line": 45,
+                                        "character": 36,
+                                        "__kind__": "HashToken"
+                                    },
+                                    {
+                                        "kind": 110,
+                                        "value": "notice_box",
+                                        "pos": 1714,
+                                        "end": 1724,
+                                        "len": 10,
+                                        "line": 45,
+                                        "character": 46,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1682,
+                                "end": 1724,
+                                "len": 42,
+                                "line": 45,
+                                "character": 46,
+                                "__kind__": "TagExpression"
+                            },
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1724,
+                                "end": 1725,
+                                "len": 1,
+                                "line": 45,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
+                            "children": [
+                                {
+                                    "kind": 108,
+                                    "indent": "      ",
+                                    "indentLevel": 6,
+                                    "token": {
+                                        "kind": 14,
+                                        "pos": 1731,
+                                        "end": 1732,
+                                        "len": 1,
+                                        "line": 46,
+                                        "character": 7,
+                                        "__kind__": "DotToken"
+                                    },
+                                    "content": {
+                                        "kind": 106,
+                                        "content": [
+                                            {
+                                                "kind": 110,
+                                                "value": "Notice:",
+                                                "pos": 1732,
+                                                "end": 1739,
+                                                "len": 7,
+                                                "line": 46,
+                                                "character": 14,
+                                                "__kind__": "StringLiteral"
+                                            },
+                                            {
+                                                "kind": 109,
+                                                "startToken": {
+                                                    "kind": 19,
+                                                    "pos": 1739,
+                                                    "end": 1742,
+                                                    "len": 3,
+                                                    "line": 46,
+                                                    "character": 17,
+                                                    "__kind__": "MustacheStartToken"
+                                                },
+                                                "expression": [
+                                                    {
+                                                        "kind": 110,
+                                                        "value": "notice",
+                                                        "pos": 1742,
+                                                        "end": 1748,
+                                                        "len": 6,
+                                                        "line": 46,
+                                                        "character": 23,
+                                                        "__kind__": "StringLiteral"
+                                                    }
+                                                ],
+                                                "endToken": {
+                                                    "kind": 20,
+                                                    "pos": 1748,
+                                                    "end": 1750,
+                                                    "len": 2,
+                                                    "line": 46,
+                                                    "character": 25,
+                                                    "__kind__": "MustacheEndToken"
+                                                },
+                                                "pos": 1739,
+                                                "end": 1750,
+                                                "len": 11,
+                                                "line": 46,
+                                                "character": 25,
+                                                "__kind__": "MustacheExpression"
+                                            }
+                                        ],
+                                        "pos": 1732,
+                                        "end": 1750,
+                                        "len": 18,
+                                        "line": 46,
+                                        "character": 25,
+                                        "__kind__": "TemplateStringExpression"
+                                    },
+                                    "endOfLineToken": {
+                                        "kind": 4,
+                                        "pos": 1750,
+                                        "end": 1751,
+                                        "len": 1,
+                                        "line": 46,
+                                        "character": 1,
+                                        "__kind__": "NewLineTrivia"
+                                    },
+                                    "pos": 1725,
+                                    "end": 1751,
+                                    "len": 26,
+                                    "line": 46,
+                                    "character": 26,
+                                    "__kind__": "TextLine"
+                                }
+                            ],
+                            "pos": 1678,
+                            "end": 1751,
+                            "len": 73,
+                            "line": 45,
+                            "character": 73,
+                            "__kind__": "ElementDeclarationLine"
+                        },
+                        {
+                            "kind": 108,
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "token": {
+                                "kind": 14,
+                                "pos": 1755,
+                                "end": 1756,
+                                "len": 1,
+                                "line": 47,
+                                "character": 5,
+                                "__kind__": "DotToken"
+                            },
+                            "content": {
+                                "kind": 106,
+                                "content": [
+                                    {
+                                        "kind": 110,
+                                        "value": "some text",
+                                        "pos": 1756,
+                                        "end": 1765,
+                                        "len": 9,
+                                        "line": 47,
+                                        "character": 14,
+                                        "__kind__": "StringLiteral"
+                                    }
+                                ],
+                                "pos": 1756,
+                                "end": 1765,
+                                "len": 9,
+                                "line": 47,
+                                "character": 14,
+                                "__kind__": "TemplateStringExpression"
+                            },
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1765,
+                                "end": 1766,
+                                "len": 1,
+                                "line": 47,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
+                            "pos": 1751,
+                            "end": 1766,
+                            "len": 15,
+                            "line": 47,
+                            "character": 15,
+                            "__kind__": "TextLine"
+                        },
+                        {
+                            "kind": 105,
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "token": {
+                                "kind": 17,
+                                "pos": 1770,
+                                "end": 1771,
+                                "len": 1,
+                                "line": 48,
+                                "character": 5,
+                                "__kind__": "MinusToken"
+                            },
+                            "identifier": {
+                                "kind": 110,
+                                "value": "node2",
+                                "pos": 1771,
+                                "end": 1776,
+                                "len": 5,
+                                "line": 48,
+                                "character": 10,
+                                "__kind__": "StringLiteral"
+                            },
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1776,
+                                "end": 1777,
+                                "len": 1,
+                                "line": 48,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
+                            "pos": 1766,
+                            "end": 1777,
+                            "len": 11,
+                            "line": 48,
+                            "character": 11,
+                            "__kind__": "MountingPointDeclaration"
+                        },
+                        {
+                            "kind": 101,
+                            "text": "    '+' stands for list mounting point\n",
+                            "pos": 1777,
+                            "end": 1816,
+                            "len": 39,
+                            "line": 49,
+                            "character": 39,
+                            "__kind__": "CommentLine"
+                        },
+                        {
+                            "kind": 105,
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "token": {
+                                "kind": 16,
+                                "pos": 1820,
+                                "end": 1821,
+                                "len": 1,
+                                "line": 50,
+                                "character": 5,
+                                "__kind__": "PlusToken"
+                            },
+                            "identifier": {
+                                "kind": 110,
+                                "value": "list1",
+                                "pos": 1821,
+                                "end": 1826,
+                                "len": 5,
+                                "line": 50,
+                                "character": 10,
+                                "__kind__": "StringLiteral"
+                            },
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1826,
+                                "end": 1827,
+                                "len": 1,
+                                "line": 50,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
+                            "pos": 1816,
+                            "end": 1827,
+                            "len": 11,
+                            "line": 50,
+                            "character": 11,
+                            "__kind__": "MountingPointDeclaration"
+                        }
+                    ],
+                    "pos": 1502,
+                    "end": 1827,
+                    "len": 325,
+                    "line": 42,
+                    "character": 325,
+                    "__kind__": "ElementDeclarationLine"
+                }
+            ],
+            "pos": 273,
+            "end": 1827,
+            "len": 1554,
+            "line": 6,
+            "character": 1554,
+            "__kind__": "ElementDeclarationLine"
+        }
+    ],
+    "endOfFileToken": {
+        "kind": 23,
+        "pos": 1827,
+        "end": 1827,
+        "len": 0,
+        "line": 51,
+        "character": 0,
+        "__kind__": "EndOfFileToken"
+    },
+    "parseDiagnostics": [],
+    "text": "Tree structure\nLines not started with >#%@.+- are considered as comments\nThe escape character of eft is '&', for prevention of the conflict with js escapes.\nExcept for the change of the character, all the usage should be the same.\nthis is a comment\n'>' stands for tag name\n>div\n  '#' stands for attributes\n  Mustaches stands for binding data\n  content inside mustaches after '=' stands for the default value for this binding\n  content without mustaches stands for a static data\n  which means that you cannot modify them using ef.js\n  #class = {{class = some class name}}\n  #style = {{attr.style = background: #ECECEC}}\n  #id = testdiv\n  #some-attr = some text\n  #content\n  '%' stands for properties\n  %title = Welcome, {{name}}\n  %anotherProperty = text\n  '@' stands for events\n  contents after ':' are considered as value passed to the handler\n  @click = updateInfo:{{binding.value}} and static value\n  modify keys now can be bind easily\n  @mousedown.shift.alt.ctrl.meta = select\n  bind to keys is also easy\n  @keypress.13 = submit\n  use '.prevent' to preventDefault, '.stop' to stopPropagation, '.stopImmediate' to stopImmediatePropagation\n  @keydown.8.prevent.stop = stopbackspace\n  use '.capture' to capture an event\n  @submit.capture.j = submit\n  '.' stands for text nodes\n  .Name: {{name}}&nJob: {{job}}\n  >pre\n    '|' stands for multiline text\n    |Line 1\n    |Line 2\n    |Line 3\n  >br\n  '-' stands for standard mounting point\n  -node1\n  '.' after a tag name stands for class names for this tag\n  >p.some.{{binding.class}}.class.names\n    '#' at the end of a tag name stands for the reference name of the node\n    Mustaches after a dot will bind to 'class' automatically\n    >span.{{emergency = emergency}}#notice_box\n      .Notice: {{notice}}\n    .some text\n    -node2\n    '+' stands for list mounting point\n    +list1\n",
+    "__kind__": "SourceFile"
+}

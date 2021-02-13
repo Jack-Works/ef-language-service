@@ -1,0 +1,52 @@
+   0 | Tree structure
+   1 | Lines not started with >#%@.+- are considered as comments
+   2 | The escape character of eft is '&', for prevention of the conflict with js escapes.
+   3 | Except for the change of the character, all the usage should be the same.
+   4 | this is a comment
+   5 | '>' stands for tag name
+   6 | >div
+   7 |   '#' stands for attributes
+   8 |   Mustaches stands for binding data
+   9 |   content inside mustaches after '=' stands for the default value for this binding
+  10 |   content without mustaches stands for a static data
+  11 |   which means that you cannot modify them using ef.js
+  12 |   #class = {{class = some class name}}
+  13 |   #style = {{attr.style = background: #ECECEC}}
+  14 |   #id = testdiv
+  15 |   #some-attr = some text
+  16 |   #content
+  17 |   '%' stands for properties
+  18 |   %title = Welcome, {{name}}
+  19 |   %anotherProperty = text
+  20 |   '@' stands for events
+  21 |   contents after ':' are considered as value passed to the handler
+  22 |   @click = updateInfo:{{binding.value}} and static value
+  23 |   modify keys now can be bind easily
+  24 |   @mousedown.shift.alt.ctrl.meta = select
+  25 |   bind to keys is also easy
+  26 |   @keypress.13 = submit
+  27 |   use '.prevent' to preventDefault, '.stop' to stopPropagation, '.stopImmediate' to stopImmediatePropagation
+  28 |   @keydown.8.prevent.stop = stopbackspace
+  29 |   use '.capture' to capture an event
+  30 |   @submit.capture.j = submit
+  31 |   '.' stands for text nodes
+  32 |   .Name: {{name}}&nJob: {{job}}
+  33 |   >pre
+  34 |     '|' stands for multiline text
+  35 |     |Line 1
+  36 |     |Line 2
+  37 |     |Line 3
+  38 |   >br
+  39 |   '-' stands for standard mounting point
+  40 |   -node1
+  41 |   '.' after a tag name stands for class names for this tag
+  42 |   >p.some.{{binding.class}}.class.names
+  43 |     '#' at the end of a tag name stands for the reference name of the node
+  44 |     Mustaches after a dot will bind to 'class' automatically
+  45 |     >span.{{emergency = emergency}}#notice_box
+  46 |       .Notice: {{notice}}
+  47 |     .some text
+  48 |     -node2
+  49 |     '+' stands for list mounting point
+  50 |     +list1
+  51 | 

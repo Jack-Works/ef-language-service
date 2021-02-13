@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AST viewer</title>
+        <style>
+            main {
+                display: flex;
+                font-family: monospace;
+            }
+            main > * {
+                max-height: 100vh;
+                max-width: 50vw;
+                overflow: scroll;
+            }
+            #source {
+                flex: 1;
+            }
+            main > ast-tree {
+                flex: 1;
+            }
+            ast-tree {
+                display: block;
+            }
+            body {
+                margin: 0;
+            }
+            ul {
+                padding-inline-start: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <textarea id="source" readonly></textarea>
+            <ast-tree id="root">Files: <input type="file" id="input" /> </ast-tree>
+        </main>
+        <script src="./ast-viewer.js"></script>
+    </body>
+</html>

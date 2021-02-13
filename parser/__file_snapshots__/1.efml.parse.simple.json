@@ -1,0 +1,506 @@
+{
+    "kind": "SourceFile",
+    "children": [
+        "CommentLine",
+        "CommentLine",
+        "CommentLine",
+        "CommentLine",
+        "CommentLine",
+        "CommentLine",
+        {
+            "kind": "ElementDeclarationLine",
+            "tag@TagExpression": {
+                "kind": "TagExpression",
+                "startToken@GreaterThanToken": "GreaterThanToken",
+                "attributes": [
+                    {
+                        "kind": "TemplateStringExpression",
+                        "content": [
+                            "StringLiteral"
+                        ]
+                    }
+                ]
+            },
+            "endOfLineToken@NewLineTrivia": "NewLineTrivia",
+            "children": [
+                "CommentLine",
+                "CommentLine",
+                "CommentLine",
+                "CommentLine",
+                "CommentLine",
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@HashToken": "HashToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                {
+                                    "kind": "MustacheExpression",
+                                    "startToken@MustacheStartToken": "MustacheStartToken",
+                                    "expression": [
+                                        "StringLiteral"
+                                    ],
+                                    "initializer": [
+                                        "EqualsToken",
+                                        "StringLiteral"
+                                    ],
+                                    "endToken@MustacheEndToken": "MustacheEndToken"
+                                }
+                            ]
+                        }
+                    ],
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@HashToken": "HashToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                {
+                                    "kind": "MustacheExpression",
+                                    "startToken@MustacheStartToken": "MustacheStartToken",
+                                    "expression": [
+                                        "StringLiteral",
+                                        "DotToken",
+                                        "StringLiteral"
+                                    ],
+                                    "initializer": [
+                                        "EqualsToken",
+                                        "StringLiteral"
+                                    ],
+                                    "endToken@MustacheEndToken": "MustacheEndToken"
+                                }
+                            ]
+                        }
+                    ],
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@HashToken": "HashToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                "StringLiteral"
+                            ]
+                        }
+                    ],
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@HashToken": "HashToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                "StringLiteral"
+                            ]
+                        }
+                    ],
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@HashToken": "HashToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                "CommentLine",
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@PercentToken": "PercentToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                "StringLiteral",
+                                {
+                                    "kind": "MustacheExpression",
+                                    "startToken@MustacheStartToken": "MustacheStartToken",
+                                    "expression": [
+                                        "StringLiteral"
+                                    ],
+                                    "endToken@MustacheEndToken": "MustacheEndToken"
+                                }
+                            ]
+                        }
+                    ],
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@PercentToken": "PercentToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                "StringLiteral"
+                            ]
+                        }
+                    ],
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                "CommentLine",
+                "CommentLine",
+                {
+                    "kind": "ElementEventHandlerDeclaration",
+                    "atToken@AtToken": "AtToken",
+                    "eventDescriptor": [
+                        "StringLiteral"
+                    ],
+                    "equalsToken@EqualsToken": "EqualsToken",
+                    "handler@StringLiteral": "StringLiteral",
+                    "parameter": [
+                        "ColonToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                {
+                                    "kind": "MustacheExpression",
+                                    "startToken@MustacheStartToken": "MustacheStartToken",
+                                    "expression": [
+                                        "StringLiteral",
+                                        "DotToken",
+                                        "StringLiteral"
+                                    ],
+                                    "endToken@MustacheEndToken": "MustacheEndToken"
+                                },
+                                "StringLiteral"
+                            ]
+                        }
+                    ],
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                "CommentLine",
+                {
+                    "kind": "ElementEventHandlerDeclaration",
+                    "atToken@AtToken": "AtToken",
+                    "eventDescriptor": [
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral"
+                    ],
+                    "equalsToken@EqualsToken": "EqualsToken",
+                    "handler@StringLiteral": "StringLiteral",
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                "CommentLine",
+                {
+                    "kind": "ElementEventHandlerDeclaration",
+                    "atToken@AtToken": "AtToken",
+                    "eventDescriptor": [
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral"
+                    ],
+                    "equalsToken@EqualsToken": "EqualsToken",
+                    "handler@StringLiteral": "StringLiteral",
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                "CommentLine",
+                {
+                    "kind": "ElementEventHandlerDeclaration",
+                    "atToken@AtToken": "AtToken",
+                    "eventDescriptor": [
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral"
+                    ],
+                    "equalsToken@EqualsToken": "EqualsToken",
+                    "handler@StringLiteral": "StringLiteral",
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                "CommentLine",
+                {
+                    "kind": "ElementEventHandlerDeclaration",
+                    "atToken@AtToken": "AtToken",
+                    "eventDescriptor": [
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral",
+                        "DotToken",
+                        "StringLiteral"
+                    ],
+                    "equalsToken@EqualsToken": "EqualsToken",
+                    "handler@StringLiteral": "StringLiteral",
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                "CommentLine",
+                {
+                    "kind": "TextLine",
+                    "token@DotToken": "DotToken",
+                    "content@TemplateStringExpression": {
+                        "kind": "TemplateStringExpression",
+                        "content": [
+                            "StringLiteral",
+                            {
+                                "kind": "MustacheExpression",
+                                "startToken@MustacheStartToken": "MustacheStartToken",
+                                "expression": [
+                                    "StringLiteral"
+                                ],
+                                "endToken@MustacheEndToken": "MustacheEndToken"
+                            },
+                            "StringLiteral",
+                            {
+                                "kind": "MustacheExpression",
+                                "startToken@MustacheStartToken": "MustacheStartToken",
+                                "expression": [
+                                    "StringLiteral"
+                                ],
+                                "endToken@MustacheEndToken": "MustacheEndToken"
+                            }
+                        ]
+                    },
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                {
+                    "kind": "ElementDeclarationLine",
+                    "tag@TagExpression": {
+                        "kind": "TagExpression",
+                        "startToken@GreaterThanToken": "GreaterThanToken",
+                        "attributes": [
+                            {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            }
+                        ]
+                    },
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia",
+                    "children": [
+                        "CommentLine",
+                        {
+                            "kind": "TextLine",
+                            "token@BarToken": "BarToken",
+                            "content@TemplateStringExpression": {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                        },
+                        {
+                            "kind": "TextLine",
+                            "token@BarToken": "BarToken",
+                            "content@TemplateStringExpression": {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                        },
+                        {
+                            "kind": "TextLine",
+                            "token@BarToken": "BarToken",
+                            "content@TemplateStringExpression": {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                        }
+                    ]
+                },
+                {
+                    "kind": "ElementDeclarationLine",
+                    "tag@TagExpression": {
+                        "kind": "TagExpression",
+                        "startToken@GreaterThanToken": "GreaterThanToken",
+                        "attributes": [
+                            {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            }
+                        ]
+                    },
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia",
+                    "children": []
+                },
+                "CommentLine",
+                {
+                    "kind": "MountingPointDeclaration",
+                    "token@MinusToken": "MinusToken",
+                    "identifier@StringLiteral": "StringLiteral",
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                },
+                "CommentLine",
+                {
+                    "kind": "ElementDeclarationLine",
+                    "tag@TagExpression": {
+                        "kind": "TagExpression",
+                        "startToken@GreaterThanToken": "GreaterThanToken",
+                        "attributes": [
+                            {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "DotToken",
+                            {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "DotToken",
+                            {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    {
+                                        "kind": "MustacheExpression",
+                                        "startToken@MustacheStartToken": "MustacheStartToken",
+                                        "expression": [
+                                            "StringLiteral",
+                                            "DotToken",
+                                            "StringLiteral"
+                                        ],
+                                        "endToken@MustacheEndToken": "MustacheEndToken"
+                                    }
+                                ]
+                            },
+                            "DotToken",
+                            {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "DotToken",
+                            {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            }
+                        ]
+                    },
+                    "endOfLineToken@NewLineTrivia": "NewLineTrivia",
+                    "children": [
+                        "CommentLine",
+                        "CommentLine",
+                        {
+                            "kind": "ElementDeclarationLine",
+                            "tag@TagExpression": {
+                                "kind": "TagExpression",
+                                "startToken@GreaterThanToken": "GreaterThanToken",
+                                "attributes": [
+                                    {
+                                        "kind": "TemplateStringExpression",
+                                        "content": [
+                                            "StringLiteral"
+                                        ]
+                                    },
+                                    "DotToken",
+                                    {
+                                        "kind": "TemplateStringExpression",
+                                        "content": [
+                                            {
+                                                "kind": "MustacheExpression",
+                                                "startToken@MustacheStartToken": "MustacheStartToken",
+                                                "expression": [
+                                                    "StringLiteral"
+                                                ],
+                                                "initializer": [
+                                                    "EqualsToken",
+                                                    "StringLiteral"
+                                                ],
+                                                "endToken@MustacheEndToken": "MustacheEndToken"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "reference": [
+                                    "HashToken",
+                                    "StringLiteral"
+                                ]
+                            },
+                            "endOfLineToken@NewLineTrivia": "NewLineTrivia",
+                            "children": [
+                                {
+                                    "kind": "TextLine",
+                                    "token@DotToken": "DotToken",
+                                    "content@TemplateStringExpression": {
+                                        "kind": "TemplateStringExpression",
+                                        "content": [
+                                            "StringLiteral",
+                                            {
+                                                "kind": "MustacheExpression",
+                                                "startToken@MustacheStartToken": "MustacheStartToken",
+                                                "expression": [
+                                                    "StringLiteral"
+                                                ],
+                                                "endToken@MustacheEndToken": "MustacheEndToken"
+                                            }
+                                        ]
+                                    },
+                                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "TextLine",
+                            "token@DotToken": "DotToken",
+                            "content@TemplateStringExpression": {
+                                "kind": "TemplateStringExpression",
+                                "content": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                        },
+                        {
+                            "kind": "MountingPointDeclaration",
+                            "token@MinusToken": "MinusToken",
+                            "identifier@StringLiteral": "StringLiteral",
+                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                        },
+                        "CommentLine",
+                        {
+                            "kind": "MountingPointDeclaration",
+                            "token@PlusToken": "PlusToken",
+                            "identifier@StringLiteral": "StringLiteral",
+                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "endOfFileToken@EndOfFileToken": "EndOfFileToken",
+    "parseDiagnostics": []
+}

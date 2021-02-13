@@ -1,0 +1,4 @@
+packages:
+    - 'parser'
+    - 'language-service'
+    - 'extension-vscode'

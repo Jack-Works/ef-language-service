@@ -1,0 +1,13 @@
+{
+  "name": "ef-parser",
+  "version": "0.0.0",
+  "types": "./dist",
+  "main": "./dist/",
+  "dependencies": {
+    "vscode-languageserver-types": "^3.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jack-Works/ef-language-service"
+  }
+}
