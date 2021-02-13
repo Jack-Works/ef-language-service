@@ -1,7 +1,7 @@
 {
     "kind": 100,
-    "fileName": "example.efml",
     "path": "example.efml",
+    "languageVariant": 1,
     "children": [
         {
             "kind": 101,

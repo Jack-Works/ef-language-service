@@ -19,14 +19,21 @@ import {
     LinedTextRange,
     LineBase,
     MutableNodeArray,
+    LanguageVariant,
 } from './ast'
 /** The node is in the constructing stage and have no position information. */
 export type ConstructingNode<T extends Node> = Mutable<
     Omit<T, keyof LinelessTextRange | keyof LinedTextRange> & Partial<LinelessTextRange & LinedTextRange>
 >
-type ConstructingNodeParam<T extends Node> = Omit<ConstructingNode<T>, 'kind'>
-export function createSourceFile(opts: ConstructingNodeParam<SourceFile>): ConstructingNode<SourceFile> {
-    return { kind: SyntaxKind.SourceFile, ...opts }
+export function createSourceFile(
+    path: SourceFile['path'],
+    text: SourceFile['text'],
+    languageVariant: LanguageVariant,
+    children: SourceFile['children'],
+    endOfFileToken: SourceFile['endOfFileToken'],
+    parseDiagnostics: SourceFile['parseDiagnostics'],
+): ConstructingNode<SourceFile> {
+    return { kind: SyntaxKind.SourceFile, path, languageVariant, children, endOfFileToken, parseDiagnostics, text }
 }
 export function createMountingPointLine(
     indent: string,

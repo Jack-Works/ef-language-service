@@ -182,7 +182,6 @@ export function createScanner(textInitial: string): Scanner {
         }
         // scan as text fragment
         tokenStartPos = trivialStartPos // count trivial in to the range
-        debugger
         while (true) {
             if (pos >= fileEnd) return (token = SyntaxKind.EndOfFileToken)
             pos++

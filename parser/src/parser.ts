@@ -19,6 +19,7 @@ import {
     Token,
     TokenSyntaxKind,
     MutableNodeArray,
+    LanguageVariant,
 } from './types/ast'
 import { Diagnostic, DiagnosticMessage, fillMessage, Position } from './types/diagnostics'
 import {
@@ -113,20 +114,20 @@ const {
 //#endregion
 
 //#region parser for lines (statements in other languages, take a whole line / multipleLine)
-export function parseSourceFile(source: string, _fileName: string): SourceFile {
+export function parseSourceFile(source: string, _fileName: string, languageVariant = LanguageVariant.HTML): SourceFile {
     initParserState(source)
     fileName = _fileName
-    const sourceFile: ConstructingNode<SourceFile> = createSourceFile({
-        fileName,
-        path: _fileName,
-        children: parseNodeList(
+    const sourceFile: ConstructingNode<SourceFile> = createSourceFile(
+        _fileName,
+        source,
+        languageVariant,
+        parseNodeList(
             () => parseLine(0),
             () => token() !== SyntaxKind.EndOfFileToken,
         ),
-        endOfFileToken: parseExpectedToken(SyntaxKind.EndOfFileToken),
+        parseExpectedToken(SyntaxKind.EndOfFileToken),
         parseDiagnostics,
-        text: source,
-    })
+    )
     return finishNode(sourceFile, 0, [0, 0], source.length)
 }
 function parseLine(currentIndentLevel: number): Line {

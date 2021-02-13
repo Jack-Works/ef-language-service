@@ -57,12 +57,16 @@ export interface Token<TKind extends TokenSyntaxKind> extends NodeBase {
 /** An efml SourceFile */
 export interface SourceFile extends NodeBase {
     readonly kind: SyntaxKind.SourceFile
+    readonly path: string
+    readonly languageVariant: LanguageVariant
     readonly children: NodeArray<Line>
     readonly endOfFileToken: Token<SyntaxKind.EndOfFileToken>
-    readonly fileName: string
-    readonly text: string
-    /** @internal */ readonly path: string
     readonly parseDiagnostics: Diagnostic[]
+    readonly text: string
+}
+export enum LanguageVariant {
+    Unknown,
+    HTML,
 }
 /** Node kind that can use at the top level, so it will have a indent */
 export interface LineBase extends NodeBase {
