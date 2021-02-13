@@ -1,7 +1,6 @@
 # Core compiler (./parser)
 
 -   ✅ Scanner: scan the text to spilt them into tokens
-    -   🔜 Let `TextFragment` doesn't include trailing white spaces if there is no meaningful token in this line.
 -   ✅ Parser: parse tokens into AST node
 -   [Diagnostics](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#diagnostic)
     -   ✅ Parser error

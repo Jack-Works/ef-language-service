@@ -130,7 +130,7 @@ export function createScanner(textInitial: string): Scanner {
         // Scan heading spaces before tokens, therefore add them before the token
         if (isSameLineWhiteSpace(text.codePointAt(pos)!)) {
             const isStartOfLine = character === 0
-            scanSameLineWhiteSpace()
+            scanSameLineWhiteSpace(true)
             // easier to set indentation for the parser
             if (isStartOfLine) return (token = SyntaxKind.WhitespaceSameLineTrivia)
         }
@@ -182,15 +182,22 @@ export function createScanner(textInitial: string): Scanner {
         }
         // scan as text fragment
         tokenStartPos = trivialStartPos // count trivial in to the range
+        debugger
         while (true) {
             if (pos >= fileEnd) return (token = SyntaxKind.EndOfFileToken)
-            if (isTokenStart(text.codePointAt(pos + 1)!)) {
-                pos++
-                character++
-                return (token = SyntaxKind.TextFragment)
-            }
             pos++
             character++
+            const nextCh = text.codePointAt(pos)!
+            if (isSameLineWhiteSpace(nextCh)) {
+                const shouldBreak = !tryScan(() => {
+                    scanSameLineWhiteSpace(false)
+                    const next = text.codePointAt(pos)!
+                    const shouldKeepState = !(isComplexTokenStart(next) || isSimpleToken(next))
+                    return shouldKeepState
+                })
+                if (shouldBreak) return (token = SyntaxKind.TextFragment)
+            }
+            if (isTokenStart(nextCh)) return (token = SyntaxKind.TextFragment)
         }
     }
 
@@ -218,9 +225,11 @@ export function createScanner(textInitial: string): Scanner {
     /**
      * Scan the continuous whitespace
      */
-    function scanSameLineWhiteSpace() {
-        trivialStartPos = pos
-        tokenStartPos = pos
+    function scanSameLineWhiteSpace(setStartPos: boolean) {
+        if (setStartPos) {
+            trivialStartPos = pos
+            tokenStartPos = pos
+        }
         while (pos < fileEnd) {
             const ch = text.codePointAt(pos)!
             if (!isSameLineWhiteSpace(ch)) break
@@ -253,7 +262,7 @@ export function createScanner(textInitial: string): Scanner {
     function lookAheadIdentLevel() {
         if (token === SyntaxKind.WhitespaceSameLineTrivia) return getTokenText().length
         return lookAhead(() => {
-            scanSameLineWhiteSpace()
+            scanSameLineWhiteSpace(false)
             return getTokenText().length
         })
     }

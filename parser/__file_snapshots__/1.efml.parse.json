@@ -304,20 +304,20 @@
                     },
                     "binding": {
                         "kind": 110,
-                        "value": "class ",
+                        "value": "class",
                         "pos": 535,
-                        "end": 541,
-                        "len": 6,
+                        "end": 540,
+                        "len": 5,
                         "line": 12,
-                        "character": 9,
+                        "character": 8,
                         "__kind__": "StringLiteral"
                     },
                     "initializer": [
                         {
                             "kind": 18,
-                            "pos": 541,
+                            "pos": 540,
                             "end": 542,
-                            "len": 1,
+                            "len": 2,
                             "line": 12,
                             "character": 10,
                             "__kind__": "EqualsToken"
@@ -339,21 +339,21 @@
                                     "expression": [
                                         {
                                             "kind": 110,
-                                            "value": "class ",
+                                            "value": "class",
                                             "pos": 545,
-                                            "end": 551,
-                                            "len": 6,
+                                            "end": 550,
+                                            "len": 5,
                                             "line": 12,
-                                            "character": 19,
+                                            "character": 18,
                                             "__kind__": "StringLiteral"
                                         }
                                     ],
                                     "initializer": [
                                         {
                                             "kind": 18,
-                                            "pos": 551,
+                                            "pos": 550,
                                             "end": 552,
-                                            "len": 1,
+                                            "len": 2,
                                             "line": 12,
                                             "character": 20,
                                             "__kind__": "EqualsToken"
@@ -425,20 +425,20 @@
                     },
                     "binding": {
                         "kind": 110,
-                        "value": "style ",
+                        "value": "style",
                         "pos": 574,
-                        "end": 580,
-                        "len": 6,
+                        "end": 579,
+                        "len": 5,
                         "line": 13,
-                        "character": 9,
+                        "character": 8,
                         "__kind__": "StringLiteral"
                     },
                     "initializer": [
                         {
                             "kind": 18,
-                            "pos": 580,
+                            "pos": 579,
                             "end": 581,
-                            "len": 1,
+                            "len": 2,
                             "line": 13,
                             "character": 10,
                             "__kind__": "EqualsToken"
@@ -479,21 +479,21 @@
                                         },
                                         {
                                             "kind": 110,
-                                            "value": "style ",
+                                            "value": "style",
                                             "pos": 589,
-                                            "end": 595,
-                                            "len": 6,
+                                            "end": 594,
+                                            "len": 5,
                                             "line": 13,
-                                            "character": 24,
+                                            "character": 23,
                                             "__kind__": "StringLiteral"
                                         }
                                     ],
                                     "initializer": [
                                         {
                                             "kind": 18,
-                                            "pos": 595,
+                                            "pos": 594,
                                             "end": 596,
-                                            "len": 1,
+                                            "len": 2,
                                             "line": 13,
                                             "character": 25,
                                             "__kind__": "EqualsToken"
@@ -565,20 +565,20 @@
                     },
                     "binding": {
                         "kind": 110,
-                        "value": "id ",
+                        "value": "id",
                         "pos": 622,
-                        "end": 625,
-                        "len": 3,
+                        "end": 624,
+                        "len": 2,
                         "line": 14,
-                        "character": 6,
+                        "character": 5,
                         "__kind__": "StringLiteral"
                     },
                     "initializer": [
                         {
                             "kind": 18,
-                            "pos": 625,
+                            "pos": 624,
                             "end": 626,
-                            "len": 1,
+                            "len": 2,
                             "line": 14,
                             "character": 7,
                             "__kind__": "EqualsToken"
@@ -636,20 +636,20 @@
                     },
                     "binding": {
                         "kind": 110,
-                        "value": "some-attr ",
+                        "value": "some-attr",
                         "pos": 638,
-                        "end": 648,
-                        "len": 10,
+                        "end": 647,
+                        "len": 9,
                         "line": 15,
-                        "character": 13,
+                        "character": 12,
                         "__kind__": "StringLiteral"
                     },
                     "initializer": [
                         {
                             "kind": 18,
-                            "pos": 648,
+                            "pos": 647,
                             "end": 649,
-                            "len": 1,
+                            "len": 2,
                             "line": 15,
                             "character": 14,
                             "__kind__": "EqualsToken"
@@ -767,20 +767,20 @@
                     },
                     "binding": {
                         "kind": 110,
-                        "value": "title ",
+                        "value": "title",
                         "pos": 702,
-                        "end": 708,
-                        "len": 6,
+                        "end": 707,
+                        "len": 5,
                         "line": 18,
-                        "character": 9,
+                        "character": 8,
                         "__kind__": "StringLiteral"
                     },
                     "initializer": [
                         {
                             "kind": 18,
-                            "pos": 708,
+                            "pos": 707,
                             "end": 709,
-                            "len": 1,
+                            "len": 2,
                             "line": 18,
                             "character": 10,
                             "__kind__": "EqualsToken"
@@ -790,21 +790,21 @@
                             "content": [
                                 {
                                     "kind": 110,
-                                    "value": " Welcome, ",
+                                    "value": " Welcome,",
                                     "pos": 709,
-                                    "end": 719,
-                                    "len": 10,
+                                    "end": 718,
+                                    "len": 9,
                                     "line": 18,
-                                    "character": 20,
+                                    "character": 19,
                                     "__kind__": "StringLiteral"
                                 },
                                 {
                                     "kind": 109,
                                     "startToken": {
                                         "kind": 19,
-                                        "pos": 719,
+                                        "pos": 718,
                                         "end": 721,
-                                        "len": 2,
+                                        "len": 3,
                                         "line": 18,
                                         "character": 22,
                                         "__kind__": "MustacheStartToken"
@@ -830,9 +830,9 @@
                                         "character": 28,
                                         "__kind__": "MustacheEndToken"
                                     },
-                                    "pos": 719,
+                                    "pos": 718,
                                     "end": 727,
-                                    "len": 8,
+                                    "len": 9,
                                     "line": 18,
                                     "character": 28,
                                     "__kind__": "MustacheExpression"
@@ -877,20 +877,20 @@
                     },
                     "binding": {
                         "kind": 110,
-                        "value": "anotherProperty ",
+                        "value": "anotherProperty",
                         "pos": 731,
-                        "end": 747,
-                        "len": 16,
+                        "end": 746,
+                        "len": 15,
                         "line": 19,
-                        "character": 19,
+                        "character": 18,
                         "__kind__": "StringLiteral"
                     },
                     "initializer": [
                         {
                             "kind": 18,
-                            "pos": 747,
+                            "pos": 746,
                             "end": 748,
-                            "len": 1,
+                            "len": 2,
                             "line": 19,
                             "character": 20,
                             "__kind__": "EqualsToken"
@@ -991,20 +991,20 @@
                     "eventDescriptor": [
                         {
                             "kind": 110,
-                            "value": "click ",
+                            "value": "click",
                             "pos": 848,
-                            "end": 854,
-                            "len": 6,
+                            "end": 853,
+                            "len": 5,
                             "line": 22,
-                            "character": 9,
+                            "character": 8,
                             "__kind__": "StringLiteral"
                         }
                     ],
                     "equalsToken": {
                         "kind": 18,
-                        "pos": 854,
+                        "pos": 853,
                         "end": 855,
-                        "len": 1,
+                        "len": 2,
                         "line": 22,
                         "character": 10,
                         "__kind__": "EqualsToken"
@@ -1238,20 +1238,20 @@
                         },
                         {
                             "kind": 110,
-                            "value": "meta ",
+                            "value": "meta",
                             "pos": 967,
-                            "end": 972,
-                            "len": 5,
+                            "end": 971,
+                            "len": 4,
                             "line": 24,
-                            "character": 33,
+                            "character": 32,
                             "__kind__": "StringLiteral"
                         }
                     ],
                     "equalsToken": {
                         "kind": 18,
-                        "pos": 972,
+                        "pos": 971,
                         "end": 973,
-                        "len": 1,
+                        "len": 2,
                         "line": 24,
                         "character": 34,
                         "__kind__": "EqualsToken"
@@ -1338,20 +1338,20 @@
                         },
                         {
                             "kind": 110,
-                            "value": "13 ",
+                            "value": "13",
                             "pos": 1021,
-                            "end": 1024,
-                            "len": 3,
+                            "end": 1023,
+                            "len": 2,
                             "line": 26,
-                            "character": 15,
+                            "character": 14,
                             "__kind__": "StringLiteral"
                         }
                     ],
                     "equalsToken": {
                         "kind": 18,
-                        "pos": 1024,
+                        "pos": 1023,
                         "end": 1025,
-                        "len": 1,
+                        "len": 2,
                         "line": 26,
                         "character": 16,
                         "__kind__": "EqualsToken"
@@ -1476,20 +1476,20 @@
                         },
                         {
                             "kind": 110,
-                            "value": "stop ",
+                            "value": "stop",
                             "pos": 1163,
-                            "end": 1168,
-                            "len": 5,
+                            "end": 1167,
+                            "len": 4,
                             "line": 28,
-                            "character": 26,
+                            "character": 25,
                             "__kind__": "StringLiteral"
                         }
                     ],
                     "equalsToken": {
                         "kind": 18,
-                        "pos": 1168,
+                        "pos": 1167,
                         "end": 1169,
-                        "len": 1,
+                        "len": 2,
                         "line": 28,
                         "character": 27,
                         "__kind__": "EqualsToken"
@@ -1595,20 +1595,20 @@
                         },
                         {
                             "kind": 110,
-                            "value": "j ",
+                            "value": "j",
                             "pos": 1239,
-                            "end": 1241,
-                            "len": 2,
+                            "end": 1240,
+                            "len": 1,
                             "line": 30,
-                            "character": 20,
+                            "character": 19,
                             "__kind__": "StringLiteral"
                         }
                     ],
                     "equalsToken": {
                         "kind": 18,
-                        "pos": 1241,
+                        "pos": 1240,
                         "end": 1242,
-                        "len": 1,
+                        "len": 2,
                         "line": 30,
                         "character": 21,
                         "__kind__": "EqualsToken"
@@ -2503,21 +2503,21 @@
                                                 "expression": [
                                                     {
                                                         "kind": 110,
-                                                        "value": "emergency ",
+                                                        "value": "emergency",
                                                         "pos": 1690,
-                                                        "end": 1700,
-                                                        "len": 10,
+                                                        "end": 1699,
+                                                        "len": 9,
                                                         "line": 45,
-                                                        "character": 22,
+                                                        "character": 21,
                                                         "__kind__": "StringLiteral"
                                                     }
                                                 ],
                                                 "initializer": [
                                                     {
                                                         "kind": 18,
-                                                        "pos": 1700,
+                                                        "pos": 1699,
                                                         "end": 1701,
-                                                        "len": 1,
+                                                        "len": 2,
                                                         "line": 45,
                                                         "character": 23,
                                                         "__kind__": "EqualsToken"
