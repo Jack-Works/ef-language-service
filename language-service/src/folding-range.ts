@@ -1,4 +1,4 @@
-import { SourceFile, forEachChildRecursively, SyntaxKind, ElementDeclarationLine, NodeArray, Node } from 'ef-parser'
+import { SyntaxKind, ElementDeclarationLine, NodeArray, Node } from 'ef-parser'
 import type {
     CancellationToken,
     Connection,
@@ -8,7 +8,7 @@ import type {
     TextDocuments,
 } from 'vscode-languageserver'
 import type { EFDocument } from './document'
-import { CommonErrors } from './utils'
+import { CommonErrors, getDocument } from './utils'
 
 export function enableFoldingRange(
     connection: Connection,
@@ -17,8 +17,7 @@ export function enableFoldingRange(
 ): ServerCapabilities['foldingRangeProvider'] {
     if (!cap) return undefined
     connection.onFoldingRanges((params, cancel) => {
-        const doc = documents.get(params.textDocument.uri)
-        if (!doc) throw CommonErrors.documentNotFound
+        const doc = getDocument(params, documents)
         return getFoldingRangeForNode(doc.ast, cancel)
     })
     return { documentSelector: null, workDoneProgress: false }

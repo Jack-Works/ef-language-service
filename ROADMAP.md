@@ -22,9 +22,9 @@
     -   🔜 Rename tags, attributes, properties (without forwarding to external world)...
     -   🔜 Rename reference
 -   🔜 [Code completion](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_completion)
+    -   ✅ Completion for event modifier
     -   🔜 Delegate to HTML and CSS
     -   🔜 Delegate exotic expressions to TypeScript
-    -   🔜 Completion for event modifier
 -   🔜 [Hover](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_hover)
     -   🔜 Delegate HTML and CSS
     -   🔜 Delegate exotic expressions to TypeScript

@@ -8,7 +8,7 @@ import type {
 import type { TokenSyntaxKind, TagExpression, Token, SourceFile } from 'ef-parser'
 import type { EFDocument } from './document'
 import { Node, SyntaxKind } from 'ef-parser'
-import { CommonErrors } from './utils'
+import { CommonErrors, getDocument } from './utils'
 
 export function enableSemanticToken(
     connection: Connection,
@@ -17,9 +17,7 @@ export function enableSemanticToken(
 ): ServerCapabilities['semanticTokensProvider'] {
     if (!cap) return undefined
     connection.languages.semanticTokens.on((params, cancel) => {
-        const uri = params.textDocument.uri
-        const doc = documents.get(uri)
-        if (!doc) throw CommonErrors.documentNotFound
+        const doc = getDocument(params, documents)
         return { data: [...toSemanticTokens(toTokenWorker(cancel, doc.ast))] }
     })
     return {

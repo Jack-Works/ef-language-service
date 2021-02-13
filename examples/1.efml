@@ -28,7 +28,7 @@ this is a comment
   use '.prevent' to preventDefault, '.stop' to stopPropagation, '.stopImmediate' to stopImmediatePropagation
   @keydown.8.prevent.stop = stopbackspace
   use '.capture' to capture an event
-  @submit.capture.j = submit
+  @submit.capture.stopImmediate = submit
   '.' stands for text nodes
   .Name: {{name}}&nJob: {{job}}
   >pre

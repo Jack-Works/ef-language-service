@@ -391,9 +391,9 @@ function finishNode<T extends Node>(
     end?: number,
 ): T {
     if (node.kind !== SyntaxKind.SourceFile) _finishPos(), _finishLinedPos()
-    if (isDebug) node.__kind__ = SyntaxKindToString((<Node>node).kind)
+    if (isDebug) node.__kind__ = SyntaxKindToString(node.kind)
     forEachChild(
-        node as Node,
+        node as any,
         (sub) => defineParent(sub, node),
         (e) => void e.forEach((sub) => defineParent(sub, node)),
     )

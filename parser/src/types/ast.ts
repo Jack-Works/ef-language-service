@@ -52,7 +52,7 @@ export interface NodeBase extends LinelessTextRange, LinedTextRange {
 }
 export interface Token<TKind extends TokenSyntaxKind> extends NodeBase {
     readonly kind: TKind
-    readonly _tokenBrand?: any
+    readonly __type__level__only__brand__: TKind
 }
 /** An efml SourceFile */
 export interface SourceFile extends NodeBase {
@@ -156,6 +156,15 @@ export const TokenSyntaxKind = [
     SyntaxKind.NewLineTrivia,
 ] as const
 export type TokenSyntaxKind = typeof TokenSyntaxKind[number]
+export const LineSyntaxKind = [
+    SyntaxKind.CommentLine,
+    SyntaxKind.ElementEventHandlerDeclaration,
+    SyntaxKind.ElementDeclarationLine,
+    SyntaxKind.ElementAttributeOrPropertyDeclaration,
+    SyntaxKind.MountingPointDeclaration,
+    SyntaxKind.TextLine,
+] as const
+export type LineSyntaxKind = typeof LineSyntaxKind[number]
 export type Line =
     | CommentLine
     | ElementEventLine

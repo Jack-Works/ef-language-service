@@ -11,7 +11,7 @@ export function enableDiagnostics(
         const textDocument = change.document
         const diagnostics: Diagnostic[] = textDocument.ast.parseDiagnostics.map((x) => ({
             ...x,
-            source: `ef.js (${x.code})`,
+            source: `ef.js`,
         }))
         connection.sendDiagnostics({ uri: textDocument.uri, diagnostics })
     })

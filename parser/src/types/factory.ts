@@ -52,7 +52,7 @@ export function createMountingPointLine(
 }
 
 export function createToken<T extends TokenSyntaxKind>(kind: T): ConstructingNode<Token<T>> {
-    return { kind }
+    return { kind } as any
 }
 export function createCommentLine(
     indent: string,
