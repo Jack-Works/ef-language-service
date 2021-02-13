@@ -1,9 +1,7 @@
 import { isDebug } from './debugger'
-import { SourceFile, SyntaxKind } from './types/ast'
+import { SyntaxKind } from './types/ast'
 import { CharacterCodes } from './types/chars'
-import type { DiagnosticMessage, Position } from './types/diagnostics'
 import { SyntaxKindToString } from './utils'
-export type ErrorCallback = (message: DiagnosticMessage, length: number) => void
 
 /**
  * Things work in this way:
@@ -68,6 +66,7 @@ export function createScanner(textInitial: string): Scanner {
     let fileEnd: number
 
     let token: SyntaxKind
+    let lastToken: SyntaxKind
 
     let line = 0
     let character = 0
@@ -126,16 +125,11 @@ export function createScanner(textInitial: string): Scanner {
         lastCharacter = character
 
         if (pos >= fileEnd) return (token = SyntaxKind.EndOfFileToken)
-
-        // Scan full line comment
-        const isStartOfLine = character === 0
-        if (isStartOfLine) {
-            const isCommentLine = scanCommentUntilEOL()
-            if (isCommentLine) return (token = SyntaxKind.CommentTrivia)
-        }
+        lastToken = token
 
         // Scan heading spaces before tokens, therefore add them before the token
         if (isSameLineWhiteSpace(text.codePointAt(pos)!)) {
+            const isStartOfLine = character === 0
             scanSameLineWhiteSpace()
             // easier to set indentation for the parser
             if (isStartOfLine) return (token = SyntaxKind.WhitespaceSameLineTrivia)
@@ -150,6 +144,18 @@ export function createScanner(textInitial: string): Scanner {
                 pos++, character++
                 return (token = simple)
             }
+        }
+
+        if (
+            // first line
+            lastToken === SyntaxKind.Unknown ||
+            // line comment with no space ahead
+            lastToken === SyntaxKind.NewLineTrivia ||
+            // line comment with space ahead
+            lastToken === SyntaxKind.WhitespaceSameLineTrivia
+        ) {
+            const isCommentLine = scanCommentUntilEOL()
+            if (isCommentLine) return (token = SyntaxKind.CommentTrivia)
         }
 
         // Scan {{
@@ -189,10 +195,10 @@ export function createScanner(textInitial: string): Scanner {
     }
 
     /**
-     * Assume the current line is start of line. It will try to scan the whole line as a comment.
+     * It will try to scan the whole line as a comment.
      */
     function scanCommentUntilEOL() {
-        const isComment = tryScan(() => {
+        return tryScan(() => {
             let inComment = false
             tokenStartPos = trivialStartPos
             while (pos < fileEnd) {
@@ -207,13 +213,6 @@ export function createScanner(textInitial: string): Scanner {
             }
             return true
         })
-        if (isComment) {
-            // consume the \n too
-            pos++, line++
-            character = 0
-            return true
-        }
-        return false
     }
 
     /**
@@ -231,9 +230,11 @@ export function createScanner(textInitial: string): Scanner {
     }
 
     function snapshot() {
-        const state = [pos, fileEnd, trivialStartPos, tokenStartPos, token, line, character, lastLine, lastCharacter]
+        const state = [pos, fileEnd, trivialStartPos, tokenStartPos, token, line, character]
+        const state2 = [lastLine, lastCharacter, lastToken]
         return () => {
-            ;[pos, fileEnd, trivialStartPos, tokenStartPos, token, line, character, lastLine, lastCharacter] = state
+            ;[pos, fileEnd, trivialStartPos, tokenStartPos, token, line, character] = state
+            ;[lastLine, lastCharacter, lastToken] = state2
         }
     }
 
@@ -268,7 +269,7 @@ export function createScanner(textInitial: string): Scanner {
     }
 
     function initPos() {
-        pos = trivialStartPos = tokenStartPos = line = character = 0
+        lastToken = pos = trivialStartPos = tokenStartPos = line = character = 0
         token = SyntaxKind.Unknown
     }
 }

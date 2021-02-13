@@ -21,7 +21,6 @@
                     }
                 ]
             },
-            "endOfLineToken@NewLineTrivia": "NewLineTrivia",
             "children": [
                 "CommentLine",
                 "CommentLine",
@@ -51,8 +50,7 @@
                                 }
                             ]
                         }
-                    ],
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    ]
                 },
                 {
                     "kind": "ElementAttributeOrPropertyDeclaration",
@@ -79,8 +77,7 @@
                                 }
                             ]
                         }
-                    ],
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    ]
                 },
                 {
                     "kind": "ElementAttributeOrPropertyDeclaration",
@@ -94,8 +91,7 @@
                                 "StringLiteral"
                             ]
                         }
-                    ],
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    ]
                 },
                 {
                     "kind": "ElementAttributeOrPropertyDeclaration",
@@ -109,14 +105,12 @@
                                 "StringLiteral"
                             ]
                         }
-                    ],
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    ]
                 },
                 {
                     "kind": "ElementAttributeOrPropertyDeclaration",
                     "startToken@HashToken": "HashToken",
-                    "binding@StringLiteral": "StringLiteral",
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    "binding@StringLiteral": "StringLiteral"
                 },
                 "CommentLine",
                 {
@@ -139,8 +133,7 @@
                                 }
                             ]
                         }
-                    ],
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    ]
                 },
                 {
                     "kind": "ElementAttributeOrPropertyDeclaration",
@@ -154,8 +147,7 @@
                                 "StringLiteral"
                             ]
                         }
-                    ],
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    ]
                 },
                 "CommentLine",
                 "CommentLine",
@@ -185,8 +177,7 @@
                                 "StringLiteral"
                             ]
                         }
-                    ],
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    ]
                 },
                 "CommentLine",
                 {
@@ -204,8 +195,7 @@
                         "StringLiteral"
                     ],
                     "equalsToken@EqualsToken": "EqualsToken",
-                    "handler@StringLiteral": "StringLiteral",
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    "handler@StringLiteral": "StringLiteral"
                 },
                 "CommentLine",
                 {
@@ -217,8 +207,7 @@
                         "StringLiteral"
                     ],
                     "equalsToken@EqualsToken": "EqualsToken",
-                    "handler@StringLiteral": "StringLiteral",
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    "handler@StringLiteral": "StringLiteral"
                 },
                 "CommentLine",
                 {
@@ -234,8 +223,7 @@
                         "StringLiteral"
                     ],
                     "equalsToken@EqualsToken": "EqualsToken",
-                    "handler@StringLiteral": "StringLiteral",
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    "handler@StringLiteral": "StringLiteral"
                 },
                 "CommentLine",
                 {
@@ -249,8 +237,7 @@
                         "StringLiteral"
                     ],
                     "equalsToken@EqualsToken": "EqualsToken",
-                    "handler@StringLiteral": "StringLiteral",
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    "handler@StringLiteral": "StringLiteral"
                 },
                 "CommentLine",
                 {
@@ -278,8 +265,7 @@
                                 "endToken@MustacheEndToken": "MustacheEndToken"
                             }
                         ]
-                    },
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    }
                 },
                 {
                     "kind": "ElementDeclarationLine",
@@ -295,7 +281,6 @@
                             }
                         ]
                     },
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia",
                     "children": [
                         "CommentLine",
                         {
@@ -306,8 +291,7 @@
                                 "content": [
                                     "StringLiteral"
                                 ]
-                            },
-                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                            }
                         },
                         {
                             "kind": "TextLine",
@@ -317,8 +301,7 @@
                                 "content": [
                                     "StringLiteral"
                                 ]
-                            },
-                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                            }
                         },
                         {
                             "kind": "TextLine",
@@ -328,8 +311,7 @@
                                 "content": [
                                     "StringLiteral"
                                 ]
-                            },
-                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                            }
                         }
                     ]
                 },
@@ -347,15 +329,13 @@
                             }
                         ]
                     },
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia",
                     "children": []
                 },
                 "CommentLine",
                 {
                     "kind": "MountingPointDeclaration",
                     "token@MinusToken": "MinusToken",
-                    "identifier@StringLiteral": "StringLiteral",
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                    "identifier@StringLiteral": "StringLiteral"
                 },
                 "CommentLine",
                 {
@@ -409,7 +389,6 @@
                             }
                         ]
                     },
-                    "endOfLineToken@NewLineTrivia": "NewLineTrivia",
                     "children": [
                         "CommentLine",
                         "CommentLine",
@@ -449,7 +428,6 @@
                                     "StringLiteral"
                                 ]
                             },
-                            "endOfLineToken@NewLineTrivia": "NewLineTrivia",
                             "children": [
                                 {
                                     "kind": "TextLine",
@@ -467,8 +445,7 @@
                                                 "endToken@MustacheEndToken": "MustacheEndToken"
                                             }
                                         ]
-                                    },
-                                    "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                                    }
                                 }
                             ]
                         },
@@ -480,27 +457,23 @@
                                 "content": [
                                     "StringLiteral"
                                 ]
-                            },
-                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                            }
                         },
                         {
                             "kind": "MountingPointDeclaration",
                             "token@MinusToken": "MinusToken",
-                            "identifier@StringLiteral": "StringLiteral",
-                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                            "identifier@StringLiteral": "StringLiteral"
                         },
                         "CommentLine",
                         {
                             "kind": "MountingPointDeclaration",
                             "token@PlusToken": "PlusToken",
-                            "identifier@StringLiteral": "StringLiteral",
-                            "endOfLineToken@NewLineTrivia": "NewLineTrivia"
+                            "identifier@StringLiteral": "StringLiteral"
                         }
                     ]
                 }
             ]
         }
     ],
-    "endOfFileToken@EndOfFileToken": "EndOfFileToken",
     "parseDiagnostics": []
 }

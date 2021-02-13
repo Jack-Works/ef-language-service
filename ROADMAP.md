@@ -3,7 +3,6 @@
 -   ✅ Scanner: scan the text to spilt them into tokens
     -   🔜 Let `TextFragment` doesn't include trailing white spaces if there is no meaningful token in this line.
 -   ✅ Parser: parse tokens into AST node
-    -   🔜 Let `CommentLine` a `Line` (with endOfLineToken)
 -   [Diagnostics](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#diagnostic)
     -   ✅ Parser error
     -   🔜 Semantic error
@@ -15,7 +14,7 @@
 -   ✅ [Semantic tokens](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_semanticTokens): Provide semantic-aware tokens for code highlighting
 -   ✅ [Folding range](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_foldingRange)
 -   🔜 [Inline hint](https://github.com/microsoft/language-server-protocol/issues/956): Provide inline hint for keycode in event declaration.
--   🔜 [Document links](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentLink): Provide link parse
+-   🔜 [Document links](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentLink): Provide link parse for HTML tags (href, ...etc)
 -   🔜 [Full formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_formatting)
     -   🔜 [Partial formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_rangeFormatting)
     -   🔜 [On type formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_onTypeFormatting)

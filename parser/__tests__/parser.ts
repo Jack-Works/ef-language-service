@@ -2,7 +2,7 @@ import { readFileSync } from 'fs'
 import { toMatchFile } from 'jest-file-snapshot'
 import { join, resolve } from 'path'
 import { parseSourceFile } from '../src/parser'
-import type { SourceFile, SyntaxKind } from '../src/types/ast'
+import { SourceFile, SyntaxKind } from '../src/types/ast'
 import { DiagnosticSeverity, Diagnostic } from '../src/types/diagnostics'
 import { SyntaxKindToString } from '../src/utils'
 
@@ -29,6 +29,12 @@ function simpleAST(source: { kind: SyntaxKind } & Record<string, any>): any {
         const item = source[key]
         if (!item) continue
         const kind = item.kind
+        if (
+            kind === SyntaxKind.NewLineTrivia ||
+            kind === SyntaxKind.WhitespaceSameLineTrivia ||
+            kind === SyntaxKind.EndOfFileToken
+        )
+            continue
         if (kind && (hit = true)) result[key + '@' + SyntaxKindToString(kind)] = simpleAST(source[key])
         else if (Array.isArray(source[key]) && (hit = true)) {
             result[key] = source[key].map(simpleAST)

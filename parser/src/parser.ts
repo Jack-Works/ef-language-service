@@ -1,5 +1,5 @@
 import { isDebug } from './debugger'
-import { createScanner, isLineBreak } from './scanner'
+import { createScanner } from './scanner'
 import {
     CommentLine,
     ElementAttributeOrPropertyDeclarationLine,
@@ -16,10 +16,8 @@ import {
     TagExpression,
     TemplateExpression,
     TextLine,
-    LinelessTextRange,
     Token,
     TokenSyntaxKind,
-    LinedTextRange,
     MutableNodeArray,
 } from './types/ast'
 import { Diagnostic, DiagnosticMessage, fillMessage, Position } from './types/diagnostics'
@@ -37,6 +35,7 @@ import {
     createStringLiteral,
     createMustachesExpression,
     ConstructingNode,
+    createNodeArray,
 } from './types/factory'
 import { DiagnosticMessages } from './types/messages'
 import { forEachChild } from './types/visitor'
@@ -125,13 +124,12 @@ export function parseSourceFile(source: string, _fileName: string): SourceFile {
             () => token() !== SyntaxKind.EndOfFileToken,
         ),
         endOfFileToken: parseExpectedToken(SyntaxKind.EndOfFileToken),
-        parseDiagnostics: parseDiagnostics,
+        parseDiagnostics,
         text: source,
     })
     return finishNode(sourceFile, 0, [0, 0], source.length)
 }
-function parseLine(currentIndentLevel: number): Line | CommentLine {
-    if (token() === SyntaxKind.CommentTrivia) return parseCommentLine()
+function parseLine(currentIndentLevel: number): Line {
     return withPos(() => {
         let indent = ''
         if (token() === SyntaxKind.WhitespaceSameLineTrivia) {
@@ -145,8 +143,9 @@ function parseLine(currentIndentLevel: number): Line | CommentLine {
         if (k === SyntaxKind.AtToken) return parseElementEventLine(indent)
         if (k === SyntaxKind.DotToken || k === SyntaxKind.BarToken) return parseTextLine(indent)
         if (k === SyntaxKind.PlusToken || k === SyntaxKind.MinusToken) return parseMountingPointLine(indent)
+        if (k === SyntaxKind.CommentTrivia) return parseCommentLine(indent)
         parseErrorAtCurrentToken(fillMessage(DiagnosticMessages.unexpected_$1, SyntaxKindToString(k)))
-        return parseErrorLine()
+        return parseCommentLine(indent)
     })
 }
 function parseElementAttributeOrPropertyLine(
@@ -169,7 +168,7 @@ function parseElementDeclarationLine(indent: string, currentLevel: number): Cons
     const children =
         nextIndentLevel === currentLevel
             ? // Return an empty NodeArray
-              parseNodeList(parseCommentLine, () => false)
+              finishNodeArray(createNodeArray<Line>(), getNodePos())
             : parseNodeList(
                   () => parseLine(nextIndentLevel),
                   () => lookAheadIdentLevel() >= nextIndentLevel,
@@ -214,11 +213,15 @@ function parseElementEventLine(indent: string): ConstructingNode<ElementEventLin
         )
     }
 }
-function parseCommentLine(): CommentLine {
+function parseCommentLine(indent: string): CommentLine {
     return withPos(() => {
-        const content = getTokenText()
-        scan()
-        return createCommentLine(content)
+        let text = getTokenText()
+        let current = token()
+        while (current !== SyntaxKind.NewLineTrivia && current !== SyntaxKind.EndOfFileToken) {
+            current = scan()
+            text += getTokenText()
+        }
+        return createCommentLine(indent, text, parseLineEnding())
     })
 }
 //#endregion
@@ -301,18 +304,8 @@ function parseTagExpression(): TagExpression {
 function parseLineEnding() {
     return parseOptionalToken(SyntaxKind.EndOfFileToken) || parseExpectedToken(SyntaxKind.NewLineTrivia)
 }
-function parseErrorLine(): ConstructingNode<CommentLine> {
-    let text = getTokenText()
-    let current = token()
-    while (current !== SyntaxKind.NewLineTrivia && current !== SyntaxKind.EndOfFileToken) {
-        current = scan()
-        text += getTokenText()
-    }
-    parseExpected(SyntaxKind.NewLineTrivia)
-    return createCommentLine(text)
-}
 function parseNodeList<T extends Node>(parser: () => T | undefined, shouldContinue: () => boolean): NodeArray<T> {
-    const arr: NodeArray<T> & T[] = [] as any
+    const arr = createNodeArray<T>()
     const pos = getNodePos()
     while (shouldContinue()) {
         const node = parser()
@@ -344,6 +337,13 @@ function parseExpectedToken<T extends TokenSyntaxKind>(kind: T): Token<T> {
     return withPos(() =>
         createMissingNode<Token<T>>(kind, fillMessage(DiagnosticMessages.$1_expected, SyntaxKindToString(kind))),
     )
+}
+function parseOptional(kind: SyntaxKind) {
+    if (token() === kind) {
+        scan()
+        return true
+    }
+    return false
 }
 function parseExpected(kind: SyntaxKind, shouldAdvance = true): boolean {
     if (token() === kind) {
@@ -406,9 +406,6 @@ function finishNode<T extends Node>(
     function _finishLinedPos() {
         let length = node.end! - node.pos!
         if (char === -1) char = length
-        if (node.kind === SyntaxKind.CommentLine) {
-            char = length = (<ConstructingNode<CommentLine>>(<any>node)).text.length
-        }
         node.len = length
         node.line = line
         node.character = char

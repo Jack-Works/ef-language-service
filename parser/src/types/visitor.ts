@@ -63,6 +63,7 @@ export function forEachChild<T>(
         case SyntaxKind.TemplateStringExpression:
             return xs(node.content)
         case SyntaxKind.CommentLine:
+            return x(node.endOfLineToken)
         case SyntaxKind.StringLiteral:
             return undefined
     }

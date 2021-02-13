@@ -57,7 +57,7 @@ export interface Token<TKind extends TokenSyntaxKind> extends NodeBase {
 /** An efml SourceFile */
 export interface SourceFile extends NodeBase {
     readonly kind: SyntaxKind.SourceFile
-    readonly children: NodeArray<Line | CommentLine>
+    readonly children: NodeArray<Line>
     readonly endOfFileToken: Token<SyntaxKind.EndOfFileToken>
     readonly fileName: string
     readonly text: string
@@ -70,10 +70,7 @@ export interface LineBase extends NodeBase {
     readonly indent: string
     readonly endOfLineToken: Token<SyntaxKind.NewLineTrivia | SyntaxKind.EndOfFileToken>
 }
-/**
- * TODO: make CommentLine a Line too.
- */
-export interface CommentLine extends NodeBase {
+export interface CommentLine extends LineBase {
     readonly kind: SyntaxKind.CommentLine
     readonly text: string
 }
@@ -81,7 +78,7 @@ export interface CommentLine extends NodeBase {
 export interface ElementDeclarationLine extends LineBase {
     readonly kind: SyntaxKind.ElementDeclarationLine
     readonly tag: TagExpression
-    readonly children: NodeArray<Line | CommentLine>
+    readonly children: NodeArray<Line>
 }
 /** >tag.a.b.c.{{expr}}#ref */
 export interface TagExpression extends NodeBase {

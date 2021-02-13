@@ -16,9 +16,9 @@ import {
     Token,
     TokenSyntaxKind,
     Node,
-    Line,
     LinedTextRange,
     LineBase,
+    MutableNodeArray,
 } from './ast'
 /** The node is in the constructing stage and have no position information. */
 export type ConstructingNode<T extends Node> = Mutable<
@@ -47,8 +47,12 @@ export function createMountingPointLine(
 export function createToken<T extends TokenSyntaxKind>(kind: T): ConstructingNode<Token<T>> {
     return { kind }
 }
-export function createCommentLine(text: string): ConstructingNode<CommentLine> {
-    return { kind: SyntaxKind.CommentLine, text }
+export function createCommentLine(
+    indent: string,
+    text: string,
+    endOfLineToken: LineBase['endOfLineToken'],
+): ConstructingNode<CommentLine> {
+    return { kind: SyntaxKind.CommentLine, indent, indentLevel: indent.length, text, endOfLineToken }
 }
 export function createElementDeclarationLine(
     indent: string,
@@ -150,4 +154,7 @@ export function createMustachesExpression(
 }
 export function createStringLiteral(value: string): ConstructingNode<StringLiteral> {
     return { kind: SyntaxKind.StringLiteral, value }
+}
+export function createNodeArray<T extends Node>(): MutableNodeArray<T> {
+    return []
 }

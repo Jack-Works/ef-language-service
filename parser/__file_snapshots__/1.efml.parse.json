@@ -5,7 +5,18 @@
     "children": [
         {
             "kind": 101,
+            "indent": "",
+            "indentLevel": 0,
             "text": "Tree structure\n",
+            "endOfLineToken": {
+                "kind": 4,
+                "pos": 14,
+                "end": 15,
+                "len": 1,
+                "line": 0,
+                "character": 1,
+                "__kind__": "NewLineTrivia"
+            },
             "pos": 0,
             "end": 15,
             "len": 15,
@@ -15,7 +26,18 @@
         },
         {
             "kind": 101,
+            "indent": "",
+            "indentLevel": 0,
             "text": "Lines not started with >#%@.+- are considered as comments\n",
+            "endOfLineToken": {
+                "kind": 4,
+                "pos": 72,
+                "end": 73,
+                "len": 1,
+                "line": 1,
+                "character": 1,
+                "__kind__": "NewLineTrivia"
+            },
             "pos": 15,
             "end": 73,
             "len": 58,
@@ -25,7 +47,18 @@
         },
         {
             "kind": 101,
+            "indent": "",
+            "indentLevel": 0,
             "text": "The escape character of eft is '&', for prevention of the conflict with js escapes.\n",
+            "endOfLineToken": {
+                "kind": 4,
+                "pos": 156,
+                "end": 157,
+                "len": 1,
+                "line": 2,
+                "character": 1,
+                "__kind__": "NewLineTrivia"
+            },
             "pos": 73,
             "end": 157,
             "len": 84,
@@ -35,7 +68,18 @@
         },
         {
             "kind": 101,
+            "indent": "",
+            "indentLevel": 0,
             "text": "Except for the change of the character, all the usage should be the same.\n",
+            "endOfLineToken": {
+                "kind": 4,
+                "pos": 230,
+                "end": 231,
+                "len": 1,
+                "line": 3,
+                "character": 1,
+                "__kind__": "NewLineTrivia"
+            },
             "pos": 157,
             "end": 231,
             "len": 74,
@@ -45,7 +89,18 @@
         },
         {
             "kind": 101,
+            "indent": "",
+            "indentLevel": 0,
             "text": "this is a comment\n",
+            "endOfLineToken": {
+                "kind": 4,
+                "pos": 248,
+                "end": 249,
+                "len": 1,
+                "line": 4,
+                "character": 1,
+                "__kind__": "NewLineTrivia"
+            },
             "pos": 231,
             "end": 249,
             "len": 18,
@@ -55,7 +110,18 @@
         },
         {
             "kind": 101,
+            "indent": "",
+            "indentLevel": 0,
             "text": "'>' stands for tag name\n",
+            "endOfLineToken": {
+                "kind": 4,
+                "pos": 272,
+                "end": 273,
+                "len": 1,
+                "line": 5,
+                "character": 1,
+                "__kind__": "NewLineTrivia"
+            },
             "pos": 249,
             "end": 273,
             "len": 24,
@@ -120,7 +186,18 @@
             "children": [
                 {
                     "kind": 101,
-                    "text": "  '#' stands for attributes\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "'#' stands for attributes\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 305,
+                        "end": 306,
+                        "len": 1,
+                        "line": 7,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 278,
                     "end": 306,
                     "len": 28,
@@ -130,7 +207,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  Mustaches stands for binding data\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "Mustaches stands for binding data\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 341,
+                        "end": 342,
+                        "len": 1,
+                        "line": 8,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 306,
                     "end": 342,
                     "len": 36,
@@ -140,7 +228,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  content inside mustaches after '=' stands for the default value for this binding\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "content inside mustaches after '=' stands for the default value for this binding\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 424,
+                        "end": 425,
+                        "len": 1,
+                        "line": 9,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 342,
                     "end": 425,
                     "len": 83,
@@ -150,7 +249,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  content without mustaches stands for a static data\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "content without mustaches stands for a static data\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 477,
+                        "end": 478,
+                        "len": 1,
+                        "line": 10,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 425,
                     "end": 478,
                     "len": 53,
@@ -160,7 +270,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  which means that you cannot modify them using ef.js\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "which means that you cannot modify them using ef.js\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 531,
+                        "end": 532,
+                        "len": 1,
+                        "line": 11,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 478,
                     "end": 532,
                     "len": 54,
@@ -612,7 +733,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  '%' stands for properties\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "'%' stands for properties\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 698,
+                        "end": 699,
+                        "len": 1,
+                        "line": 17,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 671,
                     "end": 699,
                     "len": 28,
@@ -803,7 +935,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  '@' stands for events\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "'@' stands for events\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 777,
+                        "end": 778,
+                        "len": 1,
+                        "line": 20,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 754,
                     "end": 778,
                     "len": 24,
@@ -813,7 +956,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  contents after ':' are considered as value passed to the handler\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "contents after ':' are considered as value passed to the handler\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 844,
+                        "end": 845,
+                        "len": 1,
+                        "line": 21,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 778,
                     "end": 845,
                     "len": 67,
@@ -973,7 +1127,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  modify keys now can be bind easily\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "modify keys now can be bind easily\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 938,
+                        "end": 939,
+                        "len": 1,
+                        "line": 23,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 902,
                     "end": 939,
                     "len": 37,
@@ -1119,7 +1284,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  bind to keys is also easy\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "bind to keys is also easy\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1008,
+                        "end": 1009,
+                        "len": 1,
+                        "line": 25,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 981,
                     "end": 1009,
                     "len": 28,
@@ -1208,7 +1384,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  use '.prevent' to preventDefault, '.stop' to stopPropagation, '.stopImmediate' to stopImmediatePropagation\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "use '.prevent' to preventDefault, '.stop' to stopPropagation, '.stopImmediate' to stopImmediatePropagation\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1141,
+                        "end": 1142,
+                        "len": 1,
+                        "line": 27,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 1033,
                     "end": 1142,
                     "len": 109,
@@ -1335,7 +1522,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  use '.capture' to capture an event\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "use '.capture' to capture an event\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1220,
+                        "end": 1221,
+                        "len": 1,
+                        "line": 29,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 1184,
                     "end": 1221,
                     "len": 37,
@@ -1443,7 +1641,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  '.' stands for text nodes\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "'.' stands for text nodes\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1277,
+                        "end": 1278,
+                        "len": 1,
+                        "line": 31,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 1250,
                     "end": 1278,
                     "len": 28,
@@ -1646,7 +1855,18 @@
                     "children": [
                         {
                             "kind": 101,
-                            "text": "    '|' stands for multiline text\n",
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "text": "'|' stands for multiline text\n",
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1350,
+                                "end": 1351,
+                                "len": 1,
+                                "line": 34,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
                             "pos": 1317,
                             "end": 1351,
                             "len": 34,
@@ -1876,7 +2096,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  '-' stands for standard mounting point\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "'-' stands for standard mounting point\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1433,
+                        "end": 1434,
+                        "len": 1,
+                        "line": 39,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 1393,
                     "end": 1434,
                     "len": 41,
@@ -1925,7 +2156,18 @@
                 },
                 {
                     "kind": 101,
-                    "text": "  '.' after a tag name stands for class names for this tag\n",
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "text": "'.' after a tag name stands for class names for this tag\n",
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "pos": 1501,
+                        "end": 1502,
+                        "len": 1,
+                        "line": 41,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
                     "pos": 1443,
                     "end": 1502,
                     "len": 59,
@@ -2158,7 +2400,18 @@
                     "children": [
                         {
                             "kind": 101,
-                            "text": "    '#' at the end of a tag name stands for the reference name of the node\n",
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "text": "'#' at the end of a tag name stands for the reference name of the node\n",
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1616,
+                                "end": 1617,
+                                "len": 1,
+                                "line": 43,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
                             "pos": 1542,
                             "end": 1617,
                             "len": 75,
@@ -2168,7 +2421,18 @@
                         },
                         {
                             "kind": 101,
-                            "text": "    Mustaches after a dot will bind to 'class' automatically\n",
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "text": "Mustaches after a dot will bind to 'class' automatically\n",
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1677,
+                                "end": 1678,
+                                "len": 1,
+                                "line": 44,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
                             "pos": 1617,
                             "end": 1678,
                             "len": 61,
@@ -2520,7 +2784,18 @@
                         },
                         {
                             "kind": 101,
-                            "text": "    '+' stands for list mounting point\n",
+                            "indent": "    ",
+                            "indentLevel": 4,
+                            "text": "'+' stands for list mounting point\n",
+                            "endOfLineToken": {
+                                "kind": 4,
+                                "pos": 1815,
+                                "end": 1816,
+                                "len": 1,
+                                "line": 49,
+                                "character": 1,
+                                "__kind__": "NewLineTrivia"
+                            },
                             "pos": 1777,
                             "end": 1816,
                             "len": 39,
