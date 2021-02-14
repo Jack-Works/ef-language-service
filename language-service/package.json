@@ -5,6 +5,7 @@
   "author": "Jack-Works",
   "license": "MIT",
   "types": "./dist/",
+  "main": "./dist/",
   "engines": {
     "node": "*"
   },

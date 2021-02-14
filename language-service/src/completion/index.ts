@@ -12,6 +12,7 @@ import type {
 import type { EFDocument } from '../document'
 import { getDocument } from '../utils'
 import { getBasicCompletionItems } from './basic-completion'
+import { getForwardedCompletionItems } from './forward-completion'
 
 export function enableCodeCompletion(
     connection: Connection,
@@ -20,23 +21,28 @@ export function enableCodeCompletion(
 ): ServerCapabilities['completionProvider'] {
     if (!cap) return
     connection.onCompletion((param, cancel) => {
-        return getCompletionItemAtPosition(getDocument(param, documents).ast, param.position, cancel)
+        return getCompletionItemAtPosition(connection, getDocument(param, documents).ast, param.position, cancel)
     })
     return {
         resolveProvider: false,
-        triggerCharacters: ['.'],
+        triggerCharacters: ['.', '>', '#', '@', '%'],
         // TODO: what is this?
         allCommitCharacters: undefined,
         workDoneProgress: false,
     }
 }
-export function getCompletionItemAtPosition(
+async function getCompletionItemAtPosition(
+    conn: Connection,
     doc: SourceFile,
     pos: Position,
     cancel: CancellationToken,
-): CompletionItem[] | CompletionList {
+): Promise<CompletionItem[] | CompletionList> {
     if (doc.languageVariant !== LanguageVariant.HTML) return []
-    return mergeCompletionItems([getBasicCompletionItems(doc, pos)])
+    const forwarded = await getForwardedCompletionItems(conn, doc, pos).catch((e) => {
+        console.error(e)
+        return []
+    })
+    return mergeCompletionItems([getBasicCompletionItems(doc, pos), forwarded])
 }
 
 function mergeCompletionItems(com: (CompletionItem[] | CompletionList)[]): CompletionItem[] | CompletionList {

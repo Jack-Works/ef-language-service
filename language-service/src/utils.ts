@@ -1,5 +1,5 @@
-import { forEachChildRecursively, Node, SourceFile } from 'ef-parser'
-import type { Position, TextDocumentIdentifier, TextDocuments } from 'vscode-languageserver'
+import { forEachChildRecursively, Node, SourceFile, SyntaxKind, TokenSyntaxKind } from 'ef-parser'
+import type { CompletionList, Position, TextDocumentIdentifier, TextDocuments } from 'vscode-languageserver'
 import type { EFDocument } from './document'
 
 /** Compatible with ResponseError in vscode */
@@ -36,5 +36,47 @@ export function getNodeAtPosition(node: SourceFile, pos: Position): Node | undef
         if (node.character >= pos.character && node.character - node.len < pos.character) candidates.push(node)
         return
     })
+    const token = candidates.find((x) => TokenSyntaxKind.includes(x.kind as any))
+    if (token) return token
     return candidates.sort((a, b) => a.len - b.len)[0] // the minimal length wins
 }
+
+const cursor = Symbol()
+export const completion = (() => {
+    const f = <T extends string>(tag: T) => (source: TemplateStringsArray, ...args: (string | typeof cursor)[]) => {
+        const pos: Position = { line: 0, character: 0 }
+
+        let beforeCursor = ''
+
+        const file = source.reduce((str, curr, index) => {
+            if (index === args.length) return str + curr
+            const arg = args[index]
+            if (typeof arg === 'symbol') return (beforeCursor = str + curr)
+            return str + curr + arg
+        }, '')
+
+        let lastLine = ''
+        for (const line of beforeCursor.split('\n')) {
+            pos.line++
+            lastLine = line
+        }
+        pos.line--
+        pos.character = lastLine.length
+
+        return [tag, file, pos] as const
+    }
+    return { html: f('html'), ts: f('ts'), js: f('js'), cursor } as const
+})()
+
+export function getParentTagName(node: Node) {
+    if (node.parent?.kind === SyntaxKind.ElementDeclarationLine) {
+        const attr = node.parent.tag.attributes[0]
+        if (attr?.kind !== SyntaxKind.TemplateStringExpression) return false
+        const zero = attr.content[0]
+        if (zero.kind !== SyntaxKind.StringLiteral) return false
+        return zero.value
+    }
+    return false
+}
+
+export const EmptyCompletion: CompletionList = { items: [], isIncomplete: false }

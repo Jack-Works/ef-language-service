@@ -13,7 +13,6 @@
 -   ✅ [Semantic tokens](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_semanticTokens): Provide semantic-aware tokens for code highlighting
 -   ✅ [Folding range](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_foldingRange)
 -   🔜 [Inline hint](https://github.com/microsoft/language-server-protocol/issues/956): Provide inline hint for keycode in event declaration.
--   🔜 [Document links](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentLink): Provide link parse for HTML tags (href, ...etc)
 -   🔜 [Full formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_formatting)
     -   🔜 [Partial formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_rangeFormatting)
     -   🔜 [On type formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_onTypeFormatting)
@@ -23,7 +22,7 @@
     -   🔜 Rename reference
 -   🔜 [Code completion](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_completion)
     -   ✅ Completion for event modifier
-    -   🔜 Delegate to HTML and CSS
+    -   ✅ Completion for tags, events and properties (TODO: need to response in the identifier place)
     -   🔜 Delegate exotic expressions to TypeScript
 -   🔜 [Hover](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_hover)
     -   🔜 Delegate HTML and CSS
@@ -47,6 +46,7 @@ No use cases for those features, RFC.
 
 -   🚫 [Selection range](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_selectionRange): I don't understand what function it represents
 -   🚫 [Document highlight](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentHighlight)
+-   🚫 [Document links](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentLink): Provide link parse for HTML tags (href, ...etc)
 -   🚫 [Document symbols](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentSymbol)
 -   🚫 [Code lens](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_codeLens)
 -   🚫 [Document color](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentColor) and [Color representation](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_colorPresentation): though we can do it for CSS in style attribute, but should we?
