@@ -13,6 +13,7 @@ import { enableDiagnostics } from './diagnostics'
 import { enableFoldingRange } from './folding-range'
 import { enableCodeCompletion } from './completion'
 import { enableUnstableInlayHints } from './inlay'
+import { enableHover } from './hover'
 
 const connection = createConnection(ProposedFeatures.all)
 const documents: TextDocuments<EFDocument> = new TextDocuments(EFDocument)
@@ -28,6 +29,7 @@ connection.onInitialize((params: InitializeParams) => {
             semanticTokensProvider: enableSemanticToken(connection, documents, textDocument?.semanticTokens),
             foldingRangeProvider: enableFoldingRange(connection, documents, textDocument?.foldingRange),
             completionProvider: enableCodeCompletion(connection, documents, textDocument?.completion),
+            hoverProvider: enableHover(connection, documents, textDocument?.hover),
         },
     }
     enableUnstableInlayHints(connection, documents)
