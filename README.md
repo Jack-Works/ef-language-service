@@ -1,5 +1,7 @@
 # efml language service
 
+[Road map](./ROADMAP.md)
+
 ## NPM packages (not published yet)
 
 -   ef-parser
