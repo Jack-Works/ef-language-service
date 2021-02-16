@@ -2860,7 +2860,7 @@
         }
     ],
     "endOfFileToken": {
-        "kind": 23,
+        "kind": 99,
         "pos": 1839,
         "end": 1839,
         "len": 0,

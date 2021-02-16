@@ -26,6 +26,7 @@ export const enum CharacterCodes {
     dot = 0x2e, // .
     equals = 0x3d, // =
     greaterThan = 0x3e, // >
+    exclamation = 0x21, // !
     hash = 0x23, // #
     minus = 0x2d, // -
     openBrace = 0x7b, // {

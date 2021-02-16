@@ -315,6 +315,7 @@ function isSimpleToken(ch: number): SyntaxKind | undefined {
     if (ch === CharacterCodes.colon) return SyntaxKind.ColonToken
     if (ch === CharacterCodes.minus) return SyntaxKind.MinusToken
     if (ch === CharacterCodes.plus) return SyntaxKind.PlusToken
+    if (ch === CharacterCodes.exclamation) return SyntaxKind.ExclamationToken
     return undefined
 }
 function isComplexTokenStart(ch: number) {
