@@ -13,7 +13,7 @@ it('should parse the document 1 as expected', () => {
     const ast = parseSourceFile(doc, 'example.efml')
     expect(toString(ast)).toMatchFile(join(__dirname, '../__file_snapshots__/1.efml.parse.json'))
     expect(toString(simpleAST(ast))).toMatchFile(join(__dirname, '../__file_snapshots__/1.efml.parse.simple.json'))
-    expect(mapErrorToSource(ast, ast.parseDiagnostics)).toMatchFile(
+    expect(mapErrorToSource(ast, ast.diagnostics)).toMatchFile(
         join(__dirname, '../__file_snapshots__/1.efml.parse-errors.txt'),
     )
 })

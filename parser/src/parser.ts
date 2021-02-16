@@ -13,13 +13,15 @@ import {
     SourceFile,
     StringLiteral,
     SyntaxKind,
-    TagExpression,
+    TagDescriptor,
     TemplateExpression,
     TextLine,
     Token,
     TokenSyntaxKind,
     MutableNodeArray,
     LanguageVariant,
+    DottedExpressionChain,
+    InlineNode,
 } from './types/ast'
 import { Diagnostic, DiagnosticMessage, fillMessage, Position } from './types/diagnostics'
 import {
@@ -31,12 +33,13 @@ import {
     createElementDeclarationLine,
     createElementEventLine,
     createTextLine,
-    createTagExpression,
+    createTagDescriptor,
     createTemplateExpression,
     createStringLiteral,
     createMustachesExpression,
     ConstructingNode,
     createNodeArray,
+    createDottedExpressionChain,
 } from './types/factory'
 import { DiagnosticMessages } from './types/messages'
 import { forEachChild } from './types/visitor'
@@ -54,7 +57,7 @@ const {
     lookAheadIdentLevel,
     getLinedPos,
     getLastTokenLinedPos,
-    getTokenStartPos,
+    getLeadingTriviaText,
 } = (() => {
     const scanner = createScanner('')
     const {
@@ -62,7 +65,7 @@ const {
         getTrivialStartPos: getNodePos,
         lookAheadIdentLevel,
         getLastTokenLinedPos,
-        getTokenStartPos,
+        getLeadingTriviaText,
         getLinedPos,
     } = scanner
 
@@ -72,11 +75,11 @@ const {
 
     let currentToken = SyntaxKind.EndOfFileToken
     function snapshot() {
-        const saveParserDiagnostics = [...parseDiagnostics]
+        const saveParseDiagnostics = [...parseDiagnostics]
         const state = [currentToken]
         return () => {
             ;[currentToken] = state
-            parseDiagnostics = saveParserDiagnostics
+            parseDiagnostics = saveParseDiagnostics
         }
     }
     function lookAhead<T>(callback: () => T): T {
@@ -99,7 +102,7 @@ const {
         getNodePos,
         scan,
         getTokenText,
-        getTokenStartPos,
+        getLeadingTriviaText,
         lookAheadIdentLevel,
         initParserState(text: string) {
             parseDiagnostics = []
@@ -163,7 +166,7 @@ function parseElementAttributeOrPropertyLine(
     )
 }
 function parseElementDeclarationLine(indent: string, currentLevel: number): ConstructingNode<ElementDeclarationLine> {
-    const expr = parseTagExpression()
+    const expr = parseTagDescriptor()
     const eol = parseLineEnding()
     const nextIndentLevel = lookAheadIdentLevel()
     const children =
@@ -196,7 +199,10 @@ function parseElementEventLine(indent: string): ConstructingNode<ElementEventLin
     return createElementEventLine(
         indent,
         parseExpectedToken(SyntaxKind.AtToken),
-        parseIdentifierAndDotArray(),
+        parseStringLiteralUntil([SyntaxKind.DotToken, SyntaxKind.EqualsToken]),
+        token() === SyntaxKind.DotToken
+            ? [parseExpectedToken(SyntaxKind.DotToken), parseIdentifierAndDotArray()]
+            : undefined,
         parseExpectedToken(SyntaxKind.EqualsToken),
         parseStringLiteralUntil([SyntaxKind.ColonToken]),
         token() === SyntaxKind.ColonToken
@@ -205,11 +211,9 @@ function parseElementEventLine(indent: string): ConstructingNode<ElementEventLin
         parseLineEnding(),
     )
 
-    function parseIdentifierAndDotArray(): NodeArray<StringLiteral | Token<SyntaxKind.DotToken>> {
-        return parseNodeList(
-            () =>
-                parseOptionalToken(SyntaxKind.DotToken) ||
-                parseStringLiteralUntil([SyntaxKind.DotToken, SyntaxKind.EqualsToken]),
+    function parseIdentifierAndDotArray() {
+        return parseDottedExpressionChain(
+            () => parseStringLiteralUntil([SyntaxKind.DotToken, SyntaxKind.EqualsToken]),
             isNextTokenNoneOf(SyntaxKind.NewLineTrivia, SyntaxKind.EndOfFileToken, SyntaxKind.EqualsToken),
         )
     }
@@ -242,7 +246,6 @@ function parseStringLiteralUntil(kind: SyntaxKind[]): StringLiteral {
     })
 }
 function parseTemplateExpressionUntil(until: SyntaxKind[]): TemplateExpression {
-    const pos = getNodePos()
     return withPos(() => {
         return createTemplateExpression(
             parseNodeList(
@@ -259,9 +262,8 @@ function parseMustachesExpression(): MustachesExpression {
     return withPos(() =>
         createMustachesExpression(
             parseExpectedToken(SyntaxKind.MustacheStartToken),
-            parseNodeList(
+            parseDottedExpressionChain(
                 () =>
-                    parseOptionalToken(SyntaxKind.DotToken) ||
                     parseStringLiteralUntil([SyntaxKind.DotToken, SyntaxKind.MustacheEndToken, SyntaxKind.EqualsToken]),
                 isNextTokenOneOf(SyntaxKind.DotToken, SyntaxKind.TextFragment),
             ),
@@ -275,21 +277,25 @@ function parseMustachesExpression(): MustachesExpression {
         ),
     )
 }
-function parseTagExpression(): TagExpression {
+function parseTagDescriptor(): TagDescriptor {
     return withPos(() =>
-        createTagExpression(
+        createTagDescriptor(
             parseExpectedToken(SyntaxKind.GreaterThanToken),
-            parseTemplateExpressionAndDotArray(),
+            parseStringLiteralUntil([
+                SyntaxKind.DotToken,
+                SyntaxKind.HashToken,
+                SyntaxKind.MustacheStartToken,
+                SyntaxKind.MustacheEndToken,
+            ]),
+            token() === SyntaxKind.DotToken ? [parseExpectedToken(SyntaxKind.DotToken), parseAttributes()] : undefined,
             token() === SyntaxKind.HashToken
                 ? [parseExpectedToken(SyntaxKind.HashToken), parseStringLiteralUntil([])]
                 : undefined,
         ),
     )
-    function parseTemplateExpressionAndDotArray(): NodeArray<TemplateExpression | Token<SyntaxKind.DotToken>> {
-        return parseNodeList(
-            () =>
-                parseOptionalToken(SyntaxKind.DotToken) ||
-                parseTemplateExpressionUntil([SyntaxKind.DotToken, SyntaxKind.EqualsToken, SyntaxKind.HashToken]),
+    function parseAttributes() {
+        return parseDottedExpressionChain(
+            () => parseTemplateExpressionUntil([SyntaxKind.DotToken, SyntaxKind.EqualsToken, SyntaxKind.HashToken]),
             isNextTokenNoneOf(
                 SyntaxKind.NewLineTrivia,
                 SyntaxKind.EndOfFileToken,
@@ -298,6 +304,22 @@ function parseTagExpression(): TagExpression {
             ),
         )
     }
+}
+function parseDottedExpressionChain<T extends InlineNode>(
+    parseT: () => T,
+    shouldContinue: () => boolean,
+): DottedExpressionChain<T> {
+    return withPos(() =>
+        createDottedExpressionChain(
+            parseNodeListGenerator(function* () {
+                yield parseT()
+                while (shouldContinue()) {
+                    yield parseExpectedToken(SyntaxKind.DotToken)
+                    yield parseT()
+                }
+            }),
+        ),
+    )
 }
 //#endregion
 
@@ -315,13 +337,19 @@ function parseNodeList<T extends Node>(parser: () => T | undefined, shouldContin
     }
     return finishNodeArray(arr, pos)
 }
+function parseNodeListGenerator<T extends Node>(parser: () => Generator<T>) {
+    const arr = createNodeArray<T>()
+    const pos = getNodePos()
+    arr.push(...parser())
+    return finishNodeArray(arr, pos)
+}
 function createMissingNode<T extends Token<any> | StringLiteral>(
     kind: T['kind'],
     diagnosticMessage: DiagnosticMessage,
 ): T {
     if (diagnosticMessage) parseErrorAtCurrentToken(diagnosticMessage)
 
-    const result = kind === SyntaxKind.StringLiteral ? createStringLiteral('') : createToken(kind)
+    const result = kind === SyntaxKind.StringLiteral ? createStringLiteral('') : createToken(kind, '')
     result.missing = true
     return finishNode(result as any, getNodePos(), getLastTokenLinedPos()) as T
 }
@@ -332,8 +360,9 @@ function parseOptionalToken<TKind extends TokenSyntaxKind>(t: TKind): undefined 
 function parseExpectedToken<T extends TokenSyntaxKind>(kind: T): Token<T> {
     if (token() === kind)
         return withPos(() => {
+            const text = getLeadingTriviaText() + getTokenText()
             scan()
-            return createToken(kind)
+            return createToken(kind, text)
         })
     return withPos(() =>
         createMissingNode<Token<T>>(kind, fillMessage(DiagnosticMessages.$1_expected, SyntaxKindToString(kind))),

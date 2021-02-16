@@ -9,31 +9,30 @@ import {
     SourceFile,
     StringLiteral,
     SyntaxKind,
-    TagExpression,
+    TagDescriptor,
     TemplateExpression,
     TextLine,
-    LinelessTextRange,
+    NodePosition,
     Token,
     TokenSyntaxKind,
     Node,
-    LinedTextRange,
     LineBase,
     MutableNodeArray,
     LanguageVariant,
+    DottedExpressionChain,
+    InlineNode,
 } from './ast'
 /** The node is in the constructing stage and have no position information. */
-export type ConstructingNode<T extends Node> = Mutable<
-    Omit<T, keyof LinelessTextRange | keyof LinedTextRange> & Partial<LinelessTextRange & LinedTextRange>
->
+export type ConstructingNode<T extends Node> = Mutable<Omit<T, keyof NodePosition> & Partial<NodePosition>>
 export function createSourceFile(
     path: SourceFile['path'],
     text: SourceFile['text'],
     languageVariant: LanguageVariant,
     children: SourceFile['children'],
     endOfFileToken: SourceFile['endOfFileToken'],
-    parseDiagnostics: SourceFile['parseDiagnostics'],
+    diagnostics: SourceFile['diagnostics'],
 ): ConstructingNode<SourceFile> {
-    return { kind: SyntaxKind.SourceFile, path, languageVariant, children, endOfFileToken, parseDiagnostics, text }
+    return { kind: SyntaxKind.SourceFile, path, languageVariant, children, endOfFileToken, diagnostics, text }
 }
 export function createMountingPointLine(
     indent: string,
@@ -51,8 +50,8 @@ export function createMountingPointLine(
     }
 }
 
-export function createToken<T extends TokenSyntaxKind>(kind: T): ConstructingNode<Token<T>> {
-    return { kind } as any
+export function createToken<T extends TokenSyntaxKind>(kind: T, text: string): ConstructingNode<Token<T>> {
+    return { kind, text } as { kind: T; __type__level__only__brand__: any; text: string }
 }
 export function createCommentLine(
     indent: string,
@@ -63,12 +62,12 @@ export function createCommentLine(
 }
 export function createElementDeclarationLine(
     indent: string,
-    tag: TagExpression,
+    tag: TagDescriptor,
     endOfLineToken: LineBase['endOfLineToken'],
     children: ElementDeclarationLine['children'],
 ): ConstructingNode<ElementDeclarationLine> {
     return {
-        kind: SyntaxKind.ElementDeclarationLine,
+        kind: SyntaxKind.ElementDeclaration,
         indent,
         indentLevel: indent.length,
         tag,
@@ -76,14 +75,16 @@ export function createElementDeclarationLine(
         children,
     }
 }
-export function createTagExpression(
-    startToken: TagExpression['startToken'],
-    attributes: TagExpression['attributes'],
-    reference: TagExpression['reference'],
-): ConstructingNode<TagExpression> {
+export function createTagDescriptor(
+    startToken: TagDescriptor['startToken'],
+    tagName: TagDescriptor['tagName'],
+    attributes: TagDescriptor['attributes'],
+    reference: TagDescriptor['reference'],
+): ConstructingNode<TagDescriptor> {
     return {
         kind: SyntaxKind.TagExpression,
         startToken,
+        tagName,
         attributes,
         reference,
     }
@@ -109,7 +110,8 @@ export function createElementAttributeOrPropertyLine(
 export function createElementEventLine(
     indent: string,
     atToken: ElementEventLine['atToken'],
-    eventDescriptor: ElementEventLine['eventDescriptor'],
+    event: ElementEventLine['event'],
+    modifier: ElementEventLine['modifier'],
     equalsToken: ElementEventLine['equalsToken'],
     handler: ElementEventLine['handler'],
     parameter: ElementEventLine['parameter'],
@@ -120,7 +122,8 @@ export function createElementEventLine(
         indent,
         indentLevel: indent.length,
         atToken,
-        eventDescriptor,
+        event,
+        modifier,
         equalsToken,
         handler,
         parameter,
@@ -160,7 +163,12 @@ export function createMustachesExpression(
     }
 }
 export function createStringLiteral(value: string): ConstructingNode<StringLiteral> {
-    return { kind: SyntaxKind.StringLiteral, value }
+    return { kind: SyntaxKind.StringLiteral, text: value }
+}
+export function createDottedExpressionChain<T extends InlineNode>(
+    items: DottedExpressionChain<T>['items'],
+): ConstructingNode<DottedExpressionChain<T>> {
+    return { kind: SyntaxKind.DottedExpressionChain, items }
 }
 export function createNodeArray<T extends Node>(): MutableNodeArray<T> {
     return []

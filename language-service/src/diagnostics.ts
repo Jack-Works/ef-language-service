@@ -9,7 +9,7 @@ export function enableDiagnostics(
     if (!cap) return
     documents.onDidChangeContent((change) => {
         const textDocument = change.document
-        const diagnostics: Diagnostic[] = textDocument.ast.parseDiagnostics.map((x) => ({
+        const diagnostics: Diagnostic[] = textDocument.ast.diagnostics.map((x) => ({
             ...x,
             source: `ef.js`,
         }))

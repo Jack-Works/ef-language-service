@@ -1,4 +1,4 @@
-import { Node, NodeArray, SyntaxKind } from './ast'
+import { ElementEventLine, Node, NodeArray, StringLiteral, SyntaxKind } from './ast'
 import { isToken, assertNever } from '../utils'
 export function visitNode<T>(callback: (node: Node) => T, node: Node | undefined): T | undefined {
     return node && callback(node)
@@ -27,7 +27,7 @@ export function forEachChild<T>(
     switch (node.kind) {
         case SyntaxKind.SourceFile:
             return xs(node.children) || x(node.endOfFileToken)
-        case SyntaxKind.ElementDeclarationLine:
+        case SyntaxKind.ElementDeclaration:
             return x(node.tag) || xs(node.children)
         case SyntaxKind.TagExpression:
             return (
@@ -44,7 +44,8 @@ export function forEachChild<T>(
         case SyntaxKind.ElementEventHandlerDeclaration:
             return (
                 x(node.atToken) ||
-                xs(node.eventDescriptor) ||
+                x(node.event) ||
+                (node.modifier ? x(node.modifier[0]) || x(node.modifier[1]) : undefined) ||
                 x(node.equalsToken) ||
                 x(node.handler) ||
                 (node.parameter ? x(node.parameter[0]) || x(node.parameter[1]) : undefined)
@@ -56,7 +57,7 @@ export function forEachChild<T>(
         case SyntaxKind.MustacheExpression:
             return (
                 x(node.startToken) ||
-                xs(node.expression) ||
+                x(node.expression) ||
                 (node.initializer ? x(node.initializer[0]) || x(node.initializer[1]) : undefined) ||
                 x(node.endToken)
             )
@@ -64,6 +65,8 @@ export function forEachChild<T>(
             return xs(node.content)
         case SyntaxKind.CommentLine:
             return x(node.endOfLineToken)
+        case SyntaxKind.DottedExpressionChain:
+            return xs(node.items)
         case SyntaxKind.StringLiteral:
             return undefined
     }
@@ -90,4 +93,13 @@ export function forEachChildRecursively<T>(
               }
             : undefined,
     )
+}
+
+export function getEventLineModifiers(x: ElementEventLine | ElementEventLine['modifier']): string[] {
+    if (!x) return []
+    if (Array.isArray(x)) {
+        const expr = x[1] as NonNullable<ElementEventLine['modifier']>[1]
+        return expr.items.filter((x): x is StringLiteral => x.kind === SyntaxKind.StringLiteral).map((x) => x.text)
+    }
+    return getEventLineModifiers((<ElementEventLine>x).modifier)
 }

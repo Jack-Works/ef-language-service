@@ -8,18 +8,11 @@
         "CommentLine",
         "CommentLine",
         {
-            "kind": "ElementDeclarationLine",
+            "kind": "ElementDeclaration",
             "tag@TagExpression": {
                 "kind": "TagExpression",
                 "startToken@GreaterThanToken": "GreaterThanToken",
-                "attributes": [
-                    {
-                        "kind": "TemplateStringExpression",
-                        "content": [
-                            "StringLiteral"
-                        ]
-                    }
-                ]
+                "tagName@StringLiteral": "StringLiteral"
             },
             "children": [
                 "CommentLine",
@@ -39,9 +32,12 @@
                                 {
                                     "kind": "MustacheExpression",
                                     "startToken@MustacheStartToken": "MustacheStartToken",
-                                    "expression": [
-                                        "StringLiteral"
-                                    ],
+                                    "expression@DottedExpressionChain": {
+                                        "kind": "DottedExpressionChain",
+                                        "items": [
+                                            "StringLiteral"
+                                        ]
+                                    },
                                     "initializer": [
                                         "EqualsToken",
                                         "StringLiteral"
@@ -64,11 +60,14 @@
                                 {
                                     "kind": "MustacheExpression",
                                     "startToken@MustacheStartToken": "MustacheStartToken",
-                                    "expression": [
-                                        "StringLiteral",
-                                        "DotToken",
-                                        "StringLiteral"
-                                    ],
+                                    "expression@DottedExpressionChain": {
+                                        "kind": "DottedExpressionChain",
+                                        "items": [
+                                            "StringLiteral",
+                                            "DotToken",
+                                            "StringLiteral"
+                                        ]
+                                    },
                                     "initializer": [
                                         "EqualsToken",
                                         "StringLiteral"
@@ -126,9 +125,12 @@
                                 {
                                     "kind": "MustacheExpression",
                                     "startToken@MustacheStartToken": "MustacheStartToken",
-                                    "expression": [
-                                        "StringLiteral"
-                                    ],
+                                    "expression@DottedExpressionChain": {
+                                        "kind": "DottedExpressionChain",
+                                        "items": [
+                                            "StringLiteral"
+                                        ]
+                                    },
                                     "endToken@MustacheEndToken": "MustacheEndToken"
                                 }
                             ]
@@ -154,9 +156,7 @@
                 {
                     "kind": "ElementEventHandlerDeclaration",
                     "atToken@AtToken": "AtToken",
-                    "eventDescriptor": [
-                        "StringLiteral"
-                    ],
+                    "event@StringLiteral": "StringLiteral",
                     "equalsToken@EqualsToken": "EqualsToken",
                     "handler@StringLiteral": "StringLiteral",
                     "parameter": [
@@ -167,11 +167,14 @@
                                 {
                                     "kind": "MustacheExpression",
                                     "startToken@MustacheStartToken": "MustacheStartToken",
-                                    "expression": [
-                                        "StringLiteral",
-                                        "DotToken",
-                                        "StringLiteral"
-                                    ],
+                                    "expression@DottedExpressionChain": {
+                                        "kind": "DottedExpressionChain",
+                                        "items": [
+                                            "StringLiteral",
+                                            "DotToken",
+                                            "StringLiteral"
+                                        ]
+                                    },
                                     "endToken@MustacheEndToken": "MustacheEndToken"
                                 },
                                 "StringLiteral"
@@ -183,16 +186,21 @@
                 {
                     "kind": "ElementEventHandlerDeclaration",
                     "atToken@AtToken": "AtToken",
-                    "eventDescriptor": [
-                        "StringLiteral",
+                    "event@StringLiteral": "StringLiteral",
+                    "modifier": [
                         "DotToken",
-                        "StringLiteral",
-                        "DotToken",
-                        "StringLiteral",
-                        "DotToken",
-                        "StringLiteral",
-                        "DotToken",
-                        "StringLiteral"
+                        {
+                            "kind": "DottedExpressionChain",
+                            "items": [
+                                "StringLiteral",
+                                "DotToken",
+                                "StringLiteral",
+                                "DotToken",
+                                "StringLiteral",
+                                "DotToken",
+                                "StringLiteral"
+                            ]
+                        }
                     ],
                     "equalsToken@EqualsToken": "EqualsToken",
                     "handler@StringLiteral": "StringLiteral"
@@ -201,10 +209,15 @@
                 {
                     "kind": "ElementEventHandlerDeclaration",
                     "atToken@AtToken": "AtToken",
-                    "eventDescriptor": [
-                        "StringLiteral",
+                    "event@StringLiteral": "StringLiteral",
+                    "modifier": [
                         "DotToken",
-                        "StringLiteral"
+                        {
+                            "kind": "DottedExpressionChain",
+                            "items": [
+                                "StringLiteral"
+                            ]
+                        }
                     ],
                     "equalsToken@EqualsToken": "EqualsToken",
                     "handler@StringLiteral": "StringLiteral"
@@ -213,14 +226,19 @@
                 {
                     "kind": "ElementEventHandlerDeclaration",
                     "atToken@AtToken": "AtToken",
-                    "eventDescriptor": [
-                        "StringLiteral",
+                    "event@StringLiteral": "StringLiteral",
+                    "modifier": [
                         "DotToken",
-                        "StringLiteral",
-                        "DotToken",
-                        "StringLiteral",
-                        "DotToken",
-                        "StringLiteral"
+                        {
+                            "kind": "DottedExpressionChain",
+                            "items": [
+                                "StringLiteral",
+                                "DotToken",
+                                "StringLiteral",
+                                "DotToken",
+                                "StringLiteral"
+                            ]
+                        }
                     ],
                     "equalsToken@EqualsToken": "EqualsToken",
                     "handler@StringLiteral": "StringLiteral"
@@ -229,12 +247,17 @@
                 {
                     "kind": "ElementEventHandlerDeclaration",
                     "atToken@AtToken": "AtToken",
-                    "eventDescriptor": [
-                        "StringLiteral",
+                    "event@StringLiteral": "StringLiteral",
+                    "modifier": [
                         "DotToken",
-                        "StringLiteral",
-                        "DotToken",
-                        "StringLiteral"
+                        {
+                            "kind": "DottedExpressionChain",
+                            "items": [
+                                "StringLiteral",
+                                "DotToken",
+                                "StringLiteral"
+                            ]
+                        }
                     ],
                     "equalsToken@EqualsToken": "EqualsToken",
                     "handler@StringLiteral": "StringLiteral"
@@ -250,36 +273,35 @@
                             {
                                 "kind": "MustacheExpression",
                                 "startToken@MustacheStartToken": "MustacheStartToken",
-                                "expression": [
-                                    "StringLiteral"
-                                ],
+                                "expression@DottedExpressionChain": {
+                                    "kind": "DottedExpressionChain",
+                                    "items": [
+                                        "StringLiteral"
+                                    ]
+                                },
                                 "endToken@MustacheEndToken": "MustacheEndToken"
                             },
                             "StringLiteral",
                             {
                                 "kind": "MustacheExpression",
                                 "startToken@MustacheStartToken": "MustacheStartToken",
-                                "expression": [
-                                    "StringLiteral"
-                                ],
+                                "expression@DottedExpressionChain": {
+                                    "kind": "DottedExpressionChain",
+                                    "items": [
+                                        "StringLiteral"
+                                    ]
+                                },
                                 "endToken@MustacheEndToken": "MustacheEndToken"
                             }
                         ]
                     }
                 },
                 {
-                    "kind": "ElementDeclarationLine",
+                    "kind": "ElementDeclaration",
                     "tag@TagExpression": {
                         "kind": "TagExpression",
                         "startToken@GreaterThanToken": "GreaterThanToken",
-                        "attributes": [
-                            {
-                                "kind": "TemplateStringExpression",
-                                "content": [
-                                    "StringLiteral"
-                                ]
-                            }
-                        ]
+                        "tagName@StringLiteral": "StringLiteral"
                     },
                     "children": [
                         "CommentLine",
@@ -316,18 +338,11 @@
                     ]
                 },
                 {
-                    "kind": "ElementDeclarationLine",
+                    "kind": "ElementDeclaration",
                     "tag@TagExpression": {
                         "kind": "TagExpression",
                         "startToken@GreaterThanToken": "GreaterThanToken",
-                        "attributes": [
-                            {
-                                "kind": "TemplateStringExpression",
-                                "content": [
-                                    "StringLiteral"
-                                ]
-                            }
-                        ]
+                        "tagName@StringLiteral": "StringLiteral"
                     },
                     "children": []
                 },
@@ -339,65 +354,16 @@
                 },
                 "CommentLine",
                 {
-                    "kind": "ElementDeclarationLine",
+                    "kind": "ElementDeclaration",
                     "tag@TagExpression": {
                         "kind": "TagExpression",
                         "startToken@GreaterThanToken": "GreaterThanToken",
+                        "tagName@StringLiteral": "StringLiteral",
                         "attributes": [
-                            {
-                                "kind": "TemplateStringExpression",
-                                "content": [
-                                    "StringLiteral"
-                                ]
-                            },
                             "DotToken",
                             {
-                                "kind": "TemplateStringExpression",
-                                "content": [
-                                    "StringLiteral"
-                                ]
-                            },
-                            "DotToken",
-                            {
-                                "kind": "TemplateStringExpression",
-                                "content": [
-                                    {
-                                        "kind": "MustacheExpression",
-                                        "startToken@MustacheStartToken": "MustacheStartToken",
-                                        "expression": [
-                                            "StringLiteral",
-                                            "DotToken",
-                                            "StringLiteral"
-                                        ],
-                                        "endToken@MustacheEndToken": "MustacheEndToken"
-                                    }
-                                ]
-                            },
-                            "DotToken",
-                            {
-                                "kind": "TemplateStringExpression",
-                                "content": [
-                                    "StringLiteral"
-                                ]
-                            },
-                            "DotToken",
-                            {
-                                "kind": "TemplateStringExpression",
-                                "content": [
-                                    "StringLiteral"
-                                ]
-                            }
-                        ]
-                    },
-                    "children": [
-                        "CommentLine",
-                        "CommentLine",
-                        {
-                            "kind": "ElementDeclarationLine",
-                            "tag@TagExpression": {
-                                "kind": "TagExpression",
-                                "startToken@GreaterThanToken": "GreaterThanToken",
-                                "attributes": [
+                                "kind": "DottedExpressionChain",
+                                "items": [
                                     {
                                         "kind": "TemplateStringExpression",
                                         "content": [
@@ -411,14 +377,69 @@
                                             {
                                                 "kind": "MustacheExpression",
                                                 "startToken@MustacheStartToken": "MustacheStartToken",
-                                                "expression": [
-                                                    "StringLiteral"
-                                                ],
-                                                "initializer": [
-                                                    "EqualsToken",
-                                                    "StringLiteral"
-                                                ],
+                                                "expression@DottedExpressionChain": {
+                                                    "kind": "DottedExpressionChain",
+                                                    "items": [
+                                                        "StringLiteral",
+                                                        "DotToken",
+                                                        "StringLiteral"
+                                                    ]
+                                                },
                                                 "endToken@MustacheEndToken": "MustacheEndToken"
+                                            }
+                                        ]
+                                    },
+                                    "DotToken",
+                                    {
+                                        "kind": "TemplateStringExpression",
+                                        "content": [
+                                            "StringLiteral"
+                                        ]
+                                    },
+                                    "DotToken",
+                                    {
+                                        "kind": "TemplateStringExpression",
+                                        "content": [
+                                            "StringLiteral"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "children": [
+                        "CommentLine",
+                        "CommentLine",
+                        {
+                            "kind": "ElementDeclaration",
+                            "tag@TagExpression": {
+                                "kind": "TagExpression",
+                                "startToken@GreaterThanToken": "GreaterThanToken",
+                                "tagName@StringLiteral": "StringLiteral",
+                                "attributes": [
+                                    "DotToken",
+                                    {
+                                        "kind": "DottedExpressionChain",
+                                        "items": [
+                                            {
+                                                "kind": "TemplateStringExpression",
+                                                "content": [
+                                                    {
+                                                        "kind": "MustacheExpression",
+                                                        "startToken@MustacheStartToken": "MustacheStartToken",
+                                                        "expression@DottedExpressionChain": {
+                                                            "kind": "DottedExpressionChain",
+                                                            "items": [
+                                                                "StringLiteral"
+                                                            ]
+                                                        },
+                                                        "initializer": [
+                                                            "EqualsToken",
+                                                            "StringLiteral"
+                                                        ],
+                                                        "endToken@MustacheEndToken": "MustacheEndToken"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -439,9 +460,12 @@
                                             {
                                                 "kind": "MustacheExpression",
                                                 "startToken@MustacheStartToken": "MustacheStartToken",
-                                                "expression": [
-                                                    "StringLiteral"
-                                                ],
+                                                "expression@DottedExpressionChain": {
+                                                    "kind": "DottedExpressionChain",
+                                                    "items": [
+                                                        "StringLiteral"
+                                                    ]
+                                                },
                                                 "endToken@MustacheEndToken": "MustacheEndToken"
                                             }
                                         ]
@@ -475,5 +499,5 @@
             ]
         }
     ],
-    "parseDiagnostics": []
+    "diagnostics": []
 }

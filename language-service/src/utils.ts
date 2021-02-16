@@ -69,12 +69,8 @@ export const completion = (() => {
 })()
 
 export function getParentTagName(node: Node) {
-    if (node.parent?.kind === SyntaxKind.ElementDeclarationLine) {
-        const attr = node.parent.tag.attributes[0]
-        if (attr?.kind !== SyntaxKind.TemplateStringExpression) return false
-        const zero = attr.content[0]
-        if (zero.kind !== SyntaxKind.StringLiteral) return false
-        return zero.value
+    if (node.parent?.kind === SyntaxKind.ElementDeclaration) {
+        return node.parent.tag.tagName.text
     }
     return false
 }

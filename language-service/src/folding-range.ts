@@ -29,7 +29,7 @@ export function getFoldingRangeForNode(node: Node, cancel?: CancellationToken): 
     if (cancel?.isCancellationRequested) throw CommonErrors.requestCancelled
 
     if (node.kind === SyntaxKind.SourceFile) return set(getFoldRangeForNodeArray(node.children))
-    if (node.kind === SyntaxKind.ElementDeclarationLine) {
+    if (node.kind === SyntaxKind.ElementDeclaration) {
         return set(normalize(getRangeForElementDeclarationLine(node)).concat(getFoldRangeForNodeArray(node.children)))
     }
     return []
@@ -99,7 +99,7 @@ function getRangeForElementDeclarationLine(node: ElementDeclarationLine): Foldin
     const last = node.children[node.children.length - 1]
     let endLine = last.line
 
-    if (last.kind === SyntaxKind.ElementDeclarationLine) {
+    if (last.kind === SyntaxKind.ElementDeclaration) {
         endLine = getRangeForElementDeclarationLine(last)?.endLine ?? endLine
     }
     const result: FoldingRange = { kind: foldingTable[node.kind], startLine: node.line, endLine }
@@ -107,7 +107,7 @@ function getRangeForElementDeclarationLine(node: ElementDeclarationLine): Foldin
     return result
 }
 const foldingTable: Partial<Record<SyntaxKind, string>> = {
-    [SyntaxKind.ElementDeclarationLine]: 'element',
+    [SyntaxKind.ElementDeclaration]: 'element',
     [SyntaxKind.CommentLine]: 'comment',
     [SyntaxKind.TextLine]: 'text',
 }

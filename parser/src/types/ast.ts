@@ -28,7 +28,7 @@ export enum SyntaxKind {
     FirstNode = 100,
     SourceFile = FirstNode,
     CommentLine,
-    ElementDeclarationLine,
+    ElementDeclaration,
     ElementAttributeOrPropertyDeclaration,
     ElementEventHandlerDeclaration,
     MountingPointDeclaration,
@@ -37,33 +37,42 @@ export enum SyntaxKind {
     TextLine,
     MustacheExpression,
     StringLiteral,
+    DottedExpressionChain,
 }
-export interface LinelessTextRange {
+/**
+ * All node excepts SourceFile has position.
+ * For multiple line node, it children doesn't contribute to the position.
+ */
+export interface NodePosition extends Position {
     pos: number
     end: number
-}
-export interface LinedTextRange extends Position {
+    // not use "length" cause when we set length on an array it will be strange
     len: number
 }
-export interface NodeBase extends LinelessTextRange, LinedTextRange {
+export interface NodeBaseWithoutPosition {
     readonly kind: SyntaxKind
-    readonly parent?: Node
     /** @internal */ readonly missing?: boolean
     /** @internal debug only */ readonly __kind__?: string
 }
-export interface Token<TKind extends TokenSyntaxKind> extends NodeBase {
+export interface NodeBase extends NodeBaseWithoutPosition, NodePosition {
+    readonly parent?: Node
+}
+export interface NodeWithSource {
+    /** source text of the node. includes leading trivia */
+    readonly text: string
+}
+export interface Token<TKind extends TokenSyntaxKind> extends NodeBase, NodeWithSource {
     readonly kind: TKind
     readonly __type__level__only__brand__: TKind
 }
 /** An efml SourceFile */
-export interface SourceFile extends NodeBase {
+export interface SourceFile extends NodeBase, NodeWithSource {
     readonly kind: SyntaxKind.SourceFile
     readonly path: string
     readonly languageVariant: LanguageVariant
     readonly children: NodeArray<Line>
     readonly endOfFileToken: Token<SyntaxKind.EndOfFileToken>
-    readonly parseDiagnostics: Diagnostic[]
-    readonly text: string
+    readonly diagnostics: Diagnostic[]
 }
 export enum LanguageVariant {
     Unknown,
@@ -75,39 +84,43 @@ export interface LineBase extends NodeBase {
     readonly indent: string
     readonly endOfLineToken: Token<SyntaxKind.NewLineTrivia | SyntaxKind.EndOfFileToken>
 }
-export interface CommentLine extends LineBase {
+export interface CommentLine extends LineBase, NodeWithSource {
     readonly kind: SyntaxKind.CommentLine
-    readonly text: string
 }
 /** >tag.a.b.c.{{expr}}#ref\nchildren */
 export interface ElementDeclarationLine extends LineBase {
-    readonly kind: SyntaxKind.ElementDeclarationLine
-    readonly tag: TagExpression
+    readonly kind: SyntaxKind.ElementDeclaration
+    readonly tag: TagDescriptor
     readonly children: NodeArray<Line>
 }
 /** >tag.a.b.c.{{expr}}#ref */
-export interface TagExpression extends NodeBase {
+export interface TagDescriptor extends NodeBase {
     readonly kind: SyntaxKind.TagExpression
     readonly startToken: Token<SyntaxKind.GreaterThanToken>
-    readonly attributes: NodeArray<TemplateExpression | Token<SyntaxKind.DotToken>>
-    readonly reference?: readonly [Token<SyntaxKind.HashToken>, StringLiteral]
+    readonly tagName: StringLiteral
+    readonly attributes: undefined | [Token<SyntaxKind.DotToken>, DottedExpressionChain<TemplateExpression>]
+    readonly reference: undefined | readonly [Token<SyntaxKind.HashToken>, StringLiteral]
 }
-/** #attr = data */
+/**
+ * #attr = data
+ * %attr = data
+ */
 export interface ElementAttributeOrPropertyDeclarationLine extends LineBase {
     readonly kind: SyntaxKind.ElementAttributeOrPropertyDeclaration
     readonly startToken: Token<SyntaxKind.HashToken | SyntaxKind.PercentToken>
     readonly binding: StringLiteral
-    readonly initializer?: readonly [Token<SyntaxKind.EqualsToken>, TemplateExpression]
+    readonly initializer: undefined | readonly [Token<SyntaxKind.EqualsToken>, TemplateExpression]
 }
 /** @a.b.c.123.d = identifier */
 /** @a.b.c.123.d = identifier:expr */
 export interface ElementEventLine extends LineBase {
     readonly kind: SyntaxKind.ElementEventHandlerDeclaration
     readonly atToken: Token<SyntaxKind.AtToken>
-    readonly eventDescriptor: NodeArray<Token<SyntaxKind.DotToken> | StringLiteral>
+    readonly event: StringLiteral
+    readonly modifier: undefined | readonly [Token<SyntaxKind.DotToken>, DottedExpressionChain<StringLiteral>]
     readonly equalsToken: Token<SyntaxKind.EqualsToken>
     readonly handler: StringLiteral
-    readonly parameter?: readonly [Token<SyntaxKind.ColonToken>, TemplateExpression]
+    readonly parameter: undefined | readonly [Token<SyntaxKind.ColonToken>, TemplateExpression]
 }
 /** .text or |text */
 export interface TextLine extends LineBase {
@@ -128,13 +141,16 @@ export interface TemplateExpression extends NodeBase {
 export interface MustachesExpression extends NodeBase {
     readonly kind: SyntaxKind.MustacheExpression
     readonly startToken: Token<SyntaxKind.MustacheStartToken>
-    readonly expression: NodeArray<StringLiteral | Token<SyntaxKind.DotToken>>
-    readonly initializer?: readonly [Token<SyntaxKind.EqualsToken>, StringLiteral]
+    readonly expression: DottedExpressionChain<StringLiteral>
+    readonly initializer: undefined | readonly [Token<SyntaxKind.EqualsToken>, StringLiteral]
     readonly endToken: Token<SyntaxKind.MustacheEndToken>
 }
-export interface StringLiteral extends NodeBase {
+export interface StringLiteral extends NodeBase, NodeWithSource {
     readonly kind: SyntaxKind.StringLiteral
-    readonly value: string
+}
+export interface DottedExpressionChain<N extends InlineNode> extends NodeBase {
+    readonly kind: SyntaxKind.DottedExpressionChain
+    readonly items: NodeArray<N | Token<SyntaxKind.DotToken>>
 }
 export interface NodeArray<T extends Node> extends ReadonlyArray<T> {}
 /** @internal */
@@ -160,12 +176,19 @@ export type TokenSyntaxKind = typeof TokenSyntaxKind[number]
 export const LineSyntaxKind = [
     SyntaxKind.CommentLine,
     SyntaxKind.ElementEventHandlerDeclaration,
-    SyntaxKind.ElementDeclarationLine,
+    SyntaxKind.ElementDeclaration,
     SyntaxKind.ElementAttributeOrPropertyDeclaration,
     SyntaxKind.MountingPointDeclaration,
     SyntaxKind.TextLine,
 ] as const
 export type LineSyntaxKind = typeof LineSyntaxKind[number]
+export type InlineNode =
+    | StringLiteral
+    | TagDescriptor
+    | TemplateExpression
+    | MustachesExpression
+    | Token<TokenSyntaxKind>
+    | DottedExpressionChain<InlineNode>
 export type Line =
     | CommentLine
     | ElementEventLine
@@ -173,12 +196,4 @@ export type Line =
     | ElementAttributeOrPropertyDeclarationLine
     | MountingPointLine
     | TextLine
-export type Node =
-    | Line
-    | SourceFile
-    | StringLiteral
-    | TagExpression
-    | TemplateExpression
-    | MustachesExpression
-    | StringLiteral
-    | Token<TokenSyntaxKind>
+export type Node = SourceFile | Line | InlineNode

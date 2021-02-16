@@ -5,7 +5,7 @@ import type {
     SemanticTokensClientCapabilities,
     ServerCapabilities,
 } from 'vscode-languageserver/node'
-import type { TokenSyntaxKind, TagExpression, Token, SourceFile } from 'ef-parser'
+import type { TokenSyntaxKind, TagDescriptor, Token, SourceFile } from 'ef-parser'
 import type { EFDocument } from './document'
 import { Node, SyntaxKind } from 'ef-parser'
 import { CommonErrors, getDocument } from './utils'
@@ -52,14 +52,13 @@ export function toTokenWorker(cancel: CancellationToken, document: SourceFile) {
                 return
             case SyntaxKind.CommentLine:
                 return yield tokenOf(node, SemanticTokenTypes.comment)
-            case SyntaxKind.ElementDeclarationLine:
+            case SyntaxKind.ElementDeclaration:
                 {
                     const tag = node.tag
                     yield tokenOf(tag.startToken, SemanticTokenTypes.elementStart)
-                    let seenDot = false
-                    for (const attr of tag.attributes) {
-                        if (attr.kind === SyntaxKind.DotToken) seenDot = true
-                        yield* toToken(attr, seenDot ? SemanticTokenTypes.class : SemanticTokenTypes.element)
+                    yield tokenOf(tag.tagName, SemanticTokenTypes.element)
+                    for (const attr of tag.attributes?.[1].items || []) {
+                        yield* toToken(attr, SemanticTokenTypes.class)
                     }
                     tag.reference && [
                         yield tokenOf(tag.reference[0], SemanticTokenTypes.reference),
@@ -75,7 +74,7 @@ export function toTokenWorker(cancel: CancellationToken, document: SourceFile) {
                 return
             case SyntaxKind.MustacheExpression:
                 yield tokenOf(node.startToken, SemanticTokenTypes.mustacheStart)
-                for (const expr of node.expression) yield* toToken(expr, SemanticTokenTypes.exoticExpression)
+                for (const expr of node.expression.items) yield* toToken(expr, SemanticTokenTypes.exoticExpression)
                 node.initializer && [
                     yield tokenOf(node.initializer[0], SemanticTokenTypes.operator),
                     yield* toToken(node.initializer[1], SemanticTokenTypes.string),
@@ -90,12 +89,9 @@ export function toTokenWorker(cancel: CancellationToken, document: SourceFile) {
                 )
             case SyntaxKind.ElementEventHandlerDeclaration:
                 yield tokenOf(node.atToken, SemanticTokenTypes.event)
-                {
-                    let seenDot = false
-                    for (const a of node.eventDescriptor) {
-                        if (a.kind === SyntaxKind.DotToken) seenDot = true
-                        yield* toToken(a, seenDot ? SemanticTokenTypes.modifier : SemanticTokenTypes.event)
-                    }
+                yield tokenOf(node.event, SemanticTokenTypes.event)
+                for (const a of node.modifier?.[1].items || []) {
+                    yield* toToken(a, SemanticTokenTypes.modifier)
                 }
                 yield tokenOf(node.equalsToken, SemanticTokenTypes.operator)
                 yield tokenOf(node.handler, SemanticTokenTypes.exoticExpression)
@@ -120,11 +116,15 @@ export function toTokenWorker(cancel: CancellationToken, document: SourceFile) {
                 ]
                 return
             }
+            case SyntaxKind.DottedExpressionChain:
+                debugger
+                console.warn('DottedExpressionChain should be handled by their parent cause the meaning has lost here.')
+                return
             default:
                 unhandledKinds(node)
         }
 
-        function unhandledKinds(_node: TagExpression | Token<TokenSyntaxKind>) {}
+        function unhandledKinds(_node: TagDescriptor | Token<TokenSyntaxKind>) {}
         function tokenOf(node: Node, type: SemanticTokenTypes): SemanticToken {
             return [node.line, node.character - node.len, node.len, type]
         }
