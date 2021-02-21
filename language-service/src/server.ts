@@ -12,6 +12,7 @@ import { enableSemanticToken } from './semantic-token'
 import { enableDiagnostics } from './diagnostics'
 import { enableFoldingRange } from './folding-range'
 import { enableCodeCompletion } from './completion'
+import { enableUnstableInlayHints } from './inlay'
 
 const connection = createConnection(ProposedFeatures.all)
 const documents: TextDocuments<EFDocument> = new TextDocuments(EFDocument)
@@ -29,6 +30,7 @@ connection.onInitialize((params: InitializeParams) => {
             completionProvider: enableCodeCompletion(connection, documents, textDocument?.completion),
         },
     }
+    enableUnstableInlayHints(connection, documents)
     return result
 })
 

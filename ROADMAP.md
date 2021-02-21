@@ -18,6 +18,7 @@
 -   ✅ [Semantic tokens](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_semanticTokens): Provide semantic-aware tokens for code highlighting
 -   ✅ [Folding range](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_foldingRange)
 -   ✅ [Code completion](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_completion)
+-   ✅ [Inlay hint](https://github.com/microsoft/language-server-protocol/issues/956): Provide inline hint for keycode in event declaration.
 -   🔜 [Full formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_formatting)
     -   🔜 [Partial formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_rangeFormatting)
     -   🔜 [On type formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_onTypeFormatting)
@@ -29,7 +30,6 @@
 -   🔜 [Code actions](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_codeAction)
     I guess it will have use cases but I have no idea.
 -   🔜 [Document symbols](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentSymbol): Provide all mounting points
--   🔜 [Inline hint](https://github.com/microsoft/language-server-protocol/issues/956): Provide inline hint for keycode in event declaration.
 
 ## Work with TypeScript language service
 

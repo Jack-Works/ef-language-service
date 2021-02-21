@@ -1,0 +1,16 @@
+[
+    {
+        "label": "ENTER :",
+        "position": {
+            "line": 26,
+            "character": 12
+        }
+    },
+    {
+        "label": "BACK_SPACE :",
+        "position": {
+            "line": 28,
+            "character": 11
+        }
+    }
+]

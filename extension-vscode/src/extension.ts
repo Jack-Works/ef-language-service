@@ -1,8 +1,12 @@
 import * as path from 'path'
-import { workspace, ExtensionContext } from 'vscode'
+import { workspace, ExtensionContext, languages } from 'vscode'
 import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind } from 'vscode-languageclient/node'
-import type { ExtendedLanguageServiceProtocolClientMethod } from 'ef-language-service-server'
+import type {
+    ExtendedLanguageServiceProtocolClientMethod,
+    ExtendedLanguageServiceProtocolServerMethod,
+} from 'ef-language-service-server'
 import { forwardCompletion } from './forward-completion'
+import { InlayHintsProvider } from './inlay-hint'
 let client: LanguageClient
 export function activate(context: ExtensionContext) {
     const serverModule = context.asAbsolutePath(
@@ -30,12 +34,23 @@ export function activate(context: ExtensionContext) {
 
 function extendedProtocol() {
     listen('requestCompletionFrom', forwardCompletion)
+    languages.registerInlineHintsProvider({ language: 'efml' }, new InlayHintsProvider())
 }
 function listen<K extends keyof ExtendedLanguageServiceProtocolClientMethod>(
     key: K,
     f: ExtendedLanguageServiceProtocolClientMethod[K],
 ) {
     client.onRequest(key, (e) => (f as any)(...e[0]))
+}
+export function callExtendedProtocol(): ExtendedLanguageServiceProtocolServerMethod {
+    return new Proxy(
+        {},
+        {
+            get(_, key: string) {
+                return (...args: any[]) => client.sendRequest(key, [args])
+            },
+        },
+    ) as any
 }
 
 export async function deactivate() {
