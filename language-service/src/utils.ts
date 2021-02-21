@@ -68,9 +68,12 @@ export const completion = (() => {
     return { html: f('html'), ts: f('ts'), js: f('js'), cursor } as const
 })()
 
-export function getParentTagName(node: Node) {
+export function getParentNativeTagName(node: Node) {
     if (node.parent?.kind === SyntaxKind.ElementDeclaration) {
-        return node.parent.tag.tagName.text
+        const tag = node.parent.tag.tagName.text
+        // upper case tag is not a native tag.
+        if (tag.match(/^[A-Z]/)) return false
+        return tag
     }
     return false
 }
