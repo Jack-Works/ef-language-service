@@ -25,6 +25,13 @@ export async function getForwardedCompletionItems(
     if (current.kind === SyntaxKind.AtToken && parent.kind === SyntaxKind.ElementEventHandlerDeclaration) {
         return attributeOrEventCompletion(conn, parent, 'event')
     }
+    if (
+        current.kind === SyntaxKind.AtToken &&
+        parent.kind === SyntaxKind.ElementPropertyDeclaration &&
+        parent.triggerEvent?.[0] === current
+    ) {
+        return attributeOrEventCompletion(conn, parent, 'event')
+    }
     if (current.kind === SyntaxKind.PercentToken && parent.kind === SyntaxKind.ElementPropertyDeclaration) {
         return propertyCompletion(conn, parent)
     }
