@@ -29,7 +29,8 @@ export enum SyntaxKind {
     SourceFile = FirstNode,
     CommentLine,
     ElementDeclaration,
-    ElementAttributeOrPropertyDeclaration,
+    ElementAttributeDeclaration,
+    ElementPropertyDeclaration,
     ElementEventHandlerDeclaration,
     MountingPointDeclaration,
     TemplateStringExpression,
@@ -103,13 +104,23 @@ export interface TagDescriptor extends NodeBase {
 }
 /**
  * #attr = data
+ */
+export interface ElementAttributeDeclarationLine extends LineBase {
+    readonly kind: SyntaxKind.ElementAttributeDeclaration
+    readonly startToken: Token<SyntaxKind.HashToken>
+    readonly binding: StringLiteral
+    readonly initializer: undefined | readonly [Token<SyntaxKind.EqualsToken>, TemplateExpression | MustachesExpression]
+}
+/**
  * %attr = data
  */
-export interface ElementAttributeOrPropertyDeclarationLine extends LineBase {
-    readonly kind: SyntaxKind.ElementAttributeOrPropertyDeclaration
-    readonly startToken: Token<SyntaxKind.HashToken | SyntaxKind.PercentToken>
+export interface ElementPropertyDeclarationLine extends LineBase {
+    readonly kind: SyntaxKind.ElementPropertyDeclaration
+    readonly startToken: Token<SyntaxKind.PercentToken>
     readonly binding: StringLiteral
-    readonly initializer: undefined | readonly [Token<SyntaxKind.EqualsToken>, TemplateExpression]
+    readonly updateOnly: undefined | Token<SyntaxKind.ExclamationToken>
+    readonly triggerEvent: undefined | readonly [Token<SyntaxKind.AtToken>, StringLiteral]
+    readonly initializer: undefined | readonly [Token<SyntaxKind.EqualsToken>, TemplateExpression | MustachesExpression]
 }
 /** @a.b.c.123.d = identifier */
 /** @a.b.c.123.d = identifier:expr */
@@ -144,6 +155,8 @@ export interface MustachesExpression extends NodeBase {
     readonly expression: DottedExpressionChain<StringLiteral>
     readonly initializer: undefined | readonly [Token<SyntaxKind.EqualsToken>, StringLiteral]
     readonly endToken: Token<SyntaxKind.MustacheEndToken>
+    /** This will only appears when the MustachesExpression takes the whole line as a prop/attr initializer. */
+    readonly syncOnly: undefined | Token<SyntaxKind.AmpersandToken>
 }
 export interface StringLiteral extends NodeBase, NodeWithSource {
     readonly kind: SyntaxKind.StringLiteral
@@ -161,6 +174,7 @@ export const TokenSyntaxKind = [
     SyntaxKind.AmpersandToken,
     SyntaxKind.GreaterThanToken,
     SyntaxKind.EqualsToken,
+    SyntaxKind.ExclamationToken,
     SyntaxKind.DotToken,
     SyntaxKind.HashToken,
     SyntaxKind.PercentToken,
@@ -177,7 +191,8 @@ export const LineSyntaxKind = [
     SyntaxKind.CommentLine,
     SyntaxKind.ElementEventHandlerDeclaration,
     SyntaxKind.ElementDeclaration,
-    SyntaxKind.ElementAttributeOrPropertyDeclaration,
+    SyntaxKind.ElementAttributeDeclaration,
+    SyntaxKind.ElementPropertyDeclaration,
     SyntaxKind.MountingPointDeclaration,
     SyntaxKind.TextLine,
 ] as const
@@ -193,7 +208,8 @@ export type Line =
     | CommentLine
     | ElementEventLine
     | ElementDeclarationLine
-    | ElementAttributeOrPropertyDeclarationLine
+    | ElementAttributeDeclarationLine
+    | ElementPropertyDeclarationLine
     | MountingPointLine
     | TextLine
 export type Node = SourceFile | Line | InlineNode

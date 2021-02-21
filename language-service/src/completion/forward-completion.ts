@@ -19,13 +19,13 @@ export async function getForwardedCompletionItems(
     if (current.kind === SyntaxKind.GreaterThanToken && parent.kind === SyntaxKind.TagExpression) {
         return tagCompletion(conn)
     }
-    if (current.kind === SyntaxKind.HashToken && parent.kind === SyntaxKind.ElementAttributeOrPropertyDeclaration) {
+    if (current.kind === SyntaxKind.HashToken && parent.kind === SyntaxKind.ElementAttributeDeclaration) {
         return attributeOrEventCompletion(conn, parent, 'attr')
     }
     if (current.kind === SyntaxKind.AtToken && parent.kind === SyntaxKind.ElementEventHandlerDeclaration) {
         return attributeOrEventCompletion(conn, parent, 'event')
     }
-    if (current.kind === SyntaxKind.PercentToken && parent.kind === SyntaxKind.ElementAttributeOrPropertyDeclaration) {
+    if (current.kind === SyntaxKind.PercentToken && parent.kind === SyntaxKind.ElementPropertyDeclaration) {
         return propertyCompletion(conn, parent)
     }
     return EmptyCompletion

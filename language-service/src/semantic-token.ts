@@ -103,13 +103,22 @@ export function toTokenWorker(cancel: CancellationToken, document: SourceFile) {
             case SyntaxKind.TextLine:
                 yield tokenOf(node.token, SemanticTokenTypes.operator)
                 return yield* toToken(node.content, SemanticTokenTypes.string)
-            case SyntaxKind.ElementAttributeOrPropertyDeclaration: {
-                const type =
-                    node.startToken.kind !== SyntaxKind.HashToken
-                        ? SemanticTokenTypes.property
-                        : SemanticTokenTypes.attribute
-                yield tokenOf(node.startToken, type)
-                yield tokenOf(node.binding, type)
+            case SyntaxKind.ElementAttributeDeclaration:
+                yield tokenOf(node.startToken, SemanticTokenTypes.attribute)
+                yield tokenOf(node.binding, SemanticTokenTypes.attribute)
+                node.initializer && [
+                    yield tokenOf(node.initializer[0], SemanticTokenTypes.operator),
+                    yield* toToken(node.initializer[1], SemanticTokenTypes.string),
+                ]
+                return
+            case SyntaxKind.ElementPropertyDeclaration: {
+                yield tokenOf(node.startToken, SemanticTokenTypes.property)
+                yield tokenOf(node.binding, SemanticTokenTypes.property)
+                node.updateOnly && (yield tokenOf(node.updateOnly, SemanticTokenTypes.operator))
+                node.triggerEvent && [
+                    yield tokenOf(node.triggerEvent[0], SemanticTokenTypes.event),
+                    yield tokenOf(node.triggerEvent[1], SemanticTokenTypes.event),
+                ]
                 node.initializer && [
                     yield tokenOf(node.initializer[0], SemanticTokenTypes.operator),
                     yield* toToken(node.initializer[1], SemanticTokenTypes.string),

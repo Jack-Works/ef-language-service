@@ -35,10 +35,18 @@ export function forEachChild<T>(
                 xs(node.attributes) ||
                 (node.reference ? x(node.reference[0]) || x(node.reference[1]) : undefined)
             )
-        case SyntaxKind.ElementAttributeOrPropertyDeclaration:
+        case SyntaxKind.ElementAttributeDeclaration:
             return (
                 x(node.startToken) ||
                 x(node.binding) ||
+                (node.initializer ? x(node.initializer[0]) || x(node.initializer[1]) : undefined)
+            )
+        case SyntaxKind.ElementPropertyDeclaration:
+            return (
+                x(node.startToken) ||
+                x(node.binding) ||
+                x(node.updateOnly) ||
+                (node.triggerEvent ? x(node.triggerEvent[0]) || x(node.triggerEvent[1]) : undefined) ||
                 (node.initializer ? x(node.initializer[0]) || x(node.initializer[1]) : undefined)
             )
         case SyntaxKind.ElementEventHandlerDeclaration:

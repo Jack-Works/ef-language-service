@@ -1,7 +1,8 @@
 import type { Mutable } from '../utils'
 import {
     CommentLine,
-    ElementAttributeOrPropertyDeclarationLine,
+    ElementAttributeDeclarationLine,
+    ElementPropertyDeclarationLine,
     ElementDeclarationLine,
     ElementEventLine,
     MountingPointLine,
@@ -89,20 +90,40 @@ export function createTagDescriptor(
         reference,
     }
 }
-
-export function createElementAttributeOrPropertyLine(
+export function createElementAttributeLine(
     indent: string,
-    startToken: ElementAttributeOrPropertyDeclarationLine['startToken'],
-    binding: ElementAttributeOrPropertyDeclarationLine['binding'],
-    initializer: ElementAttributeOrPropertyDeclarationLine['initializer'],
+    startToken: ElementAttributeDeclarationLine['startToken'],
+    binding: ElementAttributeDeclarationLine['binding'],
+    initializer: ElementAttributeDeclarationLine['initializer'],
     endOfLineToken: LineBase['endOfLineToken'],
-): ConstructingNode<ElementAttributeOrPropertyDeclarationLine> {
+): ConstructingNode<ElementAttributeDeclarationLine> {
     return {
-        kind: SyntaxKind.ElementAttributeOrPropertyDeclaration,
+        kind: SyntaxKind.ElementAttributeDeclaration,
         indent,
         indentLevel: indent.length,
         startToken,
         binding,
+        initializer,
+        endOfLineToken,
+    }
+}
+export function createElementPropertyLine(
+    indent: string,
+    startToken: ElementPropertyDeclarationLine['startToken'],
+    binding: ElementPropertyDeclarationLine['binding'],
+    updateOnly: ElementPropertyDeclarationLine['updateOnly'],
+    triggerEvent: ElementPropertyDeclarationLine['triggerEvent'],
+    initializer: ElementPropertyDeclarationLine['initializer'],
+    endOfLineToken: LineBase['endOfLineToken'],
+): ConstructingNode<ElementPropertyDeclarationLine> {
+    return {
+        kind: SyntaxKind.ElementPropertyDeclaration,
+        indent,
+        indentLevel: indent.length,
+        startToken,
+        binding,
+        updateOnly,
+        triggerEvent,
         initializer,
         endOfLineToken,
     }
@@ -153,6 +174,7 @@ export function createMustachesExpression(
     expression: MustachesExpression['expression'],
     initializer: MustachesExpression['initializer'],
     endToken: MustachesExpression['endToken'],
+    syncOnly: MustachesExpression['syncOnly'],
 ): ConstructingNode<MustachesExpression> {
     return {
         kind: SyntaxKind.MustacheExpression,
@@ -160,6 +182,7 @@ export function createMustachesExpression(
         expression,
         initializer,
         endToken,
+        syncOnly,
     }
 }
 export function createStringLiteral(value: string): ConstructingNode<StringLiteral> {

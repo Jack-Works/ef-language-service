@@ -2,7 +2,8 @@ import { isDebug } from './debugger'
 import { createScanner } from './scanner'
 import {
     CommentLine,
-    ElementAttributeOrPropertyDeclarationLine,
+    ElementAttributeDeclarationLine,
+    ElementPropertyDeclarationLine,
     ElementDeclarationLine,
     ElementEventLine,
     Line,
@@ -29,7 +30,8 @@ import {
     createSourceFile,
     createToken,
     createCommentLine,
-    createElementAttributeOrPropertyLine,
+    createElementAttributeLine,
+    createElementPropertyLine,
     createElementDeclarationLine,
     createElementEventLine,
     createTextLine,
@@ -141,8 +143,8 @@ function parseLine(currentIndentLevel: number): Line {
             scan()
         }
         const k = token()
-        if (k === SyntaxKind.HashToken || k === SyntaxKind.PercentToken)
-            return parseElementAttributeOrPropertyLine(indent)
+        if (k === SyntaxKind.HashToken) return parseElementAttributeLine(indent)
+        if (k === SyntaxKind.PercentToken) return parseElementPropertyLine(indent)
         if (k === SyntaxKind.GreaterThanToken) return parseElementDeclarationLine(indent, currentIndentLevel)
         if (k === SyntaxKind.AtToken) return parseElementEventLine(indent)
         if (k === SyntaxKind.DotToken || k === SyntaxKind.BarToken) return parseTextLine(indent)
@@ -152,18 +154,33 @@ function parseLine(currentIndentLevel: number): Line {
         return parseCommentLine(indent)
     })
 }
-function parseElementAttributeOrPropertyLine(
-    indent: string,
-): ConstructingNode<ElementAttributeOrPropertyDeclarationLine> {
-    return createElementAttributeOrPropertyLine(
+function parseElementAttributeLine(indent: string): ConstructingNode<ElementAttributeDeclarationLine> {
+    return createElementAttributeLine(
         indent,
-        parseOptionalToken(SyntaxKind.HashToken) || parseExpectedToken(SyntaxKind.PercentToken),
+        parseExpectedToken(SyntaxKind.HashToken),
         parseStringLiteralUntil([SyntaxKind.EqualsToken]),
-        token() === SyntaxKind.EqualsToken
-            ? ([parseExpectedToken(SyntaxKind.EqualsToken), parseTemplateExpressionUntil([])] as const)
-            : undefined,
+        parseElementAttributeOrPropertyLineInitializer(),
         parseLineEnding(),
     )
+}
+function parseElementPropertyLine(indent: string): ConstructingNode<ElementPropertyDeclarationLine> {
+    return createElementPropertyLine(
+        indent,
+        parseExpectedToken(SyntaxKind.PercentToken),
+        parseStringLiteralUntil([SyntaxKind.EqualsToken, SyntaxKind.AtToken, SyntaxKind.ExclamationToken]),
+        parseOptionalToken(SyntaxKind.ExclamationToken),
+        token() === SyntaxKind.AtToken
+            ? [parseExpectedToken(SyntaxKind.AtToken), parseStringLiteralUntil([SyntaxKind.EqualsToken])]
+            : undefined,
+        parseElementAttributeOrPropertyLineInitializer(),
+        parseLineEnding(),
+    )
+}
+function parseElementAttributeOrPropertyLineInitializer(): ElementPropertyDeclarationLine['initializer'] &
+    ElementAttributeDeclarationLine['initializer'] {
+    if (token() !== SyntaxKind.EqualsToken) return undefined
+    // TODO: parse sync-only MustacheExpression
+    return [parseExpectedToken(SyntaxKind.EqualsToken), parseTemplateExpressionUntil([])]
 }
 function parseElementDeclarationLine(indent: string, currentLevel: number): ConstructingNode<ElementDeclarationLine> {
     const expr = parseTagDescriptor()
@@ -251,14 +268,14 @@ function parseTemplateExpressionUntil(until: SyntaxKind[]): TemplateExpression {
             parseNodeList(
                 () =>
                     token() === SyntaxKind.MustacheStartToken
-                        ? parseMustachesExpression()
+                        ? parseMustachesExpression(false)
                         : parseStringLiteralUntil([SyntaxKind.MustacheStartToken, ...until]),
                 isNextTokenNoneOf(SyntaxKind.NewLineTrivia, SyntaxKind.EndOfFileToken, ...until),
             ),
         )
     })
 }
-function parseMustachesExpression(): MustachesExpression {
+function parseMustachesExpression(mayParseSyncOnlyToken: boolean): MustachesExpression {
     return withPos(() =>
         createMustachesExpression(
             parseExpectedToken(SyntaxKind.MustacheStartToken),
@@ -274,6 +291,7 @@ function parseMustachesExpression(): MustachesExpression {
                   ] as const)
                 : undefined,
             parseExpectedToken(SyntaxKind.MustacheEndToken),
+            mayParseSyncOnlyToken ? parseOptionalToken(SyntaxKind.AmpersandToken) : undefined,
         ),
     )
 }

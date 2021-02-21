@@ -1,4 +1,4 @@
-import type { ElementAttributeOrPropertyDeclarationLine } from 'ef-parser/src'
+import type { ElementAttributeDeclarationLine, ElementPropertyDeclarationLine } from 'ef-parser/src'
 import { CompletionItemKind, CompletionList, Connection } from 'vscode-languageserver'
 import { callExtendedProtocol } from '../../extended-protocol'
 import { completion, EmptyCompletion, getParentTagName } from '../../utils'
@@ -6,7 +6,7 @@ import { completion, EmptyCompletion, getParentTagName } from '../../utils'
 // TODO: memo
 export async function propertyCompletion(
     conn: Connection,
-    node: ElementAttributeOrPropertyDeclarationLine,
+    node: ElementAttributeDeclarationLine | ElementPropertyDeclarationLine,
 ): Promise<CompletionList> {
     const tag = getParentTagName(node)
     if (!tag) return EmptyCompletion

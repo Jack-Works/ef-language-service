@@ -1,4 +1,4 @@
-import type { ElementAttributeOrPropertyDeclarationLine, ElementEventLine } from 'ef-parser'
+import type { ElementAttributeDeclarationLine, ElementPropertyDeclarationLine, ElementEventLine } from 'ef-parser'
 import type { CompletionList, Connection } from 'vscode-languageserver'
 import { callExtendedProtocol } from '../../extended-protocol'
 import { completion, EmptyCompletion, getParentTagName } from '../../utils'
@@ -7,7 +7,7 @@ const attributeCache = new Map<string, CompletionList>()
 // TODO: separate cache map
 export async function attributeOrEventCompletion(
     conn: Connection,
-    node: ElementAttributeOrPropertyDeclarationLine | ElementEventLine,
+    node: ElementAttributeDeclarationLine | ElementPropertyDeclarationLine | ElementEventLine,
     kind: 'event' | 'attr',
 ) {
     const tag = getParentTagName(node)

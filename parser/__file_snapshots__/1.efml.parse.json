@@ -140,7 +140,7 @@
             "indent": "",
             "indentLevel": 0,
             "tag": {
-                "kind": 107,
+                "kind": 108,
                 "startToken": {
                     "kind": 9,
                     "text": ">",
@@ -152,7 +152,7 @@
                     "__kind__": "GreaterThanToken"
                 },
                 "tagName": {
-                    "kind": 110,
+                    "kind": 111,
                     "text": "div",
                     "pos": 274,
                     "end": 277,
@@ -304,7 +304,7 @@
                         "__kind__": "HashToken"
                     },
                     "binding": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "class",
                         "pos": 535,
                         "end": 540,
@@ -325,10 +325,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 109,
+                                    "kind": 110,
                                     "startToken": {
                                         "kind": 19,
                                         "text": " {{",
@@ -340,10 +340,10 @@
                                         "__kind__": "MustacheStartToken"
                                     },
                                     "expression": {
-                                        "kind": 111,
+                                        "kind": 112,
                                         "items": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "class",
                                                 "pos": 545,
                                                 "end": 550,
@@ -372,7 +372,7 @@
                                             "__kind__": "EqualsToken"
                                         },
                                         {
-                                            "kind": 110,
+                                            "kind": 111,
                                             "text": " some class name",
                                             "pos": 552,
                                             "end": 568,
@@ -423,7 +423,7 @@
                     "len": 39,
                     "line": 12,
                     "character": 39,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementAttributeDeclaration"
                 },
                 {
                     "kind": 103,
@@ -440,7 +440,7 @@
                         "__kind__": "HashToken"
                     },
                     "binding": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "style",
                         "pos": 574,
                         "end": 579,
@@ -461,10 +461,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 109,
+                                    "kind": 110,
                                     "startToken": {
                                         "kind": 19,
                                         "text": " {{",
@@ -476,10 +476,10 @@
                                         "__kind__": "MustacheStartToken"
                                     },
                                     "expression": {
-                                        "kind": 111,
+                                        "kind": 112,
                                         "items": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "attr",
                                                 "pos": 584,
                                                 "end": 588,
@@ -499,7 +499,7 @@
                                                 "__kind__": "DotToken"
                                             },
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "style",
                                                 "pos": 589,
                                                 "end": 594,
@@ -528,7 +528,7 @@
                                             "__kind__": "EqualsToken"
                                         },
                                         {
-                                            "kind": 110,
+                                            "kind": 111,
                                             "text": " background:#ECECEC",
                                             "pos": 596,
                                             "end": 616,
@@ -579,7 +579,7 @@
                     "len": 48,
                     "line": 13,
                     "character": 48,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementAttributeDeclaration"
                 },
                 {
                     "kind": 103,
@@ -596,7 +596,7 @@
                         "__kind__": "HashToken"
                     },
                     "binding": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "id",
                         "pos": 622,
                         "end": 624,
@@ -617,10 +617,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": " testdiv",
                                     "pos": 626,
                                     "end": 634,
@@ -653,7 +653,7 @@
                     "len": 16,
                     "line": 14,
                     "character": 16,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementAttributeDeclaration"
                 },
                 {
                     "kind": 103,
@@ -670,7 +670,7 @@
                         "__kind__": "HashToken"
                     },
                     "binding": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "some-attr",
                         "pos": 638,
                         "end": 647,
@@ -691,10 +691,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": " some text",
                                     "pos": 649,
                                     "end": 659,
@@ -727,7 +727,7 @@
                     "len": 25,
                     "line": 15,
                     "character": 25,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementAttributeDeclaration"
                 },
                 {
                     "kind": 103,
@@ -744,7 +744,7 @@
                         "__kind__": "HashToken"
                     },
                     "binding": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "content",
                         "pos": 663,
                         "end": 670,
@@ -768,7 +768,7 @@
                     "len": 11,
                     "line": 16,
                     "character": 11,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementAttributeDeclaration"
                 },
                 {
                     "kind": 101,
@@ -793,7 +793,7 @@
                     "__kind__": "CommentLine"
                 },
                 {
-                    "kind": 103,
+                    "kind": 104,
                     "indent": "  ",
                     "indentLevel": 2,
                     "startToken": {
@@ -807,7 +807,7 @@
                         "__kind__": "PercentToken"
                     },
                     "binding": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "title",
                         "pos": 702,
                         "end": 707,
@@ -828,10 +828,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": " Welcome,",
                                     "pos": 709,
                                     "end": 718,
@@ -841,7 +841,7 @@
                                     "__kind__": "StringLiteral"
                                 },
                                 {
-                                    "kind": 109,
+                                    "kind": 110,
                                     "startToken": {
                                         "kind": 19,
                                         "text": " {{",
@@ -853,10 +853,10 @@
                                         "__kind__": "MustacheStartToken"
                                     },
                                     "expression": {
-                                        "kind": 111,
+                                        "kind": 112,
                                         "items": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "name",
                                                 "pos": 721,
                                                 "end": 725,
@@ -914,10 +914,10 @@
                     "len": 29,
                     "line": 18,
                     "character": 29,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementPropertyDeclaration"
                 },
                 {
-                    "kind": 103,
+                    "kind": 104,
                     "indent": "  ",
                     "indentLevel": 2,
                     "startToken": {
@@ -931,7 +931,7 @@
                         "__kind__": "PercentToken"
                     },
                     "binding": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "anotherProperty",
                         "pos": 731,
                         "end": 746,
@@ -952,10 +952,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": " text",
                                     "pos": 748,
                                     "end": 753,
@@ -988,7 +988,7 @@
                     "len": 26,
                     "line": 19,
                     "character": 26,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementPropertyDeclaration"
                 },
                 {
                     "kind": 101,
@@ -1035,7 +1035,7 @@
                     "__kind__": "CommentLine"
                 },
                 {
-                    "kind": 104,
+                    "kind": 105,
                     "indent": "  ",
                     "indentLevel": 2,
                     "atToken": {
@@ -1049,7 +1049,7 @@
                         "__kind__": "AtToken"
                     },
                     "event": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "click",
                         "pos": 848,
                         "end": 853,
@@ -1069,7 +1069,7 @@
                         "__kind__": "EqualsToken"
                     },
                     "handler": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": " updateInfo",
                         "pos": 855,
                         "end": 866,
@@ -1090,10 +1090,10 @@
                             "__kind__": "ColonToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 109,
+                                    "kind": 110,
                                     "startToken": {
                                         "kind": 19,
                                         "text": "{{",
@@ -1105,10 +1105,10 @@
                                         "__kind__": "MustacheStartToken"
                                     },
                                     "expression": {
-                                        "kind": 111,
+                                        "kind": 112,
                                         "items": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "binding",
                                                 "pos": 869,
                                                 "end": 876,
@@ -1128,7 +1128,7 @@
                                                 "__kind__": "DotToken"
                                             },
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "value",
                                                 "pos": 877,
                                                 "end": 882,
@@ -1163,7 +1163,7 @@
                                     "__kind__": "MustacheExpression"
                                 },
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": " and static value",
                                     "pos": 884,
                                     "end": 901,
@@ -1221,7 +1221,7 @@
                     "__kind__": "CommentLine"
                 },
                 {
-                    "kind": 104,
+                    "kind": 105,
                     "indent": "  ",
                     "indentLevel": 2,
                     "atToken": {
@@ -1235,7 +1235,7 @@
                         "__kind__": "AtToken"
                     },
                     "event": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "mousedown",
                         "pos": 942,
                         "end": 951,
@@ -1256,10 +1256,10 @@
                             "__kind__": "DotToken"
                         },
                         {
-                            "kind": 111,
+                            "kind": 112,
                             "items": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "shift",
                                     "pos": 952,
                                     "end": 957,
@@ -1279,7 +1279,7 @@
                                     "__kind__": "DotToken"
                                 },
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "alt",
                                     "pos": 958,
                                     "end": 961,
@@ -1299,7 +1299,7 @@
                                     "__kind__": "DotToken"
                                 },
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "ctrl",
                                     "pos": 962,
                                     "end": 966,
@@ -1319,7 +1319,7 @@
                                     "__kind__": "DotToken"
                                 },
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "meta",
                                     "pos": 967,
                                     "end": 971,
@@ -1348,7 +1348,7 @@
                         "__kind__": "EqualsToken"
                     },
                     "handler": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": " select",
                         "pos": 973,
                         "end": 980,
@@ -1397,7 +1397,7 @@
                     "__kind__": "CommentLine"
                 },
                 {
-                    "kind": 104,
+                    "kind": 105,
                     "indent": "  ",
                     "indentLevel": 2,
                     "atToken": {
@@ -1411,7 +1411,7 @@
                         "__kind__": "AtToken"
                     },
                     "event": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "keypress",
                         "pos": 1012,
                         "end": 1020,
@@ -1432,10 +1432,10 @@
                             "__kind__": "DotToken"
                         },
                         {
-                            "kind": 111,
+                            "kind": 112,
                             "items": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "13",
                                     "pos": 1021,
                                     "end": 1023,
@@ -1464,7 +1464,7 @@
                         "__kind__": "EqualsToken"
                     },
                     "handler": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": " submit",
                         "pos": 1025,
                         "end": 1032,
@@ -1513,7 +1513,7 @@
                     "__kind__": "CommentLine"
                 },
                 {
-                    "kind": 104,
+                    "kind": 105,
                     "indent": "  ",
                     "indentLevel": 2,
                     "atToken": {
@@ -1527,7 +1527,7 @@
                         "__kind__": "AtToken"
                     },
                     "event": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "keydown",
                         "pos": 1145,
                         "end": 1152,
@@ -1548,10 +1548,10 @@
                             "__kind__": "DotToken"
                         },
                         {
-                            "kind": 111,
+                            "kind": 112,
                             "items": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "8",
                                     "pos": 1153,
                                     "end": 1154,
@@ -1571,7 +1571,7 @@
                                     "__kind__": "DotToken"
                                 },
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "prevent",
                                     "pos": 1155,
                                     "end": 1162,
@@ -1591,7 +1591,7 @@
                                     "__kind__": "DotToken"
                                 },
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "stop",
                                     "pos": 1163,
                                     "end": 1167,
@@ -1620,7 +1620,7 @@
                         "__kind__": "EqualsToken"
                     },
                     "handler": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": " stopbackspace",
                         "pos": 1169,
                         "end": 1183,
@@ -1669,7 +1669,7 @@
                     "__kind__": "CommentLine"
                 },
                 {
-                    "kind": 104,
+                    "kind": 105,
                     "indent": "  ",
                     "indentLevel": 2,
                     "atToken": {
@@ -1683,7 +1683,7 @@
                         "__kind__": "AtToken"
                     },
                     "event": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "submit",
                         "pos": 1224,
                         "end": 1230,
@@ -1704,10 +1704,10 @@
                             "__kind__": "DotToken"
                         },
                         {
-                            "kind": 111,
+                            "kind": 112,
                             "items": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "capture",
                                     "pos": 1231,
                                     "end": 1238,
@@ -1727,7 +1727,7 @@
                                     "__kind__": "DotToken"
                                 },
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "stopImmediate",
                                     "pos": 1239,
                                     "end": 1252,
@@ -1756,7 +1756,7 @@
                         "__kind__": "EqualsToken"
                     },
                     "handler": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": " submit",
                         "pos": 1254,
                         "end": 1261,
@@ -1805,7 +1805,7 @@
                     "__kind__": "CommentLine"
                 },
                 {
-                    "kind": 108,
+                    "kind": 109,
                     "indent": "  ",
                     "indentLevel": 2,
                     "token": {
@@ -1819,10 +1819,10 @@
                         "__kind__": "DotToken"
                     },
                     "content": {
-                        "kind": 106,
+                        "kind": 107,
                         "content": [
                             {
-                                "kind": 110,
+                                "kind": 111,
                                 "text": "Name:",
                                 "pos": 1293,
                                 "end": 1298,
@@ -1832,7 +1832,7 @@
                                 "__kind__": "StringLiteral"
                             },
                             {
-                                "kind": 109,
+                                "kind": 110,
                                 "startToken": {
                                     "kind": 19,
                                     "text": " {{",
@@ -1844,10 +1844,10 @@
                                     "__kind__": "MustacheStartToken"
                                 },
                                 "expression": {
-                                    "kind": 111,
+                                    "kind": 112,
                                     "items": [
                                         {
-                                            "kind": 110,
+                                            "kind": 111,
                                             "text": "name",
                                             "pos": 1301,
                                             "end": 1305,
@@ -1882,7 +1882,7 @@
                                 "__kind__": "MustacheExpression"
                             },
                             {
-                                "kind": 110,
+                                "kind": 111,
                                 "text": "&nJob:",
                                 "pos": 1307,
                                 "end": 1313,
@@ -1892,7 +1892,7 @@
                                 "__kind__": "StringLiteral"
                             },
                             {
-                                "kind": 109,
+                                "kind": 110,
                                 "startToken": {
                                     "kind": 19,
                                     "text": " {{",
@@ -1904,10 +1904,10 @@
                                     "__kind__": "MustacheStartToken"
                                 },
                                 "expression": {
-                                    "kind": 111,
+                                    "kind": 112,
                                     "items": [
                                         {
-                                            "kind": 110,
+                                            "kind": 111,
                                             "text": "job",
                                             "pos": 1316,
                                             "end": 1319,
@@ -1971,7 +1971,7 @@
                     "indent": "  ",
                     "indentLevel": 2,
                     "tag": {
-                        "kind": 107,
+                        "kind": 108,
                         "startToken": {
                             "kind": 9,
                             "text": ">",
@@ -1983,7 +1983,7 @@
                             "__kind__": "GreaterThanToken"
                         },
                         "tagName": {
-                            "kind": 110,
+                            "kind": 111,
                             "text": "pre",
                             "pos": 1325,
                             "end": 1328,
@@ -2033,7 +2033,7 @@
                             "__kind__": "CommentLine"
                         },
                         {
-                            "kind": 108,
+                            "kind": 109,
                             "indent": "    ",
                             "indentLevel": 4,
                             "token": {
@@ -2047,10 +2047,10 @@
                                 "__kind__": "BarToken"
                             },
                             "content": {
-                                "kind": 106,
+                                "kind": 107,
                                 "content": [
                                     {
-                                        "kind": 110,
+                                        "kind": 111,
                                         "text": "Line 1",
                                         "pos": 1368,
                                         "end": 1374,
@@ -2085,7 +2085,7 @@
                             "__kind__": "TextLine"
                         },
                         {
-                            "kind": 108,
+                            "kind": 109,
                             "indent": "    ",
                             "indentLevel": 4,
                             "token": {
@@ -2099,10 +2099,10 @@
                                 "__kind__": "BarToken"
                             },
                             "content": {
-                                "kind": 106,
+                                "kind": 107,
                                 "content": [
                                     {
-                                        "kind": 110,
+                                        "kind": 111,
                                         "text": "Line 2",
                                         "pos": 1380,
                                         "end": 1386,
@@ -2137,7 +2137,7 @@
                             "__kind__": "TextLine"
                         },
                         {
-                            "kind": 108,
+                            "kind": 109,
                             "indent": "    ",
                             "indentLevel": 4,
                             "token": {
@@ -2151,10 +2151,10 @@
                                 "__kind__": "BarToken"
                             },
                             "content": {
-                                "kind": 106,
+                                "kind": 107,
                                 "content": [
                                     {
-                                        "kind": 110,
+                                        "kind": 111,
                                         "text": "Line 3",
                                         "pos": 1392,
                                         "end": 1398,
@@ -2201,7 +2201,7 @@
                     "indent": "  ",
                     "indentLevel": 2,
                     "tag": {
-                        "kind": 107,
+                        "kind": 108,
                         "startToken": {
                             "kind": 9,
                             "text": ">",
@@ -2213,7 +2213,7 @@
                             "__kind__": "GreaterThanToken"
                         },
                         "tagName": {
-                            "kind": 110,
+                            "kind": 111,
                             "text": "br",
                             "pos": 1402,
                             "end": 1404,
@@ -2270,7 +2270,7 @@
                     "__kind__": "CommentLine"
                 },
                 {
-                    "kind": 105,
+                    "kind": 106,
                     "indent": "  ",
                     "indentLevel": 2,
                     "token": {
@@ -2284,7 +2284,7 @@
                         "__kind__": "MinusToken"
                     },
                     "identifier": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "node1",
                         "pos": 1449,
                         "end": 1454,
@@ -2337,7 +2337,7 @@
                     "indent": "  ",
                     "indentLevel": 2,
                     "tag": {
-                        "kind": 107,
+                        "kind": 108,
                         "startToken": {
                             "kind": 9,
                             "text": ">",
@@ -2349,7 +2349,7 @@
                             "__kind__": "GreaterThanToken"
                         },
                         "tagName": {
-                            "kind": 110,
+                            "kind": 111,
                             "text": "p",
                             "pos": 1517,
                             "end": 1518,
@@ -2370,13 +2370,13 @@
                                 "__kind__": "DotToken"
                             },
                             {
-                                "kind": 111,
+                                "kind": 112,
                                 "items": [
                                     {
-                                        "kind": 106,
+                                        "kind": 107,
                                         "content": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "some",
                                                 "pos": 1519,
                                                 "end": 1523,
@@ -2404,10 +2404,10 @@
                                         "__kind__": "DotToken"
                                     },
                                     {
-                                        "kind": 106,
+                                        "kind": 107,
                                         "content": [
                                             {
-                                                "kind": 109,
+                                                "kind": 110,
                                                 "startToken": {
                                                     "kind": 19,
                                                     "text": "{{",
@@ -2419,10 +2419,10 @@
                                                     "__kind__": "MustacheStartToken"
                                                 },
                                                 "expression": {
-                                                    "kind": 111,
+                                                    "kind": 112,
                                                     "items": [
                                                         {
-                                                            "kind": 110,
+                                                            "kind": 111,
                                                             "text": "binding",
                                                             "pos": 1526,
                                                             "end": 1533,
@@ -2442,7 +2442,7 @@
                                                             "__kind__": "DotToken"
                                                         },
                                                         {
-                                                            "kind": 110,
+                                                            "kind": 111,
                                                             "text": "class",
                                                             "pos": 1534,
                                                             "end": 1539,
@@ -2495,10 +2495,10 @@
                                         "__kind__": "DotToken"
                                     },
                                     {
-                                        "kind": 106,
+                                        "kind": 107,
                                         "content": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "class",
                                                 "pos": 1542,
                                                 "end": 1547,
@@ -2526,10 +2526,10 @@
                                         "__kind__": "DotToken"
                                     },
                                     {
-                                        "kind": 106,
+                                        "kind": 107,
                                         "content": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "names",
                                                 "pos": 1548,
                                                 "end": 1553,
@@ -2622,7 +2622,7 @@
                             "indent": "    ",
                             "indentLevel": 4,
                             "tag": {
-                                "kind": 107,
+                                "kind": 108,
                                 "startToken": {
                                     "kind": 9,
                                     "text": ">",
@@ -2634,7 +2634,7 @@
                                     "__kind__": "GreaterThanToken"
                                 },
                                 "tagName": {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "span",
                                     "pos": 1695,
                                     "end": 1699,
@@ -2655,13 +2655,13 @@
                                         "__kind__": "DotToken"
                                     },
                                     {
-                                        "kind": 111,
+                                        "kind": 112,
                                         "items": [
                                             {
-                                                "kind": 106,
+                                                "kind": 107,
                                                 "content": [
                                                     {
-                                                        "kind": 109,
+                                                        "kind": 110,
                                                         "startToken": {
                                                             "kind": 19,
                                                             "text": "{{",
@@ -2673,10 +2673,10 @@
                                                             "__kind__": "MustacheStartToken"
                                                         },
                                                         "expression": {
-                                                            "kind": 111,
+                                                            "kind": 112,
                                                             "items": [
                                                                 {
-                                                                    "kind": 110,
+                                                                    "kind": 111,
                                                                     "text": "emergency",
                                                                     "pos": 1702,
                                                                     "end": 1711,
@@ -2705,7 +2705,7 @@
                                                                 "__kind__": "EqualsToken"
                                                             },
                                                             {
-                                                                "kind": 110,
+                                                                "kind": 111,
                                                                 "text": " emergency",
                                                                 "pos": 1713,
                                                                 "end": 1723,
@@ -2761,7 +2761,7 @@
                                         "__kind__": "HashToken"
                                     },
                                     {
-                                        "kind": 110,
+                                        "kind": 111,
                                         "text": "notice_box",
                                         "pos": 1726,
                                         "end": 1736,
@@ -2790,7 +2790,7 @@
                             },
                             "children": [
                                 {
-                                    "kind": 108,
+                                    "kind": 109,
                                     "indent": "      ",
                                     "indentLevel": 6,
                                     "token": {
@@ -2804,10 +2804,10 @@
                                         "__kind__": "DotToken"
                                     },
                                     "content": {
-                                        "kind": 106,
+                                        "kind": 107,
                                         "content": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "Notice:",
                                                 "pos": 1744,
                                                 "end": 1751,
@@ -2817,7 +2817,7 @@
                                                 "__kind__": "StringLiteral"
                                             },
                                             {
-                                                "kind": 109,
+                                                "kind": 110,
                                                 "startToken": {
                                                     "kind": 19,
                                                     "text": " {{",
@@ -2829,10 +2829,10 @@
                                                     "__kind__": "MustacheStartToken"
                                                 },
                                                 "expression": {
-                                                    "kind": 111,
+                                                    "kind": 112,
                                                     "items": [
                                                         {
-                                                            "kind": 110,
+                                                            "kind": 111,
                                                             "text": "notice",
                                                             "pos": 1754,
                                                             "end": 1760,
@@ -2900,7 +2900,7 @@
                             "__kind__": "ElementDeclaration"
                         },
                         {
-                            "kind": 108,
+                            "kind": 109,
                             "indent": "    ",
                             "indentLevel": 4,
                             "token": {
@@ -2914,10 +2914,10 @@
                                 "__kind__": "DotToken"
                             },
                             "content": {
-                                "kind": 106,
+                                "kind": 107,
                                 "content": [
                                     {
-                                        "kind": 110,
+                                        "kind": 111,
                                         "text": "some text",
                                         "pos": 1768,
                                         "end": 1777,
@@ -2952,7 +2952,7 @@
                             "__kind__": "TextLine"
                         },
                         {
-                            "kind": 105,
+                            "kind": 106,
                             "indent": "    ",
                             "indentLevel": 4,
                             "token": {
@@ -2966,7 +2966,7 @@
                                 "__kind__": "MinusToken"
                             },
                             "identifier": {
-                                "kind": 110,
+                                "kind": 111,
                                 "text": "node2",
                                 "pos": 1783,
                                 "end": 1788,
@@ -3015,7 +3015,7 @@
                             "__kind__": "CommentLine"
                         },
                         {
-                            "kind": 105,
+                            "kind": 106,
                             "indent": "    ",
                             "indentLevel": 4,
                             "token": {
@@ -3029,7 +3029,7 @@
                                 "__kind__": "PlusToken"
                             },
                             "identifier": {
-                                "kind": 110,
+                                "kind": 111,
                                 "text": "list1",
                                 "pos": 1833,
                                 "end": 1838,
@@ -3076,7 +3076,7 @@
             "indent": "",
             "indentLevel": 0,
             "tag": {
-                "kind": 107,
+                "kind": 108,
                 "startToken": {
                     "kind": 9,
                     "text": ">",
@@ -3088,7 +3088,7 @@
                     "__kind__": "GreaterThanToken"
                 },
                 "tagName": {
-                    "kind": 110,
+                    "kind": 111,
                     "text": "extra",
                     "pos": 1840,
                     "end": 1845,
@@ -3116,7 +3116,7 @@
             },
             "children": [
                 {
-                    "kind": 103,
+                    "kind": 104,
                     "indent": "  ",
                     "indentLevel": 2,
                     "startToken": {
@@ -3130,14 +3130,24 @@
                         "__kind__": "PercentToken"
                     },
                     "binding": {
-                        "kind": 110,
-                        "text": "update-only!",
+                        "kind": 111,
+                        "text": "update-only",
                         "pos": 1849,
+                        "end": 1860,
+                        "len": 11,
+                        "line": 52,
+                        "character": 14,
+                        "__kind__": "StringLiteral"
+                    },
+                    "updateOnly": {
+                        "kind": 23,
+                        "text": "!",
+                        "pos": 1860,
                         "end": 1861,
-                        "len": 12,
+                        "len": 1,
                         "line": 52,
                         "character": 15,
-                        "__kind__": "StringLiteral"
+                        "__kind__": "ExclamationToken"
                     },
                     "initializer": [
                         {
@@ -3151,10 +3161,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": " 1",
                                     "pos": 1863,
                                     "end": 1865,
@@ -3187,10 +3197,10 @@
                     "len": 20,
                     "line": 52,
                     "character": 20,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementPropertyDeclaration"
                 },
                 {
-                    "kind": 103,
+                    "kind": 104,
                     "indent": "  ",
                     "indentLevel": 2,
                     "startToken": {
@@ -3204,7 +3214,7 @@
                         "__kind__": "PercentToken"
                     },
                     "binding": {
-                        "kind": 110,
+                        "kind": 111,
                         "text": "sync-only",
                         "pos": 1869,
                         "end": 1878,
@@ -3225,10 +3235,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 109,
+                                    "kind": 110,
                                     "startToken": {
                                         "kind": 19,
                                         "text": " {{",
@@ -3240,10 +3250,10 @@
                                         "__kind__": "MustacheStartToken"
                                     },
                                     "expression": {
-                                        "kind": 111,
+                                        "kind": 112,
                                         "items": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "a",
                                                 "pos": 1883,
                                                 "end": 1884,
@@ -3278,7 +3288,7 @@
                                     "__kind__": "MustacheExpression"
                                 },
                                 {
-                                    "kind": 110,
+                                    "kind": 111,
                                     "text": "&",
                                     "pos": 1886,
                                     "end": 1887,
@@ -3311,10 +3321,10 @@
                     "len": 22,
                     "line": 53,
                     "character": 22,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementPropertyDeclaration"
                 },
                 {
-                    "kind": 103,
+                    "kind": 104,
                     "indent": "  ",
                     "indentLevel": 2,
                     "startToken": {
@@ -3328,15 +3338,37 @@
                         "__kind__": "PercentToken"
                     },
                     "binding": {
-                        "kind": 110,
-                        "text": "two-way-binding@event",
+                        "kind": 111,
+                        "text": "two-way-binding",
                         "pos": 1891,
-                        "end": 1912,
-                        "len": 21,
+                        "end": 1906,
+                        "len": 15,
                         "line": 54,
-                        "character": 24,
+                        "character": 18,
                         "__kind__": "StringLiteral"
                     },
+                    "triggerEvent": [
+                        {
+                            "kind": 13,
+                            "text": "@",
+                            "pos": 1906,
+                            "end": 1907,
+                            "len": 1,
+                            "line": 54,
+                            "character": 19,
+                            "__kind__": "AtToken"
+                        },
+                        {
+                            "kind": 111,
+                            "text": "event",
+                            "pos": 1907,
+                            "end": 1912,
+                            "len": 5,
+                            "line": 54,
+                            "character": 24,
+                            "__kind__": "StringLiteral"
+                        }
+                    ],
                     "initializer": [
                         {
                             "kind": 18,
@@ -3349,10 +3381,10 @@
                             "__kind__": "EqualsToken"
                         },
                         {
-                            "kind": 106,
+                            "kind": 107,
                             "content": [
                                 {
-                                    "kind": 109,
+                                    "kind": 110,
                                     "startToken": {
                                         "kind": 19,
                                         "text": " {{",
@@ -3364,10 +3396,10 @@
                                         "__kind__": "MustacheStartToken"
                                     },
                                     "expression": {
-                                        "kind": 111,
+                                        "kind": 112,
                                         "items": [
                                             {
-                                                "kind": 110,
+                                                "kind": 111,
                                                 "text": "value",
                                                 "pos": 1917,
                                                 "end": 1922,
@@ -3425,7 +3457,7 @@
                     "len": 37,
                     "line": 54,
                     "character": 37,
-                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                    "__kind__": "ElementPropertyDeclaration"
                 }
             ],
             "pos": 1839,
