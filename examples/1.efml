@@ -49,3 +49,7 @@ this is a comment
     -node2
     '+' stands for list mounting point
     +list1
+>extra
+  %update-only! = 1
+  %sync-only = {{a}}&
+  %two-way-binding@event = {{value}}

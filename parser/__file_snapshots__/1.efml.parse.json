@@ -3070,19 +3070,383 @@
             "line": 6,
             "character": 1566,
             "__kind__": "ElementDeclaration"
+        },
+        {
+            "kind": 102,
+            "indent": "",
+            "indentLevel": 0,
+            "tag": {
+                "kind": 107,
+                "startToken": {
+                    "kind": 9,
+                    "text": ">",
+                    "pos": 1839,
+                    "end": 1840,
+                    "len": 1,
+                    "line": 51,
+                    "character": 1,
+                    "__kind__": "GreaterThanToken"
+                },
+                "tagName": {
+                    "kind": 110,
+                    "text": "extra",
+                    "pos": 1840,
+                    "end": 1845,
+                    "len": 5,
+                    "line": 51,
+                    "character": 6,
+                    "__kind__": "StringLiteral"
+                },
+                "pos": 1839,
+                "end": 1845,
+                "len": 6,
+                "line": 51,
+                "character": 6,
+                "__kind__": "TagExpression"
+            },
+            "endOfLineToken": {
+                "kind": 4,
+                "text": "\n",
+                "pos": 1845,
+                "end": 1846,
+                "len": 1,
+                "line": 51,
+                "character": 1,
+                "__kind__": "NewLineTrivia"
+            },
+            "children": [
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 11,
+                        "text": "%",
+                        "pos": 1848,
+                        "end": 1849,
+                        "len": 1,
+                        "line": 52,
+                        "character": 3,
+                        "__kind__": "PercentToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "text": "update-only!",
+                        "pos": 1849,
+                        "end": 1861,
+                        "len": 12,
+                        "line": 52,
+                        "character": 15,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "text": " =",
+                            "pos": 1861,
+                            "end": 1863,
+                            "len": 2,
+                            "line": 52,
+                            "character": 17,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 110,
+                                    "text": " 1",
+                                    "pos": 1863,
+                                    "end": 1865,
+                                    "len": 2,
+                                    "line": 52,
+                                    "character": 19,
+                                    "__kind__": "StringLiteral"
+                                }
+                            ],
+                            "pos": 1863,
+                            "end": 1865,
+                            "len": 2,
+                            "line": 52,
+                            "character": 19,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "text": "\n",
+                        "pos": 1865,
+                        "end": 1866,
+                        "len": 1,
+                        "line": 52,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 1846,
+                    "end": 1866,
+                    "len": 20,
+                    "line": 52,
+                    "character": 20,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 11,
+                        "text": "%",
+                        "pos": 1868,
+                        "end": 1869,
+                        "len": 1,
+                        "line": 53,
+                        "character": 3,
+                        "__kind__": "PercentToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "text": "sync-only",
+                        "pos": 1869,
+                        "end": 1878,
+                        "len": 9,
+                        "line": 53,
+                        "character": 12,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "text": " =",
+                            "pos": 1878,
+                            "end": 1880,
+                            "len": 2,
+                            "line": 53,
+                            "character": 14,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 109,
+                                    "startToken": {
+                                        "kind": 19,
+                                        "text": " {{",
+                                        "pos": 1880,
+                                        "end": 1883,
+                                        "len": 3,
+                                        "line": 53,
+                                        "character": 17,
+                                        "__kind__": "MustacheStartToken"
+                                    },
+                                    "expression": {
+                                        "kind": 111,
+                                        "items": [
+                                            {
+                                                "kind": 110,
+                                                "text": "a",
+                                                "pos": 1883,
+                                                "end": 1884,
+                                                "len": 1,
+                                                "line": 53,
+                                                "character": 18,
+                                                "__kind__": "StringLiteral"
+                                            }
+                                        ],
+                                        "pos": 1883,
+                                        "end": 1884,
+                                        "len": 1,
+                                        "line": 53,
+                                        "character": 18,
+                                        "__kind__": "DottedExpressionChain"
+                                    },
+                                    "endToken": {
+                                        "kind": 20,
+                                        "text": "}}",
+                                        "pos": 1884,
+                                        "end": 1886,
+                                        "len": 2,
+                                        "line": 53,
+                                        "character": 20,
+                                        "__kind__": "MustacheEndToken"
+                                    },
+                                    "pos": 1880,
+                                    "end": 1886,
+                                    "len": 6,
+                                    "line": 53,
+                                    "character": 20,
+                                    "__kind__": "MustacheExpression"
+                                },
+                                {
+                                    "kind": 110,
+                                    "text": "&",
+                                    "pos": 1886,
+                                    "end": 1887,
+                                    "len": 1,
+                                    "line": 53,
+                                    "character": 21,
+                                    "__kind__": "StringLiteral"
+                                }
+                            ],
+                            "pos": 1880,
+                            "end": 1887,
+                            "len": 7,
+                            "line": 53,
+                            "character": 21,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "text": "\n",
+                        "pos": 1887,
+                        "end": 1888,
+                        "len": 1,
+                        "line": 53,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 1866,
+                    "end": 1888,
+                    "len": 22,
+                    "line": 53,
+                    "character": 22,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                },
+                {
+                    "kind": 103,
+                    "indent": "  ",
+                    "indentLevel": 2,
+                    "startToken": {
+                        "kind": 11,
+                        "text": "%",
+                        "pos": 1890,
+                        "end": 1891,
+                        "len": 1,
+                        "line": 54,
+                        "character": 3,
+                        "__kind__": "PercentToken"
+                    },
+                    "binding": {
+                        "kind": 110,
+                        "text": "two-way-binding@event",
+                        "pos": 1891,
+                        "end": 1912,
+                        "len": 21,
+                        "line": 54,
+                        "character": 24,
+                        "__kind__": "StringLiteral"
+                    },
+                    "initializer": [
+                        {
+                            "kind": 18,
+                            "text": " =",
+                            "pos": 1912,
+                            "end": 1914,
+                            "len": 2,
+                            "line": 54,
+                            "character": 26,
+                            "__kind__": "EqualsToken"
+                        },
+                        {
+                            "kind": 106,
+                            "content": [
+                                {
+                                    "kind": 109,
+                                    "startToken": {
+                                        "kind": 19,
+                                        "text": " {{",
+                                        "pos": 1914,
+                                        "end": 1917,
+                                        "len": 3,
+                                        "line": 54,
+                                        "character": 29,
+                                        "__kind__": "MustacheStartToken"
+                                    },
+                                    "expression": {
+                                        "kind": 111,
+                                        "items": [
+                                            {
+                                                "kind": 110,
+                                                "text": "value",
+                                                "pos": 1917,
+                                                "end": 1922,
+                                                "len": 5,
+                                                "line": 54,
+                                                "character": 34,
+                                                "__kind__": "StringLiteral"
+                                            }
+                                        ],
+                                        "pos": 1917,
+                                        "end": 1922,
+                                        "len": 5,
+                                        "line": 54,
+                                        "character": 34,
+                                        "__kind__": "DottedExpressionChain"
+                                    },
+                                    "endToken": {
+                                        "kind": 20,
+                                        "text": "}}",
+                                        "pos": 1922,
+                                        "end": 1924,
+                                        "len": 2,
+                                        "line": 54,
+                                        "character": 36,
+                                        "__kind__": "MustacheEndToken"
+                                    },
+                                    "pos": 1914,
+                                    "end": 1924,
+                                    "len": 10,
+                                    "line": 54,
+                                    "character": 36,
+                                    "__kind__": "MustacheExpression"
+                                }
+                            ],
+                            "pos": 1914,
+                            "end": 1924,
+                            "len": 10,
+                            "line": 54,
+                            "character": 36,
+                            "__kind__": "TemplateStringExpression"
+                        }
+                    ],
+                    "endOfLineToken": {
+                        "kind": 4,
+                        "text": "\n",
+                        "pos": 1924,
+                        "end": 1925,
+                        "len": 1,
+                        "line": 54,
+                        "character": 1,
+                        "__kind__": "NewLineTrivia"
+                    },
+                    "pos": 1888,
+                    "end": 1925,
+                    "len": 37,
+                    "line": 54,
+                    "character": 37,
+                    "__kind__": "ElementAttributeOrPropertyDeclaration"
+                }
+            ],
+            "pos": 1839,
+            "end": 1925,
+            "len": 86,
+            "line": 51,
+            "character": 86,
+            "__kind__": "ElementDeclaration"
         }
     ],
     "endOfFileToken": {
         "kind": 99,
         "text": "",
-        "pos": 1839,
-        "end": 1839,
+        "pos": 1925,
+        "end": 1925,
         "len": 0,
-        "line": 51,
+        "line": 55,
         "character": 0,
         "__kind__": "EndOfFileToken"
     },
     "diagnostics": [],
-    "text": "Tree structure\nLines not started with >#%@.+- are considered as comments\nThe escape character of eft is '&', for prevention of the conflict with js escapes.\nExcept for the change of the character, all the usage should be the same.\nthis is a comment\n'>' stands for tag name\n>div\n  '#' stands for attributes\n  Mustaches stands for binding data\n  content inside mustaches after '=' stands for the default value for this binding\n  content without mustaches stands for a static data\n  which means that you cannot modify them using ef.js\n  #class = {{class = some class name}}\n  #style = {{attr.style = background: #ECECEC}}\n  #id = testdiv\n  #some-attr = some text\n  #content\n  '%' stands for properties\n  %title = Welcome, {{name}}\n  %anotherProperty = text\n  '@' stands for events\n  contents after ':' are considered as value passed to the handler\n  @click = updateInfo:{{binding.value}} and static value\n  modify keys now can be bind easily\n  @mousedown.shift.alt.ctrl.meta = select\n  bind to keys is also easy\n  @keypress.13 = submit\n  use '.prevent' to preventDefault, '.stop' to stopPropagation, '.stopImmediate' to stopImmediatePropagation\n  @keydown.8.prevent.stop = stopbackspace\n  use '.capture' to capture an event\n  @submit.capture.stopImmediate = submit\n  '.' stands for text nodes\n  .Name: {{name}}&nJob: {{job}}\n  >pre\n    '|' stands for multiline text\n    |Line 1\n    |Line 2\n    |Line 3\n  >br\n  '-' stands for standard mounting point\n  -node1\n  '.' after a tag name stands for class names for this tag\n  >p.some.{{binding.class}}.class.names\n    '#' at the end of a tag name stands for the reference name of the node\n    Mustaches after a dot will bind to 'class' automatically\n    >span.{{emergency = emergency}}#notice_box\n      .Notice: {{notice}}\n    .some text\n    -node2\n    '+' stands for list mounting point\n    +list1\n",
+    "text": "Tree structure\nLines not started with >#%@.+- are considered as comments\nThe escape character of eft is '&', for prevention of the conflict with js escapes.\nExcept for the change of the character, all the usage should be the same.\nthis is a comment\n'>' stands for tag name\n>div\n  '#' stands for attributes\n  Mustaches stands for binding data\n  content inside mustaches after '=' stands for the default value for this binding\n  content without mustaches stands for a static data\n  which means that you cannot modify them using ef.js\n  #class = {{class = some class name}}\n  #style = {{attr.style = background: #ECECEC}}\n  #id = testdiv\n  #some-attr = some text\n  #content\n  '%' stands for properties\n  %title = Welcome, {{name}}\n  %anotherProperty = text\n  '@' stands for events\n  contents after ':' are considered as value passed to the handler\n  @click = updateInfo:{{binding.value}} and static value\n  modify keys now can be bind easily\n  @mousedown.shift.alt.ctrl.meta = select\n  bind to keys is also easy\n  @keypress.13 = submit\n  use '.prevent' to preventDefault, '.stop' to stopPropagation, '.stopImmediate' to stopImmediatePropagation\n  @keydown.8.prevent.stop = stopbackspace\n  use '.capture' to capture an event\n  @submit.capture.stopImmediate = submit\n  '.' stands for text nodes\n  .Name: {{name}}&nJob: {{job}}\n  >pre\n    '|' stands for multiline text\n    |Line 1\n    |Line 2\n    |Line 3\n  >br\n  '-' stands for standard mounting point\n  -node1\n  '.' after a tag name stands for class names for this tag\n  >p.some.{{binding.class}}.class.names\n    '#' at the end of a tag name stands for the reference name of the node\n    Mustaches after a dot will bind to 'class' automatically\n    >span.{{emergency = emergency}}#notice_box\n      .Notice: {{notice}}\n    .some text\n    -node2\n    '+' stands for list mounting point\n    +list1\n>extra\n  %update-only! = 1\n  %sync-only = {{a}}&\n  %two-way-binding@event = {{value}}\n",
     "__kind__": "SourceFile"
 }

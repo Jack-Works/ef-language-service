@@ -497,6 +497,79 @@
                     ]
                 }
             ]
+        },
+        {
+            "kind": "ElementDeclaration",
+            "tag@TagExpression": {
+                "kind": "TagExpression",
+                "startToken@GreaterThanToken": "GreaterThanToken",
+                "tagName@StringLiteral": "StringLiteral"
+            },
+            "children": [
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@PercentToken": "PercentToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                "StringLiteral"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@PercentToken": "PercentToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                {
+                                    "kind": "MustacheExpression",
+                                    "startToken@MustacheStartToken": "MustacheStartToken",
+                                    "expression@DottedExpressionChain": {
+                                        "kind": "DottedExpressionChain",
+                                        "items": [
+                                            "StringLiteral"
+                                        ]
+                                    },
+                                    "endToken@MustacheEndToken": "MustacheEndToken"
+                                },
+                                "StringLiteral"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "kind": "ElementAttributeOrPropertyDeclaration",
+                    "startToken@PercentToken": "PercentToken",
+                    "binding@StringLiteral": "StringLiteral",
+                    "initializer": [
+                        "EqualsToken",
+                        {
+                            "kind": "TemplateStringExpression",
+                            "content": [
+                                {
+                                    "kind": "MustacheExpression",
+                                    "startToken@MustacheStartToken": "MustacheStartToken",
+                                    "expression@DottedExpressionChain": {
+                                        "kind": "DottedExpressionChain",
+                                        "items": [
+                                            "StringLiteral"
+                                        ]
+                                    },
+                                    "endToken@MustacheEndToken": "MustacheEndToken"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "diagnostics": []

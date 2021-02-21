@@ -49,4 +49,8 @@
   48 |     -node2
   49 |     '+' stands for list mounting point
   50 |     +list1
-  51 | 
+  51 | >extra
+  52 |   %update-only! = 1
+  53 |   %sync-only = {{a}}&
+  54 |   %two-way-binding@event = {{value}}
+  55 | 
