@@ -170,6 +170,11 @@ export function createScanner(textInitial: string): Scanner {
             character += 2
             return (token = SyntaxKind.MustacheEndToken)
         }
+        if (ch === CharacterCodes.ampersand && lastToken === SyntaxKind.MustacheEndToken) {
+            pos++
+            character++
+            return (token = SyntaxKind.AmpersandToken)
+        }
         if (isLineBreak(ch)) {
             if (ch === CharacterCodes.carriageReturn) {
                 if (text.charCodeAt(pos + 1) === CharacterCodes.lineFeed) {

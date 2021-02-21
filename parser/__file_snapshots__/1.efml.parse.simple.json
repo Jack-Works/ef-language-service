@@ -27,24 +27,19 @@
                     "initializer": [
                         "EqualsToken",
                         {
-                            "kind": "TemplateStringExpression",
-                            "content": [
-                                {
-                                    "kind": "MustacheExpression",
-                                    "startToken@MustacheStartToken": "MustacheStartToken",
-                                    "expression@DottedExpressionChain": {
-                                        "kind": "DottedExpressionChain",
-                                        "items": [
-                                            "StringLiteral"
-                                        ]
-                                    },
-                                    "initializer": [
-                                        "EqualsToken",
-                                        "StringLiteral"
-                                    ],
-                                    "endToken@MustacheEndToken": "MustacheEndToken"
-                                }
-                            ]
+                            "kind": "MustacheExpression",
+                            "startToken@MustacheStartToken": "MustacheStartToken",
+                            "expression@DottedExpressionChain": {
+                                "kind": "DottedExpressionChain",
+                                "items": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "initializer": [
+                                "EqualsToken",
+                                "StringLiteral"
+                            ],
+                            "endToken@MustacheEndToken": "MustacheEndToken"
                         }
                     ]
                 },
@@ -55,26 +50,21 @@
                     "initializer": [
                         "EqualsToken",
                         {
-                            "kind": "TemplateStringExpression",
-                            "content": [
-                                {
-                                    "kind": "MustacheExpression",
-                                    "startToken@MustacheStartToken": "MustacheStartToken",
-                                    "expression@DottedExpressionChain": {
-                                        "kind": "DottedExpressionChain",
-                                        "items": [
-                                            "StringLiteral",
-                                            "DotToken",
-                                            "StringLiteral"
-                                        ]
-                                    },
-                                    "initializer": [
-                                        "EqualsToken",
-                                        "StringLiteral"
-                                    ],
-                                    "endToken@MustacheEndToken": "MustacheEndToken"
-                                }
-                            ]
+                            "kind": "MustacheExpression",
+                            "startToken@MustacheStartToken": "MustacheStartToken",
+                            "expression@DottedExpressionChain": {
+                                "kind": "DottedExpressionChain",
+                                "items": [
+                                    "StringLiteral",
+                                    "DotToken",
+                                    "StringLiteral"
+                                ]
+                            },
+                            "initializer": [
+                                "EqualsToken",
+                                "StringLiteral"
+                            ],
+                            "endToken@MustacheEndToken": "MustacheEndToken"
                         }
                     ]
                 },
@@ -528,21 +518,16 @@
                     "initializer": [
                         "EqualsToken",
                         {
-                            "kind": "TemplateStringExpression",
-                            "content": [
-                                {
-                                    "kind": "MustacheExpression",
-                                    "startToken@MustacheStartToken": "MustacheStartToken",
-                                    "expression@DottedExpressionChain": {
-                                        "kind": "DottedExpressionChain",
-                                        "items": [
-                                            "StringLiteral"
-                                        ]
-                                    },
-                                    "endToken@MustacheEndToken": "MustacheEndToken"
-                                },
-                                "StringLiteral"
-                            ]
+                            "kind": "MustacheExpression",
+                            "startToken@MustacheStartToken": "MustacheStartToken",
+                            "expression@DottedExpressionChain": {
+                                "kind": "DottedExpressionChain",
+                                "items": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "endToken@MustacheEndToken": "MustacheEndToken",
+                            "syncOnly@AmpersandToken": "AmpersandToken"
                         }
                     ]
                 },
@@ -557,20 +542,15 @@
                     "initializer": [
                         "EqualsToken",
                         {
-                            "kind": "TemplateStringExpression",
-                            "content": [
-                                {
-                                    "kind": "MustacheExpression",
-                                    "startToken@MustacheStartToken": "MustacheStartToken",
-                                    "expression@DottedExpressionChain": {
-                                        "kind": "DottedExpressionChain",
-                                        "items": [
-                                            "StringLiteral"
-                                        ]
-                                    },
-                                    "endToken@MustacheEndToken": "MustacheEndToken"
-                                }
-                            ]
+                            "kind": "MustacheExpression",
+                            "startToken@MustacheStartToken": "MustacheStartToken",
+                            "expression@DottedExpressionChain": {
+                                "kind": "DottedExpressionChain",
+                                "items": [
+                                    "StringLiteral"
+                                ]
+                            },
+                            "endToken@MustacheEndToken": "MustacheEndToken"
                         }
                     ]
                 }

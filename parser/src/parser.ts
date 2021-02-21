@@ -60,6 +60,7 @@ const {
     getLinedPos,
     getLastTokenLinedPos,
     getLeadingTriviaText,
+    tryParse,
 } = (() => {
     const scanner = createScanner('')
     const {
@@ -97,7 +98,7 @@ const {
             result = callback()
             return result && !isPure
         })
-        if (result! && !isPure) rollback()
+        if (!(result! && !isPure)) rollback()
         return result!
     }
     return {
@@ -114,6 +115,7 @@ const {
         token: () => currentToken,
         getLastTokenLinedPos,
         getLinedPos,
+        tryParse,
     }
 })()
 //#endregion
@@ -179,8 +181,16 @@ function parseElementPropertyLine(indent: string): ConstructingNode<ElementPrope
 function parseElementAttributeOrPropertyLineInitializer(): ElementPropertyDeclarationLine['initializer'] &
     ElementAttributeDeclarationLine['initializer'] {
     if (token() !== SyntaxKind.EqualsToken) return undefined
-    // TODO: parse sync-only MustacheExpression
-    return [parseExpectedToken(SyntaxKind.EqualsToken), parseTemplateExpressionUntil([])]
+    const equal = parseExpectedToken(SyntaxKind.EqualsToken)
+    const mayParseSyncOnlyMustaches =
+        token() === SyntaxKind.MustacheStartToken
+            ? tryParse(() => {
+                  const mustaches = parseMustachesExpression(true)
+                  if (token() === SyntaxKind.NewLineTrivia) return [equal, mustaches] as const
+                  return false as const
+              })
+            : undefined
+    return mayParseSyncOnlyMustaches || [equal, parseTemplateExpressionUntil([])]
 }
 function parseElementDeclarationLine(indent: string, currentLevel: number): ConstructingNode<ElementDeclarationLine> {
     const expr = parseTagDescriptor()
