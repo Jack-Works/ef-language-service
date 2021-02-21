@@ -4,10 +4,10 @@ import {
     CompletionItemKind as VSCodeCompletionItemKind,
 } from 'vscode'
 import { CompletionItemKind, CompletionItem, MarkupKind } from 'vscode-languageclient'
-import type { ExtendedLanguageServiceProtocol } from 'ef-language-service-server'
+import type { ExtendedLanguageServiceProtocolClientMethod } from 'ef-language-service-server'
 import { createNewVirtualFile } from './forward-utils'
 
-type f = ExtendedLanguageServiceProtocol['requestCompletionFrom']
+type f = ExtendedLanguageServiceProtocolClientMethod['requestCompletionFrom']
 
 export async function forwardCompletion(...[lang, source, pos, only]: Parameters<f>): ReturnType<f> {
     const [uri, cleanup] = createNewVirtualFile(lang, source)

@@ -1,7 +1,7 @@
 import type { Connection } from 'vscode-languageserver'
 import type { CompletionItemKind, CompletionList, Position } from 'vscode-languageserver-types'
-
-export interface ExtendedLanguageServiceProtocol {
+/** Client should implement those methods to enable extra capabilities of the language service. */
+export interface ExtendedLanguageServiceProtocolClientMethod {
     requestCompletionFrom(
         extension: 'html' | 'ts' | 'js',
         source: string,
@@ -9,7 +9,8 @@ export interface ExtendedLanguageServiceProtocol {
         filter?: CompletionItemKind,
     ): Promise<CompletionList | undefined>
 }
-export function callExtendedProtocol(connection: Connection): ExtendedLanguageServiceProtocol {
+export interface ExtendedLanguageServiceProtocolServerMethod {}
+export function callExtendedProtocol(connection: Connection): ExtendedLanguageServiceProtocolClientMethod {
     return new Proxy(
         {},
         {
