@@ -7,6 +7,7 @@ import type {
 } from 'ef-language-service-server'
 import { forwardCompletion } from './forward-completion'
 import { InlayHintsProvider } from './inlay-hint'
+import { forwardHover } from './forward-hover'
 let client: LanguageClient
 export function activate(context: ExtensionContext) {
     const serverModule = context.asAbsolutePath(
@@ -34,6 +35,7 @@ export function activate(context: ExtensionContext) {
 
 function extendedProtocol() {
     listen('requestCompletionFrom', forwardCompletion)
+    listen('requestHoverInfoFrom', forwardHover)
     languages.registerInlineHintsProvider({ language: 'efml' }, new InlayHintsProvider())
 }
 function listen<K extends keyof ExtendedLanguageServiceProtocolClientMethod>(

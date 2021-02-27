@@ -19,14 +19,13 @@
 -   ✅ [Folding range](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_foldingRange)
 -   ✅ [Code completion](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_completion)
 -   ✅ [Inlay hint](https://github.com/microsoft/language-server-protocol/issues/956): Provide inline hint for keycode in event declaration.
+-   ✅ [Hover](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_hover)
 -   🔜 [Full formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_formatting)
     -   🔜 [Partial formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_rangeFormatting)
     -   🔜 [On type formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_onTypeFormatting)
 -   🔜 [Rename](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_rename)
     -   🔜 [Prepare rename](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_prepareRename)
     -   🔜 Rename tags, attributes, properties (single-change)
--   🔜 [Hover](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_hover)
-    -   🔜 Delegate HTML and CSS
 -   🔜 [Code actions](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_codeAction)
     I guess it will have use cases but I have no idea.
 -   🔜 [Document symbols](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentSymbol): Provide all mounting points
