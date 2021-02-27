@@ -79,3 +79,13 @@ export function getParentNativeTagName(node: Node) {
 }
 
 export const EmptyCompletion: CompletionList = { items: [], isIncomplete: false }
+/** @internal */
+export function assertNever(x: never): never {
+    debugger
+    console.error(x)
+    throw new Error('Never case happened')
+}
+/** @internal */
+export function last<T>(x: readonly T[]): T | undefined {
+    return x[x.length - 1]
+}

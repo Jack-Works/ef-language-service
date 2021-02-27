@@ -14,6 +14,7 @@ import { enableFoldingRange } from './folding-range'
 import { enableCodeCompletion } from './completion'
 import { enableUnstableInlayHints } from './inlay'
 import { enableHover } from './hover'
+import { enableDocumentSymbol } from './document-symbol'
 
 const connection = createConnection(ProposedFeatures.all)
 const documents: TextDocuments<EFDocument> = new TextDocuments(EFDocument)
@@ -30,6 +31,7 @@ connection.onInitialize((params: InitializeParams) => {
             foldingRangeProvider: enableFoldingRange(connection, documents, textDocument?.foldingRange),
             completionProvider: enableCodeCompletion(connection, documents, textDocument?.completion),
             hoverProvider: enableHover(connection, documents, textDocument?.hover),
+            documentSymbolProvider: enableDocumentSymbol(connection, documents, textDocument?.documentSymbol),
         },
     }
     enableUnstableInlayHints(connection, documents)

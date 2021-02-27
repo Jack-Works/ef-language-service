@@ -20,6 +20,7 @@
 -   ✅ [Code completion](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_completion)
 -   ✅ [Inlay hint](https://github.com/microsoft/language-server-protocol/issues/956): Provide inline hint for keycode in event declaration.
 -   ✅ [Hover](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_hover)
+-   ✅ [Document symbols](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentSymbol)
 -   🔜 [Full formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_formatting)
     -   🔜 [Partial formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_rangeFormatting)
     -   🔜 [On type formatting](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_onTypeFormatting)
@@ -28,7 +29,6 @@
     -   🔜 Rename tags, attributes, properties (single-change)
 -   🔜 [Code actions](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_codeAction)
     I guess it will have use cases but I have no idea.
--   🔜 [Document symbols](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocument_documentSymbol): Provide all mounting points
 
 ## Work with TypeScript language service
 
