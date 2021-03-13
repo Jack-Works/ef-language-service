@@ -36,7 +36,9 @@ export function activate(context: ExtensionContext) {
 function extendedProtocol() {
     listen('requestCompletionFrom', forwardCompletion)
     listen('requestHoverInfoFrom', forwardHover)
-    languages.registerInlineHintsProvider({ language: 'efml' }, new InlayHintsProvider())
+    try {
+        languages.registerInlineHintsProvider({ language: 'efml' }, new InlayHintsProvider())
+    } catch {}
 }
 function listen<K extends keyof ExtendedLanguageServiceProtocolClientMethod>(
     key: K,

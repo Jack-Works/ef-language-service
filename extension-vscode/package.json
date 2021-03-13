@@ -6,7 +6,7 @@
   "license": "MIT",
   "version": "0.0.0",
   "main": "./dist/extension.js",
-  "enableProposedApi": true,
+  "enableProposedApi": false,
   "activationEvents": [
     "onLanguage:efml"
   ],
