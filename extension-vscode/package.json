@@ -7,6 +7,7 @@
   "version": "0.0.0",
   "main": "./dist/extension.js",
   "enableProposedApi": false,
+  "publisher": "MagicWorks",
   "activationEvents": [
     "onLanguage:efml"
   ],
@@ -87,6 +88,7 @@
   "devDependencies": {
     "@types/node": "^14.14.31",
     "@types/vscode": "^1.52.0",
+    "vsce": "^1.87.0",
     "vscode-test": "^1.5.1"
   }
 }
