@@ -43,7 +43,7 @@ importers:
       '@types/node': ^14.14.31
       '@types/vscode': ^1.52.0
       del: ^6.0.0
-      ef-language-service-server: '*'
+      ef-language-service-server: workspace:*
       rollup: ^2.41.2
       vsce: ^1.87.0
       vscode-languageclient: ^7.0.0
@@ -55,7 +55,7 @@ importers:
       vscode-languageserver-textdocument: 1.0.1
       vscode-languageserver-types: 3.16.0
     specifiers:
-      ef-parser: '*'
+      ef-parser: workspace:*
       vscode-languageserver: ^7.0.0
       vscode-languageserver-textdocument: ^1.0.1
       vscode-languageserver-types: ^3.16.0
