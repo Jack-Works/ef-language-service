@@ -42,6 +42,7 @@ const conf = {
                     // write package.json
                     const pkg = require('./package.json')
                     delete pkg.enableProposedApi
+                    delete pkg.scripts
                     keptOnly(pkg.dependencies, ['ef-language-service-server'])
                     keptOnly(pkg.devDependencies, ['@types/vscode'])
                     this.emitFile({

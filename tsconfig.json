@@ -23,5 +23,8 @@
     { "path": "./parser/" },
     { "path": "./parser/__tests__" }
   ],
-  "files": []
+  "files": [],
+  "ts-node": {
+    "transpileOnly": true
+  }
 }

@@ -5,12 +5,16 @@
   "description": "Language service for ef",
   "scripts": {
     "test": "jest",
-    "watch": "tsc -b . -w"
+    "watch": "tsc -b . -w",
+    "build": "gulp"
   },
   "author": "Jack Works",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "@types/gulp": "^4.0.8",
     "@types/jest": "^26.0.20",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
     "jest": "^26.6.3",
     "jest-file-snapshot": "^0.5.0",
     "prettier": "^2.2.1",
