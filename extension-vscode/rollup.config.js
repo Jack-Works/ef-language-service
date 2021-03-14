@@ -26,6 +26,7 @@ const conf = {
                 return 'libs/' + pkg[1]
             }
         },
+        chunkFileNames: '[name].js',
     },
     plugins: [
         node({ preferBuiltins: true }),

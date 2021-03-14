@@ -58,5 +58,5 @@ jobs:
             - run: npm run build
             - uses: actions/upload-artifact@v2
               with:
-                  name: dist-without-markdown
+                  name: plugins
                   path: dist
