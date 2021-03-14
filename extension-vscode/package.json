@@ -4,7 +4,7 @@
   "description": "VSCode extension for efml language server",
   "author": "Jack Works",
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "./dist/extension.js",
   "enableProposedApi": false,
   "publisher": "MagicWorks",
