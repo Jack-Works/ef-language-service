@@ -1,3 +1,8 @@
+// @ts-ignore Read comments in rollup.patch for details. This must be the first import
+import { a } from '../rollup.patch/index.js'
+// @ts-ignore avoid treeshaking
+Symbol.for(a.toString())
+
 import * as path from 'path'
 import { workspace, ExtensionContext, languages } from 'vscode'
 import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind } from 'vscode-languageclient/node'
@@ -8,6 +13,7 @@ import type {
 import { forwardCompletion } from './forward-completion'
 import { InlayHintsProvider } from './inlay-hint'
 import { forwardHover } from './forward-hover'
+
 let client: LanguageClient
 export function activate(context: ExtensionContext) {
     const serverModule = context.asAbsolutePath(
