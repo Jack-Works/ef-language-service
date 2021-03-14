@@ -26,6 +26,7 @@ const conf = {
                 return 'libs/' + pkg[1]
             }
         },
+        chunkFileNames: '[name].js',
     },
     plugins: [
         node({ preferBuiltins: true }),
@@ -44,6 +45,7 @@ const conf = {
                     delete pkg.enableProposedApi
                     delete pkg.scripts
                     keptOnly(pkg.dependencies, ['ef-language-service-server'])
+                    pkg.dependencies['ef-language-service-server'] = '*'
                     keptOnly(pkg.devDependencies, ['@types/vscode'])
                     this.emitFile({
                         type: 'asset',
@@ -51,6 +53,18 @@ const conf = {
                         source: JSON.stringify(pkg, undefined, 2),
                     })
                 }
+                this.emitFile({
+                    type: 'asset',
+                    fileName: 'node_modules/ef-language-service-server/package.json',
+                    source: JSON.stringify(
+                        {
+                            name: 'ef-language-service-server',
+                            version: '0.0.0',
+                        },
+                        undefined,
+                        4,
+                    ),
+                })
                 await copy.call(this, 'README.md')
                 await copy.call(this, 'language-configuration.json')
             },

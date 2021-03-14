@@ -82,7 +82,7 @@
     "vscode": "^1.52.0"
   },
   "dependencies": {
-    "ef-language-service-server": "*",
+    "ef-language-service-server": "workspace:*",
     "vscode-languageclient": "^7.0.0"
   },
   "devDependencies": {

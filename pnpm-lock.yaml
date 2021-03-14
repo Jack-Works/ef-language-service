@@ -25,7 +25,6 @@ importers:
   extension-vscode:
     dependencies:
       ef-language-service-server: link:../language-service
-      tslib: 2.1.0
       vscode-languageclient: 7.0.0
     devDependencies:
       '@rollup/plugin-commonjs': 17.1.0_rollup@2.41.2
@@ -34,7 +33,6 @@ importers:
       '@types/node': 14.14.34
       '@types/vscode': 1.54.0
       del: 6.0.0
-      gulp: 4.0.2
       rollup: 2.41.2
       vsce: 1.87.0
       vscode-test: 1.5.1
@@ -45,10 +43,8 @@ importers:
       '@types/node': ^14.14.31
       '@types/vscode': ^1.52.0
       del: ^6.0.0
-      ef-language-service-server: '*'
-      gulp: ^4.0.2
+      ef-language-service-server: workspace:*
       rollup: ^2.41.2
-      tslib: ^2.1.0
       vsce: ^1.87.0
       vscode-languageclient: ^7.0.0
       vscode-test: ^1.5.1
@@ -59,7 +55,7 @@ importers:
       vscode-languageserver-textdocument: 1.0.1
       vscode-languageserver-types: 3.16.0
     specifiers:
-      ef-parser: '*'
+      ef-parser: workspace:*
       vscode-languageserver: ^7.0.0
       vscode-languageserver-textdocument: ^1.0.1
       vscode-languageserver-types: ^3.16.0
@@ -5748,10 +5744,6 @@ packages:
       typescript: '>=2.7'
     resolution:
       integrity: sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==
-  /tslib/2.1.0:
-    dev: false
-    resolution:
-      integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
   /tunnel-agent/0.6.0:
     dependencies:
       safe-buffer: 5.2.1
