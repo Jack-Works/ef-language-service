@@ -6,6 +6,7 @@ jobs:
     name: Run linters
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
       - name: Run linters
         uses: wearerequired/lint-action@v1
@@ -15,12 +16,14 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/action/setup
       - run: npm run test
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
       - run: npm run build
       - name: Archive plugins
